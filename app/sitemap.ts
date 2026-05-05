@@ -1,0 +1,38 @@
+import { MetadataRoute } from 'next';
+import { getAllPosts } from '@/lib/blog';
+
+export const dynamic = 'force-static';
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rishtamaker.in';
+
+  const staticRoutes = [
+    { url: '', changeFrequency: 'daily' as const, priority: 1 },
+    { url: '/create-biodata', changeFrequency: 'daily' as const, priority: 1 },
+    { url: '/templates', changeFrequency: 'daily' as const, priority: 0.9 },
+    { url: '/biodata-for-boy', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: '/biodata-for-girl', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: '/hindi-biodata', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: '/marriage-biodata-format', changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: '/simple-biodata-format', changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: '/blog', changeFrequency: 'daily' as const, priority: 0.8 },
+  ];
+
+  const sitemapRoutes: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
+    url: `${baseUrl}${route.url}`,
+    lastModified: new Date(),
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
+
+  // Dynamically add all blog posts
+  const posts = getAllPosts();
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
+  return [...sitemapRoutes, ...blogRoutes];
+}
