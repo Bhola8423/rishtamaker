@@ -14,4 +14,17 @@ export type PremiumTemplateDefinition = {
 };
 
 // Removed templates per user request. Will add them one by one as suggested.
-export const premiumTemplates: PremiumTemplateDefinition[] = [];
+import RoyalFloralTemplate from "./RoyalFloralTemplate";
+
+export const premiumTemplates: PremiumTemplateDefinition[] = [
+  {
+    id: "royal-floral-signature",
+    name: "Royal Floral Signature",
+    description: "An elite, ornate design featuring watercolor florals and classic script typography. Perfect for a first-class impression.",
+    price: 49,
+    gender: "both",
+    isPopular: true,
+    thumbnailColor: "#2a050c",
+    Component: RoyalFloralTemplate,
+  }
+];

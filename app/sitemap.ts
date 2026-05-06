@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '', changeFrequency: 'daily' as const, priority: 1 },
     { url: '/templates', changeFrequency: 'daily' as const, priority: 0.9 },
     { url: '/premium-templates', changeFrequency: 'daily' as const, priority: 0.95 },
+    { url: '/premium-templates/floral-royal', changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: '/biodata-for-boy', changeFrequency: 'weekly' as const, priority: 0.9 },
     { url: '/biodata-for-girl', changeFrequency: 'weekly' as const, priority: 0.9 },
     { url: '/hindi-biodata', changeFrequency: 'weekly' as const, priority: 0.9 },

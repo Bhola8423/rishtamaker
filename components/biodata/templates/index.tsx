@@ -123,7 +123,7 @@ export const standardTemplates: BiodataTemplateDefinition[] = [
 ];
 
 export const biodataTemplates: BiodataTemplateDefinition[] = [
-  ...premiumTemplates,
+  // ...premiumTemplates,
   ...standardTemplates,
 ];
 

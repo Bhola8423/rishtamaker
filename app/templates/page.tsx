@@ -7,6 +7,7 @@ import { biodataTemplates } from "@/components/biodata/templates";
 import { TemplateCard } from "@/components/templates/TemplateCard";
 import { BiodataCTA } from "@/components/biodata/CTA";
 import { Sparkles, Layout, Palette, ArrowRight } from "lucide-react";
+import RoyalFloralTemplate from "@/components/biodata/premium-templates/RoyalFloralTemplate";
 
 export default function TemplatesPage() {
   return (
@@ -79,33 +80,6 @@ export default function TemplatesPage() {
           </div>
         </section>
 
-        {/* Elite Premium Collection Banner */}
-        <section className="bg-white py-10">
-          <div className="container mx-auto px-6 max-w-7xl">
-            <Link href="/premium-templates" className="group block relative overflow-hidden rounded-[2.5rem] bg-[#2a050c] p-8 sm:p-12 transition-all hover:scale-[1.01] shadow-2xl">
-              {/* Luxury Background Glows */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(245,158,11,0.15),_transparent_50%)]" />
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-              
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-                <div className="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-                  <div className="h-20 w-20 shrink-0 rounded-3xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white shadow-[0_15px_35px_rgba(245,158,11,0.4)] animate-pulse">
-                    <Sparkles className="h-10 w-10" />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">Discover the <span className="text-amber-400 italic">Signature</span> Collection</h3>
-                    <p className="text-amber-200/70 text-lg font-medium max-w-xl">
-                      Ultra-premium, gold-foil matrimonial formats designed for those who seek perfection.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 bg-amber-500 text-white px-10 py-4 rounded-full text-lg font-bold transition-all group-hover:bg-amber-400 group-hover:scale-105 shadow-[0_10px_25px_rgba(245,158,11,0.3)]">
-                  View Premium Templates <ArrowRight className="h-6 w-6" />
-                </div>
-              </div>
-            </Link>
-          </div>
-        </section>
 
         {/* Templates Grid Section - More Spacing and Polish */}
         <section className="relative py-20 bg-white">

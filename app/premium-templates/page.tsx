@@ -8,6 +8,7 @@ import { BiodataCTA } from "@/components/biodata/CTA";
 import { ArrowRight, Crown, Sparkles, Diamond, Palette } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import RoyalFloralTemplate from "@/components/biodata/premium-templates/RoyalFloralTemplate";
 
 export default function PremiumTemplatesPage() {
   return (
@@ -31,71 +32,82 @@ export default function PremiumTemplatesPage() {
                <div className="w-24 h-1.5 bg-gradient-to-r from-amber-400 via-[#b11e24] to-amber-400 rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 gap-16 xl:grid-cols-2 min-h-[500px] relative">
-              {premiumTemplates.length > 0 ? (
-                premiumTemplates.map((template) => (
-                  <div key={template.id} className="transition-transform hover:-translate-y-2 duration-500">
-                     <TemplateCard template={template as any} gender={template.gender} />
-                  </div>
-                ))
-              ) : (
-                <div className="col-span-full py-20 flex flex-col items-center justify-center relative">
-                  {/* Floating Mockup Images for 'Cool' Factor */}
-                  <div className="absolute -left-20 top-0 w-64 md:w-80 h-96 opacity-20 md:opacity-40 rotate-[-12deg] blur-[2px] hover:blur-0 transition-all duration-700 hover:scale-105 hover:opacity-100 z-0">
-                     <Image 
-                       src="/images/premium/mockup-1.png" 
-                       alt="Premium Mockup" 
-                       width={400} 
-                       height={600} 
-                       className="rounded-3xl shadow-2xl border-4 border-white"
-                     />
-                  </div>
-                  <div className="absolute -right-20 bottom-10 w-64 md:w-80 h-96 opacity-20 md:opacity-40 rotate-[8deg] blur-[2px] hover:blur-0 transition-all duration-700 hover:scale-105 hover:opacity-100 z-0">
-                     <Image 
-                       src="/images/premium/mockup-2.png" 
-                       alt="Traditional Mockup" 
-                       width={400} 
-                       height={600} 
-                       className="rounded-3xl shadow-2xl border-4 border-white"
-                     />
-                  </div>
-
-                  {/* Modern Glassmorphism Card for Coming Soon */}
-                  <div className="relative p-12 md:p-20 rounded-[3rem] bg-white/80 border border-amber-200/40 shadow-[0_40px_100px_rgba(212,175,55,0.12)] max-w-4xl w-full text-center backdrop-blur-md overflow-hidden group z-10">
-                    <div className="absolute -top-20 -right-20 w-64 h-64 bg-amber-400/10 blur-[80px] rounded-full group-hover:bg-amber-400/20 transition-all duration-700" />
-                    
-                    <div className="relative z-10 flex flex-col items-center">
-                      <div className="mb-10 relative">
-                        <div className="absolute inset-0 bg-amber-500/20 blur-2xl rounded-full scale-150 animate-pulse" />
-                        <div className="relative h-24 w-24 rounded-[2rem] bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white shadow-2xl">
-                          <Crown className="w-12 h-12" />
-                        </div>
-                      </div>
-
-                      <h3 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6 font-[family-name:var(--font-display)] leading-tight">
-                        Our <span className="text-[#b11e24] italic text-shadow-sm">Signature Collection</span> <br /> is being Handcrafted
-                      </h3>
-                      
-                      <p className="text-xl text-slate-500 mb-12 max-w-xl mx-auto leading-relaxed">
-                        We are collaborating with top designers to bring you a new era of matrimonial elegance. New exclusive templates arrive shortly.
-                      </p>
-
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-2xl">
-                        {[
-                          { icon: <Diamond className="w-5 h-5" />, text: "Premium Paper Textures" },
-                          { icon: <Palette className="h-5 w-5" />, text: "Smart Color Palettes" },
-                          { icon: <Crown className="h-5 w-5" />, text: "Elite Typography" }
-                        ].map((item, i) => (
-                          <div key={i} className="flex flex-col items-center gap-3 p-4 rounded-2xl bg-white border border-slate-100 shadow-sm transition-all hover:border-amber-200 hover:-translate-y-1">
-                            <div className="text-amber-500">{item.icon}</div>
-                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-tight">{item.text}</span>
-                          </div>
-                        ))}
-                      </div>
+            <div className="flex flex-col items-center">
+              <div className="relative group max-w-[850px] w-full">
+                 <div className="absolute -inset-10 bg-gradient-to-r from-amber-200 via-[#b11e24]/20 to-amber-200 blur-[100px] opacity-20 group-hover:opacity-40 transition-opacity animate-pulse" />
+                 
+                 <div className="relative bg-white p-4 md:p-8 rounded-[3rem] md:rounded-[4.5rem] shadow-[0_60px_120px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-hidden flex justify-center">
+                    <div className="scale-[0.4] sm:scale-[0.55] md:scale-[0.75] lg:scale-[0.9] xl:scale-100 origin-top transform-gpu h-[450px] sm:h-[600px] md:h-[840px] lg:h-[1000px] xl:h-[1123px] overflow-hidden">
+                       <RoyalFloralTemplate data={{
+                         fullName: "Priya Sharma",
+                         profileImage: "https://images.unsplash.com/photo-1594744803329-a584af1af518?q=80&w=1000&auto=format&fit=crop",
+                         sections: [
+                           {
+                             id: "personal",
+                             title: "Personal Details",
+                             fields: [
+                               { id: "1", label: "Full Name", value: "Priya Sharma" },
+                               { id: "2", label: "Nickname", value: "Piku" },
+                               { id: "3", label: "Marital Status", value: "Unmarried" },
+                               { id: "4", label: "Nationality", value: "Indian" },
+                             ]
+                           },
+                           {
+                             id: "education",
+                             title: "Education & Career",
+                             fields: [
+                               { id: "10", label: "Education", value: "MBA in Finance" },
+                               { id: "11", label: "Profession", value: "Investment Banker" },
+                             ]
+                           },
+                           {
+                             id: "family",
+                             title: "Family Details",
+                             fields: [
+                               { id: "15", label: "Father's Name", value: "Mr. Rajesh Sharma" },
+                               { id: "17", label: "Mother's Name", value: "Mrs. Sunita Sharma" },
+                             ]
+                           }
+                         ]
+                       }} />
                     </div>
+                    
+                    {/* Floating Action Badge */}
+                    <div className="absolute top-12 right-12 z-20 animate-bounce-slow">
+                       <div className="bg-[#b11e24] text-white px-6 py-3 rounded-2xl font-bold shadow-2xl flex items-center gap-2 border-2 border-white/20">
+                          <Crown className="w-5 h-5 text-amber-400" />
+                          Signature Design
+                       </div>
+                    </div>
+
+                    {/* Bottom Action Overlay */}
+                    <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/95 to-transparent flex flex-col items-center justify-end pb-12 z-30">
+                       <div className="flex flex-col items-center gap-6">
+                          <div className="flex items-center gap-4 text-slate-400 text-sm font-bold uppercase tracking-widest">
+                             <div className="h-px w-8 bg-slate-200" />
+                             Elite Experience
+                             <div className="h-px w-8 bg-slate-200" />
+                          </div>
+                          <Link href="/#builder" className="bg-[#2a050c] text-white px-12 py-5 rounded-full font-bold shadow-[0_20px_40px_rgba(42,5,12,0.3)] hover:scale-105 hover:bg-black transition-all flex items-center gap-3 text-lg">
+                             Personalize This Template <ArrowRight className="w-6 h-6" />
+                          </Link>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+
+              <div className="mt-16 flex flex-wrap justify-center gap-8 text-slate-400">
+                {[
+                  { icon: <Diamond className="w-5 h-5" />, text: "Premium Texture" },
+                  { icon: <Palette className="h-5 w-5" />, text: "Royal Colors" },
+                  { icon: <Crown className="h-5 w-5" />, text: "Signature Fonts" }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                    <div className="text-amber-500">{item.icon}</div>
+                    <span className="text-xs font-bold uppercase tracking-widest">{item.text}</span>
                   </div>
-                </div>
-              )}
+                ))}
+              </div>
             </div>
           </div>
         </section>
