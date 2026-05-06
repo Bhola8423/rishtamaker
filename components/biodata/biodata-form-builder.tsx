@@ -472,7 +472,7 @@ export function BiodataFormBuilder() {
                 data={formData}
                 templates={standardTemplates}
                 selectedTemplateId={selectedTemplate.id}
-                onSelect={(id) => {
+                onSelect={(id: any) => {
                   setSelectedTemplateId(id);
                   // Optional: add a slight delay so they see it selected before the modal closes
                   setTimeout(() => setIsGalleryOpen(false), 250);

@@ -4,7 +4,13 @@ import { biodataTemplates, type BiodataTemplateDefinition } from "@/components/b
 import type { BiodataFormData } from "@/components/biodata/types";
 import { defaultBiodataData } from "@/components/biodata/mock-data";
 
-
+interface TemplateSelectorRowProps {
+  data: BiodataFormData;
+  selectedTemplateId: string;
+  onSelect: (id: string) => void;
+  layout?: "carousel" | "grid";
+  templates?: BiodataTemplateDefinition[];
+}
 
 const DEMO_PROFILES = [
   { name: "Priyanka Singhania", image: "/images/profile1.jpg" },
@@ -34,7 +40,6 @@ export function TemplateSelectorRow({
       if (firstCard && secondCard) {
         // Exact distance between two cards including gap
         // scrollAmount = secondCard.offsetLeft - firstCard.offsetLeft;
-
       } else if (firstCard) {
         scrollAmount = firstCard.offsetWidth + 64;
       }
