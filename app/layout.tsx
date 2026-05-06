@@ -16,6 +16,11 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "RishtaMaker | Create Beautiful Marriage Biodata Online",
   description: "Instant marriage profile builder. Create professional matrimonial biodata in 2 minutes. Choose from premium templates, no login required.",
+  icons: {
+    icon: '/images/short_logo.png',
+    shortcut: '/images/short_logo.png',
+    apple: '/images/short_logo.png',
+  },
 };
 
 export default function RootLayout({
