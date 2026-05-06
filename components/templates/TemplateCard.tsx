@@ -22,9 +22,9 @@ export function TemplateCard({ template, onSelect }: TemplateCardProps) {
       )}
 
       {/* Preview Area */}
-      <div className={`relative mb-8 aspect-[3/4] w-full overflow-hidden rounded-[2rem] border border-slate-100 ${template.thumbnailColor || "bg-slate-50"} shadow-inner`}>
-        <div className="absolute inset-0 origin-top scale-[0.35] p-10 transition-transform duration-700 group-hover:scale-[0.38]">
-          <div className="h-full w-full pointer-events-none rounded-xl overflow-hidden shadow-2xl bg-white" style={{ width: '675px' }}>
+      <div className={`relative mb-8 aspect-[3/4] w-full overflow-hidden rounded-[2rem] border border-slate-100 ${template.thumbnailColor || "bg-slate-50"} shadow-inner flex items-center justify-center`}>
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="origin-center scale-[0.46] shadow-2xl bg-transparent transition-transform duration-700 group-hover:scale-[0.48]" style={{ width: '675px', height: '950px' }}>
              <DesignComponent data={defaultBiodataData} />
           </div>
         </div>
@@ -32,7 +32,7 @@ export function TemplateCard({ template, onSelect }: TemplateCardProps) {
         {/* Hover Overlay */}
         <div className="absolute inset-0 flex items-center justify-center bg-slate-900/0 transition-all duration-500 group-hover:bg-slate-900/10">
           <Link
-            href={`/create-biodata?template=${template.id}`}
+            href={`/#builder?template=${template.id}`}
             className="translate-y-4 scale-95 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100"
           >
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-slate-900 shadow-2xl ring-4 ring-white/20">
@@ -58,7 +58,7 @@ export function TemplateCard({ template, onSelect }: TemplateCardProps) {
         </p>
 
         <Link
-          href={`/create-biodata?template=${template.id}`}
+          href={`/#builder?template=${template.id}`}
           className="mt-8 flex h-14 w-full items-center justify-center gap-3 rounded-2xl bg-slate-900 px-6 text-sm font-bold text-white transition-all hover:bg-[#aa1d1f] hover:shadow-[0_15px_30px_rgba(170,29,31,0.2)]"
         >
           Use This Template

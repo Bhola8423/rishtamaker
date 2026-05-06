@@ -67,7 +67,7 @@ export function Homepage() {
 
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center pt-4">
                 <Link
-                  href="/create-biodata"
+                  href="#builder"
                   className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#aa1d1f] px-8 text-base font-bold text-white shadow-[0_20px_40px_rgba(170,29,31,0.25)] transition-all hover:scale-105 hover:bg-[#931719] hover:shadow-[0_25px_50px_rgba(170,29,31,0.3)] sm:w-auto"
                 >
                   Create My Biodata Now
@@ -295,7 +295,7 @@ export function Homepage() {
 
         <div className="mt-14 text-center ">
           <Link
-            href="/create-biodata"
+            href="#builder"
             className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#aa1d1f] px-10 text-[1.05rem] font-medium text-white shadow-[0_20px_40px_rgba(170,29,31,0.2)] transition hover:scale-105 hover:bg-[#931719]"
           >
             Create My Biodata Now
@@ -363,7 +363,7 @@ export function Homepage() {
             ].map(keyword => (
               <Link 
                 key={keyword} 
-                href="/create-biodata"
+                href="#builder"
                 className="rounded-full border border-[#b11e24]/15 bg-white px-5 py-2.5 text-[0.85rem] font-medium text-slate-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#b11e24]/40 hover:text-[#b11e24] hover:shadow-md"
               >
                 {keyword}
