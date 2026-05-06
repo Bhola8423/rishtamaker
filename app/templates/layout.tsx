@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Marriage Biodata Templates | Modern & Traditional Formats",
-  description: "Browse our full collection of marriage biodata templates. Choose from professional, modern, and traditional formats to create your matrimonial profile instantly.",
-  keywords: ["marriage biodata templates", "biodata format for boy", "biodata format for girl", "modern biodata designs", "traditional marriage formats"],
+  title: "Marriage Biodata Formats & Templates | Choose Your Design",
+  description: "Browse 12+ premium marriage biodata formats. Choose from professional, modern, and traditional templates for boys and girls. Download high-quality PDF in minutes.",
+  keywords: ["biodata templates", "marriage biodata format", "matrimonial biodata design", "biodata download", "biodata sample"],
+  alternates: {
+    canonical: "https://rishtamaker.in/templates",
+  },
 };
 
 export default function TemplatesLayout({

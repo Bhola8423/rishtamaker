@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { PageShell } from "@/components/shared/page-shell";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,8 +10,20 @@ interface Props {
   params: Promise<{ profession: string }>;
 }
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { profession } = await params;
+  const name = profession.charAt(0).toUpperCase() + profession.slice(1).replace("-", " ");
+  return {
+    title: `Marriage Biodata for ${name} | Professional ${name} Formats 2026`,
+    description: `Create a professional marriage biodata specifically designed for ${name}s. Highlight your career and educational achievements with our elite templates.`,
+    alternates: {
+      canonical: `https://rishtamaker.in/biodata-for/${profession}`,
+    },
+  };
+}
+
 export async function generateStaticParams() {
-  const professions = ["engineer", "doctor", "teacher", "lawyer", "accountant", "software-developer", "business-owner"];
+  const professions = ["engineer", "doctor", "teacher", "lawyer", "accountant", "software-developer", "business-owner", "architect", "nurse", "banker", "management-professional", "government-employee", "pharmacist", "professor", "chef", "artist", "designer", "scientist", "police", "defence-personnel"];
   return professions.map((p) => ({
     profession: p,
   }));

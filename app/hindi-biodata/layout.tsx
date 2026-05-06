@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Marriage Biodata Format for Hindi | शादी के लिए बायोडाटा",
-  description: "Create your marriage biodata in Hindi online. Choose from beautiful Hindi matrimonial formats and download high-quality PDF instantly.",
-  keywords: ["hindi marriage biodata", "shaadi biodata in hindi", "matrimonial biodata hindi", "hindi biodata creator", "biodata format hindi"],
+  title: "Hindi Marriage Biodata Maker | हिंदी में विवाह बायोडाटा बनाएं",
+  description: "हिंदी में विवाह बायोडाटा बनाने के लिए सबसे अच्छा ऑनलाइन टूल। अपनी पसंद का फॉर्मेट चुनें और तुरंत डाउनलोड करें।",
+  keywords: ["hindi biodata", "marriage biodata in hindi", "हिंदी बायोडाटा", "विवाह बायोडाटा"],
+  alternates: {
+    canonical: "https://rishtamaker.in/hindi-biodata",
+  },
 };
 
 export default function HindiLayout({

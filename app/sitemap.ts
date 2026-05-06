@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/blog', changeFrequency: 'daily' as const, priority: 0.8 },
   ];
 
-  const professions = ["engineer", "doctor", "teacher", "lawyer", "accountant", "software-developer", "business-owner"];
+  const professions = ["engineer", "doctor", "teacher", "lawyer", "accountant", "software-developer", "business-owner", "architect", "nurse", "banker", "management-professional", "government-employee", "pharmacist", "professor", "chef", "artist", "designer", "scientist", "police", "defence-personnel"];
   const professionRoutes = professions.map(p => ({
     url: `/biodata-for/${p}`,
     changeFrequency: 'monthly' as const,
