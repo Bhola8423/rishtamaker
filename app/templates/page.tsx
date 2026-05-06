@@ -79,6 +79,30 @@ export default function TemplatesPage() {
           </div>
         </section>
 
+        {/* Elite Premium Collection Banner */}
+        <section className="bg-white py-10">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <Link href="/premium-templates" className="group block relative overflow-hidden rounded-3xl bg-gradient-to-r from-amber-500/10 to-amber-600/10 border border-amber-500/20 p-8 transition-all hover:border-amber-500/40">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+                <div className="flex items-center gap-6">
+                  <div className="h-16 w-16 rounded-2xl bg-amber-500 flex items-center justify-center text-white shadow-[0_10px_30px_rgba(245,158,11,0.3)]">
+                    <Sparkles className="h-8 w-8" />
+                  </div>
+                  <div className="text-left">
+                    <h3 className="text-2xl font-bold text-white mb-1">Discover the Signature Collection</h3>
+                    <p className="text-amber-200/60 font-medium">Ultra-premium, gold-foil matrimonial formats for a first-class impression.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-amber-500 text-white px-8 py-3 rounded-full font-bold transition-transform group-hover:scale-105">
+                  View Premium Templates <ArrowRight className="h-5 w-5" />
+                </div>
+              </div>
+              {/* Decorative Background */}
+              <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 h-64 w-64 bg-amber-500/5 blur-[80px] rounded-full" />
+            </Link>
+          </div>
+        </section>
+
         {/* Templates Grid Section - More Spacing and Polish */}
         <section className="relative py-20 bg-white">
           <div className="container mx-auto px-6 max-w-[1440px]">
@@ -95,7 +119,7 @@ export default function TemplatesPage() {
         {/* Bottom CTA */}
         <section className="py-24">
           <div className="container mx-auto px-6 max-w-7xl">
-             <div className="relative rounded-[4rem] bg-slate-900 p-12 md:p-24 overflow-hidden text-center">
+             <div className="relative rounded-[4rem] bg-[#8e1933] p-12 md:p-24 overflow-hidden text-center">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(177,30,36,0.15),_transparent_70%)]" />
                 <div className="relative z-10">
                    <h2 className="text-4xl md:text-6xl font-[family-name:var(--font-display)] font-bold text-white mb-8">Ready to create yours?</h2>

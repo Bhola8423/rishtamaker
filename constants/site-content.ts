@@ -41,6 +41,7 @@ export const siteContent = {
     { label: "Home", href: "/" },
     { label: "Create Biodata", href: "/#builder" },
     { label: "Templates", href: "/templates" },
+    { label: "Premium Collection", href: "/premium-templates" },
     { label: "Blogs", href: "/blog" },
     { label: "Hindi Biodata", href: "/hindi-biodata" },
     { label: "Format for Boy", href: "/biodata-for-boy" },

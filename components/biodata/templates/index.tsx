@@ -2,7 +2,6 @@ import type { ComponentType } from "react";
 
 import { ClassicMaroonTemplate } from "@/components/biodata/templates/classic-maroon-template";
 import { ElegantHeritageTemplate } from "@/components/biodata/templates/elegant-heritage-template";
-import { EmeraldRoyalTemplate } from "@/components/biodata/templates/emerald-royal-template";
 import { FloralCreamTemplate } from "@/components/biodata/templates/floral-cream-template";
 import { FloralPinkTemplate } from "@/components/biodata/templates/floral-pink-template";
 import { GoldenVintageTemplate } from "@/components/biodata/templates/golden-vintage-template";
@@ -10,8 +9,9 @@ import { MaroonSplitTemplate } from "@/components/biodata/templates/maroon-split
 import { MinimalSlateTemplate } from "@/components/biodata/templates/minimal-slate-template";
 import { ModernDarkTemplate } from "@/components/biodata/templates/modern-dark-template";
 import { OceanWaveTemplate } from "@/components/biodata/templates/ocean-wave-template";
-import { RoyalCrimsonTemplate } from "@/components/biodata/templates/royal-crimson-template";
 import { TealGoldTemplate } from "@/components/biodata/templates/teal-gold-template";
+
+import { premiumTemplates } from "@/components/biodata/premium-templates";
 
 import type { BiodataTemplateProps } from "@/components/biodata/types";
 
@@ -27,7 +27,7 @@ export type BiodataTemplateDefinition = {
   Component: ComponentType<BiodataTemplateProps>;
 };
 
-export const biodataTemplates: BiodataTemplateDefinition[] = [
+export const standardTemplates: BiodataTemplateDefinition[] = [
   {
     id: "classic-maroon",
     name: "Royal Maroon",
@@ -64,15 +64,6 @@ export const biodataTemplates: BiodataTemplateDefinition[] = [
     tags: ["Traditional", "Heritage"],
     thumbnailColor: "bg-orange-50",
     Component: ElegantHeritageTemplate,
-  },
-  {
-    id: "emerald-royal",
-    name: "Emerald Royal",
-    description: "Luxury green and gold theme for a rich, royal matrimonial profile.",
-    gender: "boy",
-    tags: ["Premium", "Royal"],
-    thumbnailColor: "bg-emerald-50",
-    Component: EmeraldRoyalTemplate,
   },
   {
     id: "floral-pink",
@@ -121,15 +112,6 @@ export const biodataTemplates: BiodataTemplateDefinition[] = [
     Component: OceanWaveTemplate,
   },
   {
-    id: "royal-crimson",
-    name: "Royal Crimson",
-    description: "Bold crimson theme with high-contrast elements and royal styling.",
-    gender: "boy",
-    tags: ["Premium", "Bold"],
-    thumbnailColor: "bg-red-50",
-    Component: RoyalCrimsonTemplate,
-  },
-  {
     id: "teal-gold",
     name: "Teal Gold",
     description: "Elegant teal and gold combination for a balanced professional look.",
@@ -139,3 +121,10 @@ export const biodataTemplates: BiodataTemplateDefinition[] = [
     Component: TealGoldTemplate,
   },
 ];
+
+export const biodataTemplates: BiodataTemplateDefinition[] = [
+  ...premiumTemplates,
+  ...standardTemplates,
+];
+
+export { premiumTemplates };

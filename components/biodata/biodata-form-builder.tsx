@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { Plus, Trash2, X, PlusCircle, Loader2, CheckCircle2, Layout } from "lucide-react";
+import { Plus, Trash2, X, PlusCircle, Loader2, CheckCircle2, Layout, Crown } from "lucide-react";
+import Link from "next/link";
 
 import { ImagePicker } from "@/components/biodata/image-picker";
 import { defaultBiodataData } from "@/components/biodata/mock-data";
-import { biodataTemplates } from "@/components/biodata/templates";
+import { standardTemplates, premiumTemplates, biodataTemplates } from "@/components/biodata/templates";
 import { TemplateSelectorRow } from "@/components/biodata/template-selector-row";
 import type { BiodataField, BiodataFormData } from "@/components/biodata/types";
 
@@ -33,7 +34,7 @@ export function BiodataFormBuilder() {
   const [paymentStatus, setPaymentStatus] = useState<"idle" | "verifying" | "success">("idle");
   const [activeTab, setActiveTab] = useState<"form" | "preview">("form"); // For mobile tabs
 
-  const [selectedTemplateId, setSelectedTemplateId] = useState(biodataTemplates[0]?.id ?? "");
+  const [selectedTemplateId, setSelectedTemplateId] = useState(standardTemplates[0]?.id ?? "");
   const [formData, setFormData] = useState<BiodataFormData>(() => cloneDefaultData());
 
   // Sync with URL parameters when they change
@@ -204,7 +205,7 @@ export function BiodataFormBuilder() {
 
   const resetForm = () => {
     setFormData(cloneDefaultData());
-    setSelectedTemplateId(biodataTemplates[0]?.id ?? "");
+    setSelectedTemplateId(standardTemplates[0]?.id ?? "");
   };
 
   const PreviewComponent = selectedTemplate.Component;
@@ -216,20 +217,29 @@ export function BiodataFormBuilder() {
           <h2 className="text-xl sm:text-[1.35rem] font-medium text-white tracking-wide">
             From traditional to modern, our curated biodata formats will create the Best Impression.
           </h2>
-          <button
-            suppressHydrationWarning
-            type="button"
-            onClick={() => setIsGalleryOpen(true)}
-            className="mt-6 bg-white text-[#8e1933] px-8 py-3 rounded-full font-bold shadow-lg hover:bg-slate-50 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-[0.95rem] flex items-center gap-2 cursor-pointer"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
-            View All Templates Gallery
-          </button>
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
+            <button
+              suppressHydrationWarning
+              type="button"
+              onClick={() => setIsGalleryOpen(true)}
+              className="bg-white text-[#8e1933] px-8 py-3 rounded-full font-bold shadow-lg hover:bg-slate-50 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-[0.95rem] flex items-center gap-2 cursor-pointer"
+            >
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
+              Standard Gallery
+            </button>
+            <Link
+              href="/premium-templates"
+              className="bg-gradient-to-r from-amber-400 to-amber-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:from-amber-500 hover:to-amber-700 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-[0.95rem] flex items-center gap-2"
+            >
+              <Crown className="w-5 h-5" />
+              Premium Collection
+            </Link>
+          </div>
         </div>
 
-        {/* We only conditionally show the row here if we want to, but standard is fine. Let's keep the row to quick switch. */}
         <TemplateSelectorRow
           data={formData}
+          templates={standardTemplates}
           selectedTemplateId={selectedTemplate.id}
           onSelect={setSelectedTemplateId}
         />
@@ -423,18 +433,15 @@ export function BiodataFormBuilder() {
 
             <div className="text-center mb-10 sm:mb-14 relative z-0">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#fcd071] tracking-wide mb-3 sm:mb-4 drop-shadow-md">
-                Premium Template Gallery
+                Standard Template Gallery
               </h2>
-              {/* <p className="text-white/90 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
-                Explore our full collection of beautifully crafted matrimonial formats. Select any design to instantly preview it with your details.
-              </p> */}
             </div>
 
             {/* Enhanced Gallery Grid Container strictly bounded inside the modal */}
             <div className="relative z-0 px-4">
               <TemplateSelectorRow
                 data={formData}
-                // layout="grid"
+                templates={standardTemplates}
                 selectedTemplateId={selectedTemplate.id}
                 onSelect={(id) => {
                   setSelectedTemplateId(id);
