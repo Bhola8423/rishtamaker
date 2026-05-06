@@ -11,11 +11,9 @@ interface PopularTemplatesSectionProps {
 }
 
 export function PopularTemplatesSection({ gender }: PopularTemplatesSectionProps) {
-  const filteredTemplates = gender 
+  const popularTemplates = gender 
     ? biodataTemplates.filter(t => t.gender === gender || t.gender === "both")
     : biodataTemplates;
-    
-  const popularTemplates = filteredTemplates.slice(0, 4);
 
   return (
     <section className="py-24 bg-white overflow-hidden">
@@ -40,7 +38,7 @@ export function PopularTemplatesSection({ gender }: PopularTemplatesSectionProps
 
         <div className="grid grid-cols-1 gap-16 xl:grid-cols-2">
           {popularTemplates.map((template) => (
-            <TemplateCard key={template.id} template={template} />
+            <TemplateCard key={template.id} template={template} gender={gender} />
           ))}
         </div>
       </div>

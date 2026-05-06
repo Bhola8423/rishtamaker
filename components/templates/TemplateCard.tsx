@@ -1,17 +1,21 @@
 "use client";
 
 import { BiodataTemplateDefinition } from "@/components/biodata/templates";
-import { defaultBiodataData } from "@/components/biodata/mock-data";
+import { defaultBiodataData, boyMockData, girlMockData } from "@/components/biodata/mock-data";
 import { Check, Star, ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 
 interface TemplateCardProps {
   template: BiodataTemplateDefinition;
+  gender?: "boy" | "girl" | "both";
   onSelect?: (id: string) => void;
 }
 
-export function TemplateCard({ template, onSelect }: TemplateCardProps) {
+export function TemplateCard({ template, gender, onSelect }: TemplateCardProps) {
   const DesignComponent = template.Component;
+  
+  // Select mock data based on gender
+  const mockData = gender === "boy" ? boyMockData : (gender === "girl" || gender === "both" ? girlMockData : defaultBiodataData);
 
   return (
     <div className="group relative flex flex-col mx-auto w-full max-w-3xl rounded-[2.5rem] border border-slate-200/60 bg-white p-5 transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_45px_90px_-15px_rgba(32,24,26,0.18)] hover:border-[#b11e24]/20">
@@ -60,7 +64,7 @@ export function TemplateCard({ template, onSelect }: TemplateCardProps) {
 
         <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110 pointer-events-none">
           <div className="template-container absolute top-1/2 left-1/2 pointer-events-none rounded-xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.25)] bg-white border border-slate-100" style={{ width: '675px' }}>
-             <DesignComponent data={defaultBiodataData} />
+             <DesignComponent data={mockData} />
           </div>
         </div>
         

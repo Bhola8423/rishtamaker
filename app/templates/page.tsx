@@ -85,7 +85,7 @@ export default function TemplatesPage() {
             <div className="grid grid-cols-1 gap-16 xl:grid-cols-2">
               {biodataTemplates.map((template) => (
                 <div key={template.id} className="transition-transform hover:-translate-y-2 duration-500">
-                   <TemplateCard template={template} />
+                   <TemplateCard template={template} gender={template.gender} />
                 </div>
               ))}
             </div>
