@@ -1,17 +1,11 @@
-import { Metadata } from "next";
+"use client";
+
 import { PageShell } from "@/components/shared/page-shell";
 import Link from "next/link";
-import { Heart, Stars, UserCircle, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { Heart, Stars, UserCircle, ArrowRight, ShieldCheck, Sparkles, Star, CheckCircle2, Quote, Flower2 } from "lucide-react";
 import { BiodataCTA } from "@/components/biodata/CTA";
 import { PopularTemplatesSection } from "@/components/marketing/popular-templates";
-
-export const metadata: Metadata = {
-  title: "Marriage Biodata Format for Girl | Beautiful Templates 2026",
-  description: "Create a beautiful and graceful marriage biodata for girls. High-quality elegant formats for brides. Free PDF download, AI assisted bio, and aesthetic designs.",
-  alternates: {
-    canonical: "/biodata-for-girl",
-  },
-};
 
 export default function BiodataForGirlPage() {
   const faqData = [
@@ -31,132 +25,201 @@ export default function BiodataForGirlPage() {
 
   return (
     <PageShell>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#fffafb] pt-20 pb-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(225,29,72,0.05),_transparent_40%)]" />
-        <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-rose-600/15 bg-rose-50 px-4 py-2 mb-6">
-              <span className="flex h-2 w-2 rounded-full bg-rose-600 animate-pulse" />
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-rose-600">
-                Elegant Bride Formats
+      {/* Premium Hero Section */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[#fffafb] pt-20 pb-20">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(225,29,72,0.08),_transparent_50%)]" />
+        <div className="absolute top-0 right-0 h-[600px] w-[600px] rounded-full bg-rose-500/[0.02] blur-[120px]" />
+        
+        <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="text-left">
+              <div className="inline-flex items-center gap-3 rounded-full border border-rose-600/20 bg-rose-50 px-4 py-2 mb-8">
+                <span className="flex h-2 w-2 rounded-full bg-rose-600 animate-pulse" />
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-rose-700">
+                  Elegant Bride Formats 2026
+                </p>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-display)] font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">
+                Create a Graceful <br />
+                <span className="text-rose-600 italic">Matrimonial Profile</span>
+              </h1>
+              <p className="text-xl text-slate-600 max-w-xl mb-12 leading-relaxed">
+                Reflect your personality, education, and values with our collection of beautiful and aesthetic designs. Make your first impression unforgettable.
               </p>
+              <div className="flex flex-wrap gap-5">
+                <Link href="/#builder" className="inline-flex h-16 items-center justify-center gap-3 rounded-full bg-rose-600 px-10 text-lg font-bold text-white shadow-[0_20px_50px_rgba(225,29,72,0.25)] transition-all hover:scale-105 hover:bg-rose-700 active:scale-95">
+                  Create My Profile <ArrowRight className="w-6 h-6" />
+                </Link>
+                <Link href="#preview" className="inline-flex h-16 items-center justify-center gap-3 rounded-full border-2 border-rose-100 bg-white px-10 text-lg font-bold text-rose-700 transition-all hover:bg-rose-50">
+                  Browse Designs
+                </Link>
+              </div>
+
+              {/* Social Proof Mini */}
+              <div className="mt-12 flex items-center gap-6">
+                <div className="flex -space-x-4">
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="h-12 w-12 rounded-full border-2 border-white bg-rose-100 overflow-hidden">
+                       <img src={`https://i.pravatar.cc/150?u=${i+20}`} alt="User" className="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <p className="text-slate-900 font-bold">Loved by 25,000+ Brides</p>
+                  <p className="text-sm text-slate-500 font-medium">Top choice for Indian families</p>
+                </div>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-[family-name:var(--font-display)] font-bold text-slate-900 leading-tight mb-6">
-              Marriage Biodata Format <br />
-              <span className="text-rose-600">for Girls & Women</span>
-            </h1>
-            <p className="text-lg text-slate-600 max-w-2xl mb-10">
-              Create a stunning matrimonial profile that reflects your grace, education, and family heritage. Choose from our collection of beautiful and aesthetic designs.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/create-biodata" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-rose-600 px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-rose-700">
-                Create My Profile <ArrowRight className="w-5 h-5" />
-              </Link>
+
+            {/* Premium Preview Image */}
+            <div className="relative group">
+              <div className="absolute -inset-10 bg-rose-100 rounded-[5rem] -rotate-6 transition-transform duration-700 group-hover:rotate-0" />
+              <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(225,29,72,0.15)] border-[12px] border-white">
+                <Image 
+                  src="/images/biodata-girl-hero.png" 
+                  alt="Elegant Girl Biodata Design" 
+                  width={800} 
+                  height={1000}
+                  className="w-full h-auto transition-transform duration-1000 group-hover:scale-105"
+                  priority
+                />
+              </div>
+              {/* Decorative Element */}
+              <div className="absolute -right-12 -bottom-12 p-8 bg-white rounded-[3rem] shadow-2xl z-20 animate-bounce-slow">
+                <Flower2 className="h-10 w-10 text-rose-400 mb-2" />
+                <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest">Aesthetic</p>
+                <p className="text-sm font-bold text-slate-900">Floral Themes</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SEO Content Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="prose prose-slate prose-lg max-w-none">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Crafting the Perfect Marriage Biodata for a Girl</h2>
-            <p>
-              In the Indian wedding journey, the <strong>marriage biodata for a girl</strong> is often the first step toward a beautiful new beginning. It is a graceful representation of who you are—your education, your upbringing, and your aspirations for the future. A well-designed biodata can leave a lasting positive impression on potential life partners and their families.
-            </p>
-            <p>
-              When creating a <em>matrimonial biodata for a bride</em>, the focus should be on authenticity and elegance. In 2026, modern families value a balance between traditional roots and progressive education. Whether you are a professional, an artist, or a home-maker, your biodata should tell your unique story with poise.
-            </p>
-            <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4">What to Include in Your Profile?</h3>
-            <p>
-              An ideal girl's biodata format should clearly organize information to help the other family understand your background:
-            </p>
-            <ul>
-              <li><strong>Elegant Self-Introduction:</strong> A polite and warm "About Me" section that reflects your personality and values.</li>
-              <li><strong>Educational Achievements:</strong> Highlight your degrees and specialized skills, as education is highly valued in modern matches.</li>
-              <li><strong>Family Heritage:</strong> Briefly describe your parents and siblings to provide a sense of your family environment.</li>
-              <li><strong>Cultural & Lifestyle Preferences:</strong> Mention your hobbies, diet, and what you value in a life partner.</li>
-            </ul>
+      {/* Graceful Features */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6 max-w-[1440px]">
+          <div className="grid md:grid-cols-3 gap-10 text-center">
+            {[
+              { 
+                icon: <Heart className="h-8 w-8" />, 
+                t: "Graceful Designs", 
+                d: "Aesthetic templates with soft tones and elegant typography perfect for brides.",
+                bg: "bg-rose-50 text-rose-600"
+              },
+              { 
+                icon: <Stars className="h-8 w-8" />, 
+                t: "AI Bio Assistant", 
+                d: "Our AI tool helps write a polite and beautiful introduction for you instantly.",
+                bg: "bg-amber-50 text-amber-600"
+              },
+              { 
+                icon: <ShieldCheck className="h-8 w-8" />, 
+                t: "Secure & Private", 
+                d: "Your data is safe with us. We do not share your profile without your permission.",
+                bg: "bg-green-50 text-green-600"
+              }
+            ].map((f, i) => (
+              <div key={i} className="p-12 rounded-[3rem] border border-slate-50 transition-all hover:bg-slate-50 hover:shadow-inner">
+                <div className={`mx-auto h-20 w-20 rounded-[2rem] flex items-center justify-center mb-8 transition-all hover:scale-110 ${f.bg}`}>
+                  {f.icon}
+                </div>
+                <h4 className="text-2xl font-bold text-slate-900 mb-4">{f.t}</h4>
+                <p className="text-slate-500 leading-relaxed">{f.d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="p-8 rounded-3xl bg-white shadow-sm border border-slate-100">
-              <div className="mx-auto h-12 w-12 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-6">
-                <Heart className="h-6 w-6" />
-              </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-3">Graceful Designs</h4>
-              <p className="text-slate-500 text-sm">Aesthetic templates with soft tones and elegant typography perfect for brides.</p>
+      {/* Content Section with Image */}
+      <section className="py-24 bg-[#fffcfd]">
+        <div className="container mx-auto px-6 max-w-[1440px]">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+            <div className="relative">
+               <div className="aspect-[4/5] bg-rose-100 rounded-[4rem] -rotate-3 absolute inset-0" />
+               <div className="relative bg-white p-4 rounded-[4rem] shadow-2xl">
+                 <img 
+                    src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=800" 
+                    alt="Elegant Bride Profile" 
+                    className="rounded-[3.5rem] w-full h-full object-cover"
+                 />
+               </div>
             </div>
-            <div className="p-8 rounded-3xl bg-white shadow-sm border border-slate-100">
-              <div className="mx-auto h-12 w-12 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-6">
-                <Stars className="h-6 w-6" />
+            <div>
+              <h2 className="text-4xl md:text-5xl font-[family-name:var(--font-display)] font-bold text-slate-900 mb-10 leading-tight">
+                Crafting the Perfect <br />
+                <span className="text-rose-600">Matrimonial Journey</span>
+              </h2>
+              <div className="space-y-8">
+                {[
+                  "Elegant Self-Introduction: A polite and warm 'About Me' section.",
+                  "Educational Achievements: Highlight your degrees and skills.",
+                  "Family Heritage: Describe your parents and siblings with pride.",
+                  "Lifestyle Preferences: Share your values and expectations."
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-5 items-start">
+                    <div className="flex-shrink-0 h-8 w-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center">
+                      <CheckCircle2 className="h-5 w-5" />
+                    </div>
+                    <p className="text-lg text-slate-700 font-medium">{item}</p>
+                  </div>
+                ))}
               </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-3">AI Bio Assistant</h4>
-              <p className="text-slate-500 text-sm">Our AI tool helps write a polite and beautiful introduction for you instantly.</p>
-            </div>
-            <div className="p-8 rounded-3xl bg-white shadow-sm border border-slate-100">
-              <div className="mx-auto h-12 w-12 bg-rose-50 text-rose-600 rounded-2xl flex items-center justify-center mb-6">
-                <ShieldCheck className="h-6 w-6" />
+              <div className="mt-12 p-8 rounded-[2.5rem] bg-rose-50 border border-rose-100 relative">
+                <Quote className="h-10 w-10 text-rose-200 absolute top-6 right-8" />
+                <p className="text-rose-900 font-medium italic leading-relaxed pr-10">
+                  "A girl's biodata is her proxy in traditional matchmaking. We ensure it speaks with grace and authenticity."
+                </p>
               </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-3">Secure & Private</h4>
-              <p className="text-slate-500 text-sm">Your data is safe with us. We do not share your profile without your permission.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Templates Preview */}
-      <PopularTemplatesSection />
-
-      {/* Step Guide */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-16">Create Your Biodata in 5 Easy Steps</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-5 gap-8">
-            {[
-              { s: "Select a Theme", d: "Choose an elegant floral or minimal design." },
-              { s: "Add Your Photo", d: "Upload a clear and aesthetic profile picture." },
-              { s: "Enter Details", d: "Fill in your education, career, and family info." },
-              { s: "AI Bio Draft", d: "Let AI write a graceful introduction for you." },
-              { s: "Get Your PDF", d: "Download and share it instantly on WhatsApp." }
-            ].map((step, i) => (
-              <div key={i} className="text-center">
-                <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-rose-100 text-rose-600 font-bold mb-4">
-                  {i + 1}
-                </div>
-                <h5 className="font-bold text-slate-900 text-sm mb-2">{step.s}</h5>
-                <p className="text-xs text-slate-500 leading-relaxed">{step.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section id="preview">
+        <PopularTemplatesSection gender="girl" />
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">FAQ for Girls Biodata</h2>
-          <div className="space-y-4">
-            {faqData.map((faq, i) => (
-              <div key={i} className="bg-white p-6 rounded-2xl border border-slate-200">
-                <h4 className="font-bold text-slate-900 mb-2">{faq.q}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
+      {/* Soft CTA Section */}
+      <div className="container mx-auto px-6 py-24 max-w-[1440px]">
+        <div className="relative rounded-[4rem] overflow-hidden bg-white border border-rose-100 p-12 md:p-24 text-center shadow-2xl shadow-rose-100">
+           <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(225,29,72,0.05),_transparent_50%)]" />
+           <div className="relative z-10">
+             <h2 className="text-4xl md:text-6xl font-[family-name:var(--font-display)] font-bold text-slate-900 mb-8">
+               Ready to find your <br />
+               <span className="text-rose-600">perfect match?</span>
+             </h2>
+             <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+               Create a stunning biodata in less than 2 minutes and share it with families who share your values.
+             </p>
+             <div className="flex flex-wrap justify-center gap-6">
+               <Link href="/#builder" className="h-16 inline-flex items-center justify-center rounded-full bg-rose-600 px-12 text-lg font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-rose-700">
+                 Create My Profile
+               </Link>
+               <Link href="/templates" className="h-16 inline-flex items-center justify-center rounded-full border-2 border-rose-100 bg-white px-12 text-lg font-bold text-rose-700 transition-all hover:bg-rose-50">
+                 View Samples
+               </Link>
+             </div>
+           </div>
         </div>
-      </section>
-
-      <div className="container mx-auto px-4 py-24 max-w-5xl">
-        <BiodataCTA />
       </div>
+
+      {/* FAQ Modernized */}
+      <section className="py-24 bg-[#fffafb]">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-display)] font-bold text-slate-900 text-center mb-16">Frequently Asked</h2>
+          <div className="grid gap-6">
+            {faqData.map((faq, i) => (
+              <div key={i} className="p-10 rounded-[3rem] bg-white border border-rose-50 shadow-sm transition-all hover:shadow-xl hover:scale-[1.02]">
+                <h4 className="text-xl font-bold text-slate-900 mb-4">{faq.q}</h4>
+                <p className="text-slate-600 leading-relaxed text-lg">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <script
         type="application/ld+json"

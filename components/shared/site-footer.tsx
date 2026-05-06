@@ -35,7 +35,7 @@ function getSocialIcon(iconName: string) {
 
 export function SiteFooter() {
   return (
-    <footer className="relative mt-12 overflow-hidden bg-[#0A0F16] text-slate-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
+    <footer className="relative mt-12 overflow-hidden bg-[#2a050c] text-slate-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]">
       {/* Decorative top border glow */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#D7A347]/40 to-transparent" />
       

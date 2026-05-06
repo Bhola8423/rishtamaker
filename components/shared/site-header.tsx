@@ -64,7 +64,7 @@ export function SiteHeader() {
         {/* CTA & Mobile Menu */}
         <div className="flex items-center gap-3 shrink-0">
           <Link
-            href="/create-biodata"
+            href="/#builder"
             className="hidden sm:inline-flex h-10 items-center justify-center rounded-full bg-[#aa1d1f] px-6 text-sm font-semibold text-white shadow-[0_10px_20px_rgba(170,29,31,0.2)] transition-all hover:scale-105 hover:bg-[#931719]"
           >
             Create Biodata

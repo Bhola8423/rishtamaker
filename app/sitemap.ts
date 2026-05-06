@@ -8,8 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     { url: '', changeFrequency: 'daily' as const, priority: 1 },
-    { url: '/create-biodata', changeFrequency: 'daily' as const, priority: 1 },
     { url: '/templates', changeFrequency: 'daily' as const, priority: 0.9 },
+    { url: '/premium-templates', changeFrequency: 'daily' as const, priority: 0.95 },
     { url: '/biodata-for-boy', changeFrequency: 'weekly' as const, priority: 0.9 },
     { url: '/biodata-for-girl', changeFrequency: 'weekly' as const, priority: 0.9 },
     { url: '/hindi-biodata', changeFrequency: 'weekly' as const, priority: 0.9 },
@@ -18,7 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/blog', changeFrequency: 'daily' as const, priority: 0.8 },
   ];
 
-  const sitemapRoutes: MetadataRoute.Sitemap = staticRoutes.map((route) => ({
+  const professions = ["engineer", "doctor", "teacher", "lawyer", "accountant", "software-developer", "business-owner"];
+  const professionRoutes = professions.map(p => ({
+    url: `/biodata-for/${p}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7
+  }));
+
+  const sitemapRoutes: MetadataRoute.Sitemap = [...staticRoutes, ...professionRoutes].map((route) => ({
     url: `${baseUrl}${route.url}`,
     lastModified: new Date(),
     changeFrequency: route.changeFrequency,

@@ -1,5 +1,4 @@
 import { StepWrapper, InputField } from "./step-ui";
-import { AIGeneratorButton } from "../AIGeneratorButton";
 
 export function PartnerPreferencesStep({ data, updateData }: { data: any, updateData: (key: string, value: any) => void }) {
   const handleChange = (e: any) => updateData(e.target.name, e.target.value);
@@ -10,18 +9,6 @@ export function PartnerPreferencesStep({ data, updateData }: { data: any, update
       description="What are you looking for in a life partner?"
     >
       <div className="space-y-6">
-        <div className="flex items-center justify-between gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-100">
-          <div className="space-y-1">
-            <p className="text-sm font-bold text-slate-900">AI Partner Preferences</p>
-            <p className="text-xs text-slate-500">Auto-generate polite and clear partner expectations.</p>
-          </div>
-          <AIGeneratorButton 
-            data={data} 
-            section="partnerPreferences" 
-            onGenerated={(res) => updateData("expectations", res.partnerPreferences)} 
-          />
-        </div>
-
         <div className="space-y-4">
         <InputField 
           label="Partner Expectations" 

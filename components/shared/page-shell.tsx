@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { SiteHeader } from "@/components/shared/site-header";
+import { SiteFooter } from "@/components/shared/site-footer";
 
 export function PageShell({
   children,
@@ -18,7 +19,9 @@ export function PageShell({
       <div className="mx-auto flex min-h-screen w-full max-w-8xl flex-col pb-8 pt-6">
         {showHeader ? <SiteHeader /> : null}
         {children}
+
       </div>
+      <SiteFooter />
     </main>
   );
 }

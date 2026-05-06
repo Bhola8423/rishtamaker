@@ -4,12 +4,7 @@ import { biodataTemplates, type BiodataTemplateDefinition } from "@/components/b
 import type { BiodataFormData } from "@/components/biodata/types";
 import { defaultBiodataData } from "@/components/biodata/mock-data";
 
-type TemplateSelectorRowProps = {
-  data: BiodataFormData;
-  selectedTemplateId: string;
-  onSelect: (templateId: string) => void;
-  layout?: "grid" | "carousel";
-};
+
 
 const DEMO_PROFILES = [
   { name: "Priyanka Singhania", image: "/images/profile1.jpg" },
@@ -25,6 +20,7 @@ export function TemplateSelectorRow({
   selectedTemplateId,
   onSelect,
   layout = "carousel",
+  templates = biodataTemplates,
 }: TemplateSelectorRowProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -50,7 +46,7 @@ export function TemplateSelectorRow({
     }
   };
 
-  const cards = biodataTemplates.map((template, index) => {
+  const cards = templates.map((template, index) => {
     const profile = DEMO_PROFILES[index % DEMO_PROFILES.length];
     const demoData: BiodataFormData = {
       ...defaultBiodataData,

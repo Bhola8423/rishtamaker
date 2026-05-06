@@ -23,7 +23,7 @@ export function BiodataCTA() {
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
           <Link
-            href="/create-biodata"
+            href="/#builder"
             className="group flex h-14 items-center justify-center gap-2 rounded-full bg-white px-8 text-base font-bold text-[#b11e24] shadow-xl transition-all hover:scale-105 hover:bg-slate-50 sm:w-auto"
           >
             Start Now

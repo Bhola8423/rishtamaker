@@ -1,4 +1,8 @@
+"use client";
+
 import { BiodataFormBuilder } from "@/components/biodata/biodata-form-builder";
+import { biodataTemplates } from "@/components/biodata/templates";
+import { TemplateCard } from "@/components/templates/TemplateCard";
 import Image from "next/image";
 import Link from "next/link";
 import { siteContent } from "@/constants/site-content";
@@ -30,84 +34,98 @@ export function Homepage() {
   return (
     <PageShell>
       {/* Hero Section */}
-      <section className="relative -mt-10  overflow-hidden border-b border-white/70 bg-[#fcf9f7]">
-        {/* Animated Background Gradients */}
-        <div className="absolute inset-0 w-full bg-[radial-gradient(circle_at_top_left,_rgba(177,30,36,0.06),_transparent_35%),radial-gradient(circle_at_80%_60%,_rgba(215,163,71,0.08),_transparent_40%),linear-gradient(180deg,#fffdfc_0%,#fcf7f4_100%)]" />
-        <div className="absolute -left-10 top-20 h-64 w-64 rounded-full bg-red-400/20 blur-3xl mix-blend-multiply opacity-50" />
-        <div className="absolute right-20 top-40 h-80 w-80 rounded-full bg-amber-200/40 blur-3xl mix-blend-multiply opacity-40" />
+      <section className="relative -mt-10 overflow-hidden border-b border-white/70 bg-[#fffdfc]">
+        {/* Animated Background Gradients & Patterns */}
+        <div className="absolute inset-0 w-full bg-[radial-gradient(circle_at_top_left,_rgba(177,30,36,0.08),_transparent_40%),radial-gradient(circle_at_80%_60%,_rgba(215,163,71,0.1),_transparent_50%),linear-gradient(180deg,#ffffff_0%,#fdf8f5_100%)]" />
 
-        <div className="absolute inset-x-0 top-[96px] h-px bg-gradient-to-r from-transparent via-[#20181a]/10 to-transparent" />
+        {/* Floating blobs */}
+        <div className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-red-500/10 blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute right-0 top-10 h-[500px] w-[500px] rounded-full bg-amber-400/10 blur-[120px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }} />
 
-        <div className="relative flex flex-col px-4 pb-12 pt-5 sm:px-6 lg:px-8">
+        {/* Subtle pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
-          <div className="grid flex-1 items-center gap-12 py-10 lg:grid-cols-[minmax(0,1fr)_minmax(520px,1.08fr)] lg:gap-4 lg:py-12 xl:grid-cols-[minmax(0,1.02fr)_minmax(620px,0.98fr)]">
-            <div className="space-y-6 pr-0 lg:pr-4 relative z-10">
-              <div className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#b11e24]/15 bg-[#b11e24]/5 px-4 py-2 backdrop-blur-sm">
-                  <span className="flex h-2 w-2 rounded-full bg-[#b11e24] animate-pulse" />
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#b11e24]">
+        <div className="relative flex flex-col px-4 pb-20 pt-10 sm:px-6 lg:px-8">
+          <div className="grid flex-1 items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 xl:grid-cols-[1.2fr_0.8fr]">
+            <div className="space-y-10 relative z-10 animate-in fade-in slide-in-from-left-8 duration-1000 ease-out">
+              <div className="flex flex-wrap items-center gap-4">
+                <div className="inline-flex items-center gap-2.5 rounded-full border border-[#b11e24]/20 bg-white/60 px-5 py-2.5 backdrop-blur-md shadow-sm glass">
+                  <span className="flex h-2.5 w-2.5 rounded-full bg-[#b11e24] animate-ping" />
+                  <p className="text-[0.7rem] font-bold uppercase tracking-[0.25em] text-[#b11e24]">
                     {siteContent.hero.eyebrow}
                   </p>
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-green-600/15 bg-green-50 px-4 py-2">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-green-700">
-                    No Login Required • 100% Free
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-600/20 bg-emerald-50 px-4 py-2 glass">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-emerald-700">
+                    Free • No Login Required
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-5">
-                <h1 className="font-[family-name:var(--font-display)] text-[2.8rem] font-semibold leading-[1.08] tracking-[-0.02em] text-[#120d0e] sm:text-[3.6rem] lg:text-[4.2rem] xl:text-[4.6rem]">
-                  Create <span className="bg-gradient-to-r from-[#b11e24] to-[#e44b52] bg-clip-text text-transparent">beautiful biodata</span> for marriage in minutes.
+              <div className="space-y-6">
+                <h1 className="font-[family-name:var(--font-display)] text-[3.5rem] font-bold leading-[1.05] tracking-tight text-[#120d0e] sm:text-[4.5rem] lg:text-[5rem] xl:text-[6rem]">
+                  Create <span className="text-[#b11e24] relative">
+                    beautiful
+                    <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#b11e24]/20" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 25 0 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="4" /></svg>
+                  </span> biodata for marriage.
                 </h1>
-                <p className="max-w-[620px] text-base leading-7 text-slate-600 sm:text-lg sm:leading-8 lg:text-[1.25rem] lg:leading-[1.6]">
+                <p className="max-w-[640px] text-lg leading-relaxed text-slate-600 sm:text-xl lg:text-[1.4rem] lg:leading-[1.6] font-medium">
                   {siteContent.hero.description}
                 </p>
               </div>
 
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center pt-4">
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-center pt-4">
                 <Link
-                  href="#builder"
-                  className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#aa1d1f] px-8 text-base font-bold text-white shadow-[0_20px_40px_rgba(170,29,31,0.25)] transition-all hover:scale-105 hover:bg-[#931719] hover:shadow-[0_25px_50px_rgba(170,29,31,0.3)] sm:w-auto"
+                  href="/#builder"
+                  className="group relative inline-flex h-16 items-center justify-center gap-3 overflow-hidden rounded-full bg-[#b11e24] px-10 text-lg font-bold text-white shadow-[0_20px_40px_rgba(177,30,36,0.25)] transition-all hover:scale-105 hover:bg-[#931719] active:scale-95 sm:w-auto"
                 >
-                  Create My Biodata Now
-                  <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  <span className="relative z-10">Start Building Free</span>
+                  <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                  <div className="absolute inset-0 -z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                 </Link>
 
                 <Link
-                  href="/templates"
-                  className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 text-base font-bold text-slate-700 transition-all hover:bg-slate-50 sm:w-auto"
+                  href="#templates"
+                  className="inline-flex h-16 items-center justify-center gap-2 rounded-full border-2 border-slate-200 bg-white px-8 text-lg font-bold text-slate-700 transition-all hover:border-[#b11e24]/30 hover:bg-slate-50 active:scale-95 sm:w-auto glass"
                 >
-                  See Sample Biodata
+                  See Designs
                 </Link>
+              </div>
 
-                <div className="flex items-center gap-3 px-4 text-sm text-slate-500">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="h-8 w-8 rounded-full border-2 border-[#fcf9f7] bg-slate-200" style={{ backgroundImage: `url(https://i.pravatar.cc/100?img=${i + 10})`, backgroundSize: 'cover' }} />
+              <div className="flex items-center gap-4 pt-4">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="h-12 w-12 rounded-full border-4 border-white bg-slate-200 shadow-md transition-transform hover:-translate-y-2 hover:z-20 ring-1 ring-slate-100" style={{ backgroundImage: `url(https://i.pravatar.cc/100?img=${i + 20})`, backgroundSize: 'cover' }} />
+                  ))}
+                </div>
+                <div className="flex flex-col">
+                  <div className="flex text-amber-400">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="h-4 w-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                     ))}
                   </div>
-                  <div className="flex flex-col">
-                    <div className="flex text-amber-500">
-                      {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="h-3.5 w-3.5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-                      ))}
-                    </div>
-                    <span className="text-xs font-medium tracking-tight">Used by 1,000+ users today • Trusted by Indian families</span>
-                  </div>
+                  <span className="text-[0.7rem] font-bold text-slate-400 uppercase tracking-widest">Loved by 10k+ families</span>
                 </div>
               </div>
             </div>
 
-            <div className="relative flex min-h-[320px] items-center justify-center sm:min-h-[400px] lg:min-h-[500px] xl:min-h-[520px]">
-              <div className="absolute bottom-8 left-1/2 h-20 w-[72%] -translate-x-1/2 bg-[radial-gradient(circle,_rgba(32,24,26,0.18),_transparent_68%)] blur-2xl" />
-              {heroBiodataImages.map((image) => (
+            <div className="relative flex min-h-[500px] items-center justify-center lg:min-h-[700px] animate-in fade-in zoom-in duration-1000 ease-out">
+              {/* Main glowing background for the images */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(177,30,36,0.1),_transparent_70%)] blur-3xl" />
+              
+              <div className="absolute bottom-10 left-1/2 h-32 w-[85%] -translate-x-1/2 bg-[radial-gradient(circle,_rgba(32,24,26,0.1),_transparent_70%)] blur-3xl opacity-40" />
+              
+              {heroBiodataImages.map((image, idx) => (
                 <div
                   key={image.src}
-                  className={`absolute flex items-center justify-center p-3 sm:p-5 lg:p-6 rounded-[2rem] overflow-hidden bg-gradient-to-br from-rose-100 via-violet-50 to-amber-100/60 shadow-[0_28px_60px_rgba(32,24,26,0.18)] border border-white/60 ${image.className}`}
+                  className={`absolute flex items-center justify-center p-3 sm:p-5 rounded-[2.5rem] overflow-hidden bg-white/40 shadow-[0_32px_64px_rgba(32,24,26,0.12)] border border-white/80 backdrop-blur-md transition-all duration-700 hover:scale-105 hover:z-30 hover:shadow-[0_45px_80px_rgba(32,24,26,0.2)] animate-float ${image.className}`}
+                  style={{ 
+                    animationDelay: `${idx * 1.5}s`,
+                    animationDuration: '6s',
+                    transitionDelay: `${idx * 150}ms` 
+                  }}
                 >
-                  <div className="w-full bg-white shadow-[0_10px_35px_rgba(0,0,0,0.18)] rounded-xl overflow-hidden flex-none relative">
-                    <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-xl z-10" />
+                  <div className="w-full bg-white shadow-[0_12px_40px_rgba(0,0,0,0.15)] rounded-2xl overflow-hidden flex-none relative">
                     <img
                       src={image.src}
                       alt={image.alt}
@@ -122,6 +140,8 @@ export function Homepage() {
           </div>
         </div>
       </section>
+
+
 
       {/* Trust & Features Section - Compact Glass Bar */}
       <section className="relative z-10 mx-auto  max-w-6xl px-6 lg:px-8 ">
@@ -138,7 +158,7 @@ export function Homepage() {
                   <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#D7A347]/20 to-[#D7A347]/5 shadow-inner ring-1 ring-[#D7A347]/20">
                     {icons[idx]}
                   </div>
-                  <h3 className="font-[family-name:var(--font-body)] text-[1.25rem] font-bold tracking-tight text-slate-900">
+                  <h3 className="font-[family-name:var(--font-display)] text-[1.35rem] font-bold tracking-tight text-slate-900">
                     {feature.title}
                   </h3>
                   <p className="mt-3 text-[1.05rem] leading-relaxed text-slate-600">
@@ -193,7 +213,7 @@ export function Homepage() {
                   <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#b11e24]/10 to-[#b11e24]/5 text-[#b11e24] ring-1 ring-[#b11e24]/10">
                     {icons[idx]}
                   </div>
-                  <h3 className="font-sans text-lg font-semibold tracking-tight text-slate-800 leading-snug">
+                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-slate-800 leading-snug">
                     {section.heading}
                   </h3>
                   <p className="mt-2 text-[0.95rem] leading-relaxed text-slate-600 font-normal">
@@ -295,7 +315,7 @@ export function Homepage() {
 
         <div className="mt-14 text-center ">
           <Link
-            href="#builder"
+            href="/#builder"
             className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#aa1d1f] px-10 text-[1.05rem] font-medium text-white shadow-[0_20px_40px_rgba(170,29,31,0.2)] transition hover:scale-105 hover:bg-[#931719]"
           >
             Create My Biodata Now
@@ -303,7 +323,7 @@ export function Homepage() {
           </Link>
         </div>
       </section>
-      
+
       {/* SEO Footer Tags */}
       <section className="border-t border-[#b11e24]/10 bg-gradient-to-b from-transparent to-[#b11e24]/5 py-16 text-center">
         <div className="mx-auto max-w-6xl px-6">
@@ -319,8 +339,8 @@ export function Homepage() {
                 { label: "Marriage Biodata Format 2026", href: "/marriage-biodata-format" },
                 { label: "Simple Biodata Format", href: "/simple-biodata-format" },
               ].map(page => (
-                <Link 
-                  key={page.href} 
+                <Link
+                  key={page.href}
                   href={page.href}
                   className="rounded-full border border-blue-100 bg-blue-50/50 px-5 py-2.5 text-xs font-bold text-blue-600 transition-all hover:bg-blue-100"
                 >
@@ -361,9 +381,9 @@ export function Homepage() {
               "ऑनलाइन बायोडाटा मेकर शादी", "best marriage biodata maker in india", "create biodata in 2 minutes",
               "free biodata maker for shaadi", "modern biodata templates free", "instant marriage profile builder"
             ].map(keyword => (
-              <Link 
-                key={keyword} 
-                href="#builder"
+              <Link
+                key={keyword}
+                href="/#builder"
                 className="rounded-full border border-[#b11e24]/15 bg-white px-5 py-2.5 text-[0.85rem] font-medium text-slate-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#b11e24]/40 hover:text-[#b11e24] hover:shadow-md"
               >
                 {keyword}

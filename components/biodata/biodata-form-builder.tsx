@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { Plus, Trash2, X, PlusCircle, Loader2, CheckCircle2, Layout } from "lucide-react";
+import { Plus, Trash2, X, PlusCircle, Loader2, CheckCircle2, Layout, Crown, Sparkles, UserCircle } from "lucide-react";
+import Link from "next/link";
 
 import { ImagePicker } from "@/components/biodata/image-picker";
 import { defaultBiodataData } from "@/components/biodata/mock-data";
-import { biodataTemplates } from "@/components/biodata/templates";
+import { standardTemplates, premiumTemplates, biodataTemplates } from "@/components/biodata/templates";
 import { TemplateSelectorRow } from "@/components/biodata/template-selector-row";
 import type { BiodataField, BiodataFormData } from "@/components/biodata/types";
 
@@ -33,7 +34,7 @@ export function BiodataFormBuilder() {
   const [paymentStatus, setPaymentStatus] = useState<"idle" | "verifying" | "success">("idle");
   const [activeTab, setActiveTab] = useState<"form" | "preview">("form"); // For mobile tabs
 
-  const [selectedTemplateId, setSelectedTemplateId] = useState(biodataTemplates[0]?.id ?? "");
+  const [selectedTemplateId, setSelectedTemplateId] = useState(standardTemplates[0]?.id ?? "");
   const [formData, setFormData] = useState<BiodataFormData>(() => cloneDefaultData());
 
   // Sync with URL parameters when they change
@@ -204,136 +205,174 @@ export function BiodataFormBuilder() {
 
   const resetForm = () => {
     setFormData(cloneDefaultData());
-    setSelectedTemplateId(biodataTemplates[0]?.id ?? "");
+    setSelectedTemplateId(standardTemplates[0]?.id ?? "");
   };
 
   const PreviewComponent = selectedTemplate.Component;
 
   return (
-    <section className="mx-12 py-20">
-      <div className="bg-[#8e1933] px-4 py-10 sm:py-12 sm:px-8 rounded-t-2xl sm:rounded-t-[2.5rem]">
-        <div className="mb-10 text-center flex flex-col items-center">
-          <h2 className="text-xl sm:text-[1.35rem] font-medium text-white tracking-wide">
-            From traditional to modern, our curated biodata formats will create the Best Impression.
+    <section className="mx-4 lg:mx-12 py-16 lg:py-24 animate-in fade-in duration-1000">
+      <div className="relative overflow-hidden bg-[#2a050c] px-6 py-12 sm:py-16 sm:px-12 rounded-t-[2.5rem] lg:rounded-t-[3.5rem]">
+        {/* Animated Background for Builder Header */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(177,30,36,0.15),_transparent_60%)]" />
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.08]" />
+
+        <div className="relative mb-12 text-center flex flex-col items-center z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6 backdrop-blur-md">
+            <Sparkles className="w-4 h-4 text-[#fcd071]" />
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/70">Professional Builder</span>
+          </div>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4 font-[family-name:var(--font-display)]">
+            Design Your <span className="text-[#b11e24] italic">Perfect Impression</span>
           </h2>
-          <button
-            suppressHydrationWarning
-            type="button"
-            onClick={() => setIsGalleryOpen(true)}
-            className="mt-6 bg-white text-[#8e1933] px-8 py-3 rounded-full font-bold shadow-lg hover:bg-slate-50 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 text-[0.95rem] flex items-center gap-2 cursor-pointer"
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" /></svg>
-            View All Templates Gallery
-          </button>
+          <p className="text-slate-400 max-w-2xl text-lg font-medium leading-relaxed">
+            From traditional elegance to modern sophistication, choose the format that reflects your true personality.
+          </p>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <button
+              suppressHydrationWarning
+              type="button"
+              onClick={() => setIsGalleryOpen(true)}
+              className="bg-white text-[#120d0e] px-8 py-4 rounded-full font-bold shadow-xl hover:bg-slate-50 hover:shadow-[0_20px_40px_rgba(255,255,255,0.1)] hover:-translate-y-1 transition-all duration-300 text-[0.95rem] flex items-center gap-3 cursor-pointer group"
+            >
+              <Layout className="w-5 h-5 group-hover:rotate-6 transition-transform" />
+              Standard Designs
+            </button>
+            <Link
+              href="/premium-templates"
+              className="bg-[#b11e24] text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-red-900/20 hover:bg-[#931719] hover:shadow-red-900/40 hover:-translate-y-1 transition-all duration-300 text-[0.95rem] flex items-center gap-3 group"
+            >
+              <Crown className="w-5 h-5 text-amber-400 group-hover:scale-110 transition-transform" />
+              Premium Templates
+            </Link>
+          </div>
         </div>
 
-        {/* We only conditionally show the row here if we want to, but standard is fine. Let's keep the row to quick switch. */}
-        <TemplateSelectorRow
-          data={formData}
-          selectedTemplateId={selectedTemplate.id}
-          onSelect={setSelectedTemplateId}
-        />
+        <div className="relative z-10 p-2 rounded-[2rem] bg-white/5 border border-white/5 backdrop-blur-sm">
+          <TemplateSelectorRow
+            data={formData}
+            templates={standardTemplates}
+            selectedTemplateId={selectedTemplate.id}
+            onSelect={setSelectedTemplateId}
+          />
+        </div>
       </div>
 
-      <div id="biodata-form" className="grid gap-6 lg:grid-cols-[1fr_1.25fr] bg-[#8e1933] p-4 sm:p-8 rounded-b-2xl sm:rounded-b-[2.5rem] pt-0 sm:pt-0 scroll-mt-6">
-        <div className="rounded-[1rem] bg-white p-5 shadow-xl sm:p-7">
-          <div className="flex flex-col gap-6 pb-2">
-            <ImagePicker
-              image={formData.profileImage}
-              fullName={formData.fullName}
-              onImageChange={(value) => handleProfileChange("profileImage", value)}
-            />
+      <div id="biodata-form" className="grid gap-10 lg:grid-cols-[1fr_1.35fr] bg-slate-50/50 p-6 sm:p-10 lg:p-16 rounded-b-[2.5rem] lg:rounded-b-[3.5rem] border-x border-b border-slate-100 shadow-2xl shadow-slate-200/50 scroll-mt-10 relative">
+        <div className="flex flex-col gap-8">
+          <div className="rounded-[2.5rem] bg-white p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-slate-100 relative overflow-hidden group">
+            {/* Subtle highlight */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#b11e24]/20 to-transparent" />
 
-            <div className="h-px bg-slate-100 w-full mt-2" />
-          </div>
-
-          <div className="mt-4 space-y-6">
-            {formData.sections.map((section) => (
-              <div key={section.id} className="flex flex-col gap-3">
-                <div className="flex items-center justify-between pb-1">
-                  <div className="flex-1 max-w-[50%]">
-                    <input
-                      suppressHydrationWarning
-                      value={section.title}
-                      onChange={(event) => updateSectionTitle(section.id, event.target.value)}
-                      className="text-[#8e1933] font-bold text-lg bg-transparent outline-none border-b border-transparent focus:border-[#8e1933]/30 w-full"
-                    />
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <button
-                      suppressHydrationWarning
-                      type="button"
-                      onClick={() => addField(section.id)}
-                      className="flex items-center gap-1.5 rounded bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-600 transition hover:bg-slate-200"
-                    >
-                      <Plus className="h-3 w-3" />
-                      Add Field
-                    </button>
-                    {formData.sections.length > 1 && (
-                      <button
-                        suppressHydrationWarning
-                        type="button"
-                        onClick={() => removeSection(section.id)}
-                        className="flex items-center rounded bg-red-50 px-2 py-1.5 text-red-600 transition hover:bg-red-100"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </button>
-                    )}
-                  </div>
+            <div className="flex flex-col gap-8 pb-4">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="h-10 w-10 rounded-xl bg-[#b11e24]/5 flex items-center justify-center text-[#b11e24]">
+                  <UserCircle className="w-6 h-6" />
                 </div>
-
-                <div className="flex flex-col gap-3">
-                  {section.fields.map((field) => (
-                    <div key={field.id} className="flex items-center gap-2">
-                      <input
-                        suppressHydrationWarning
-                        value={field.label}
-                        onChange={(event) => updateField(section.id, field.id, "label", event.target.value)}
-                        className="w-[32%] rounded-md border border-slate-300 bg-[#f4f6f8] px-3 py-2.5 text-[0.85rem] text-slate-700 outline-none transition focus:border-accent"
-                        placeholder="Label"
-                      />
-                      <input
-                        suppressHydrationWarning
-                        value={field.value}
-                        onChange={(event) => updateField(section.id, field.id, "value", event.target.value)}
-                        className="w-[68%] rounded-md border border-slate-300 bg-white px-3 py-2.5 text-[0.85rem] text-slate-800 outline-none transition focus:border-accent"
-                        placeholder="Value"
-                      />
-                      <button
-                        suppressHydrationWarning
-                        type="button"
-                        onClick={() => removeField(section.id, field.id)}
-                        disabled={section.fields.length === 1}
-                        title="Remove Field"
-                        className="flex shrink-0 items-center justify-center rounded-full border border-slate-300 p-2 text-slate-500 transition hover:border-red-400 hover:text-red-500 disabled:cursor-not-allowed disabled:opacity-40"
-                      >
-                        <Trash2 className="h-[15px] w-[15px]" />
-                      </button>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-xl font-bold text-slate-900 tracking-tight">Identity & Photo</h3>
               </div>
-            ))}
-          </div>
 
-          <div className="mt-6 flex flex-wrap gap-3">
-            <button
-              suppressHydrationWarning
-              type="button"
-              onClick={addSection}
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_38px_rgba(143,29,59,0.22)] transition hover:bg-[#781431]"
-            >
-              <PlusCircle className="h-5 w-5" />
-              Add Section
-            </button>
-            <button
-              suppressHydrationWarning
-              type="button"
-              onClick={resetForm}
-              className="rounded-full border border-foreground/10 bg-white px-5 py-3 text-sm font-semibold text-foreground transition hover:border-foreground/30"
-            >
-              Reset Form
-            </button>
+              <ImagePicker
+                image={formData.profileImage}
+                fullName={formData.fullName}
+                onImageChange={(value) => handleProfileChange("profileImage", value)}
+              />
+
+              <div className="h-px bg-slate-100 w-full" />
+            </div>
+
+            <div className="space-y-10">
+              {formData.sections.map((section, sIdx) => (
+                <div key={section.id} className="flex flex-col gap-5 animate-in fade-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: `${sIdx * 100}ms` }}>
+                  <div className="flex items-center justify-between pb-2 border-b border-slate-50">
+                    <div className="flex items-center gap-3 flex-1">
+                      <div className="w-1.5 h-6 bg-[#b11e24]/20 rounded-full" />
+                      <input
+                        suppressHydrationWarning
+                        value={section.title}
+                        onChange={(event) => updateSectionTitle(section.id, event.target.value)}
+                        className="text-[#120d0e] font-bold text-xl bg-transparent outline-none border-b-2 border-transparent focus:border-[#b11e24]/20 w-full py-1 transition-all"
+                        placeholder="Section Title"
+                      />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        suppressHydrationWarning
+                        type="button"
+                        onClick={() => addField(section.id)}
+                        className="flex items-center gap-2 rounded-full bg-slate-50 px-4 py-2 text-xs font-bold text-slate-600 transition hover:bg-slate-100 hover:text-[#b11e24]"
+                      >
+                        <PlusCircle className="h-4 w-4" />
+                        Add Field
+                      </button>
+                      {formData.sections.length > 1 && (
+                        <button
+                          suppressHydrationWarning
+                          type="button"
+                          onClick={() => removeSection(section.id)}
+                          className="flex items-center justify-center rounded-full bg-red-50 p-2 text-red-500 transition hover:bg-red-500 hover:text-white"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4">
+                    {section.fields.map((field, fIdx) => (
+                      <div key={field.id} className="flex items-center gap-3 group/field animate-in fade-in duration-300">
+                        <div className="relative flex-1 flex items-center gap-3">
+                          <input
+                            suppressHydrationWarning
+                            value={field.label}
+                            onChange={(event) => updateField(section.id, field.id, "label", event.target.value)}
+                            className="w-[35%] rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-[0.9rem] font-bold text-slate-700 outline-none transition-all focus:border-[#b11e24]/30 focus:bg-white focus:ring-4 focus:ring-[#b11e24]/5"
+                            placeholder="Label (e.g. Height)"
+                          />
+                          <input
+                            suppressHydrationWarning
+                            value={field.value}
+                            onChange={(event) => updateField(section.id, field.id, "value", event.target.value)}
+                            className="w-[65%] rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-[0.9rem] font-medium text-slate-800 outline-none transition-all focus:border-[#b11e24]/30 focus:ring-4 focus:ring-[#b11e24]/5"
+                            placeholder="Value (e.g. 5'10&quot;)"
+                          />
+                        </div>
+                        <button
+                          suppressHydrationWarning
+                          type="button"
+                          onClick={() => removeField(section.id, field.id)}
+                          disabled={section.fields.length === 1}
+                          className="flex shrink-0 items-center justify-center rounded-xl border border-slate-100 p-2.5 text-slate-300 transition-all hover:border-red-200 hover:text-red-500 hover:bg-red-50 disabled:opacity-0"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 flex flex-wrap gap-4 border-t border-slate-50 pt-10">
+              <button
+                suppressHydrationWarning
+                type="button"
+                onClick={addSection}
+                className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-8 py-4 text-[0.95rem] font-bold text-white shadow-xl hover:bg-[#120d0e] hover:-translate-y-1 transition-all"
+              >
+                <PlusCircle className="h-5 w-5" />
+                Add New Section
+              </button>
+              <button
+                suppressHydrationWarning
+                type="button"
+                onClick={resetForm}
+                className="rounded-full border-2 border-slate-200 bg-white px-8 py-4 text-[0.95rem] font-bold text-slate-600 transition-all hover:border-red-100 hover:text-red-500 hover:bg-red-50/30"
+              >
+                Clear All
+              </button>
+            </div>
           </div>
         </div>
 
@@ -423,18 +462,15 @@ export function BiodataFormBuilder() {
 
             <div className="text-center mb-10 sm:mb-14 relative z-0">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#fcd071] tracking-wide mb-3 sm:mb-4 drop-shadow-md">
-                Premium Template Gallery
+                Standard Template Gallery
               </h2>
-              {/* <p className="text-white/90 text-lg sm:text-xl font-medium max-w-2xl mx-auto">
-                Explore our full collection of beautifully crafted matrimonial formats. Select any design to instantly preview it with your details.
-              </p> */}
             </div>
 
             {/* Enhanced Gallery Grid Container strictly bounded inside the modal */}
             <div className="relative z-0 px-4">
               <TemplateSelectorRow
                 data={formData}
-                // layout="grid"
+                templates={standardTemplates}
                 selectedTemplateId={selectedTemplate.id}
                 onSelect={(id) => {
                   setSelectedTemplateId(id);
