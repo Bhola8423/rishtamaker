@@ -50,7 +50,7 @@ export default function BiodataForBoyPage() {
               Design a professional matrimonial profile that highlights your career, family, and values. Stand out with our masculine and elegant designs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/create-biodata" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-blue-600 px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-blue-700">
+              <Link href="/#builder" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-blue-600 px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-blue-700">
                 Start Building Now <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

@@ -46,7 +46,7 @@ export default function SimpleBiodataFormatPage() {
               Sometimes, less is more. Our simple biodata templates focus on clarity and readability, ensuring your details shine through without unnecessary clutter.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/create-biodata" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-slate-900 px-8 text-base font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-slate-800">
+              <Link href="/#builder" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-slate-900 px-8 text-base font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-slate-800">
                 Create Simple Biodata <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

@@ -50,7 +50,7 @@ export default function BiodataForGirlPage() {
               Create a stunning matrimonial profile that reflects your grace, education, and family heritage. Choose from our collection of beautiful and aesthetic designs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/create-biodata" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-rose-600 px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-rose-700">
+              <Link href="/#builder" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-rose-600 px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-rose-700">
                 Create My Profile <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

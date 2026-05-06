@@ -63,7 +63,7 @@ export default async function ProfessionBiodataPage({ params }: Props) {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
             {details.intro} Choose a professional format that respects your hard-earned career.
           </p>
-          <Link href="/create-biodata" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-blue-600 px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-blue-700">
+          <Link href="/#builder" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-blue-600 px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-blue-700">
             Create {name} Biodata <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

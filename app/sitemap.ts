@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     { url: '', changeFrequency: 'daily' as const, priority: 1 },
-    { url: '/create-biodata', changeFrequency: 'daily' as const, priority: 1 },
     { url: '/templates', changeFrequency: 'daily' as const, priority: 0.9 },
     { url: '/biodata-for-boy', changeFrequency: 'weekly' as const, priority: 0.9 },
     { url: '/biodata-for-girl', changeFrequency: 'weekly' as const, priority: 0.9 },

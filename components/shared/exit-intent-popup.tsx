@@ -46,7 +46,7 @@ export function ExitIntentPopup() {
 
           <div className="mt-8 flex flex-col w-full gap-3">
             <Link 
-              href="/create-biodata"
+              href="/#builder"
               onClick={() => setIsVisible(false)}
               className="flex h-14 items-center justify-center gap-2 rounded-full bg-[#b11e24] px-8 text-base font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-[#8b1c31]"
             >

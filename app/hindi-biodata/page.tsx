@@ -49,7 +49,7 @@ export default function HindiBiodataPage() {
             अपनी मातृभाषा में एक प्रभावशाली और पारंपरिक शादी का बायोडाटा तैयार करें। हमारे हिंदी फॉर्मेट्स आपके व्यक्तित्व और संस्कारों को बखूबी दर्शाते हैं।
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/create-biodata" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-amber-600 px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-amber-700">
+            <Link href="/#builder" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-amber-600 px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-amber-700">
               अभी बायोडाटा बनाएं <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

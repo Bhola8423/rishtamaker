@@ -175,7 +175,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               <h3 className="mb-4 text-2xl font-bold">Ready to create your own biodata?</h3>
               <p className="mb-8 text-slate-400">Join thousands of others who have created professional biodatas with Rishtamaker.</p>
               <Link
-                href="/create-biodata"
+                href="/#builder"
                 className="inline-flex h-12 items-center justify-center rounded-full bg-[#b11e24] px-8 text-sm font-bold text-white transition-all hover:scale-105 hover:bg-[#8b1c31]"
               >
                 Create My Biodata Now →

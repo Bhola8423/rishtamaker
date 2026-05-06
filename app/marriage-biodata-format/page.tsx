@@ -53,7 +53,7 @@ export default function MarriageBiodataFormatPage() {
               Stop using boring Word documents. Create a stunning, professional marriage biodata format that makes a lasting impression on the bride or groom's family.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/create-biodata" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#b11e24] px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-[#8b1c31]">
+              <Link href="/#builder" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#b11e24] px-8 text-base font-bold text-white shadow-xl transition-all hover:scale-105 hover:bg-[#8b1c31]">
                 Create My Biodata <ArrowRight className="w-5 h-5" />
               </Link>
               <Link href="/templates" className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 text-base font-bold text-slate-700 transition-all hover:bg-slate-50">

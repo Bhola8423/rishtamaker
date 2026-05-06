@@ -32,7 +32,7 @@ export function TemplateCard({ template, onSelect }: TemplateCardProps) {
         {/* Hover Overlay */}
         <div className="absolute inset-0 flex items-center justify-center bg-slate-900/0 transition-all duration-500 group-hover:bg-slate-900/10">
           <Link
-            href={`/create-biodata?template=${template.id}`}
+          href={`/?template=${template.id}#builder`}
             className="translate-y-4 scale-95 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100"
           >
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-slate-900 shadow-2xl ring-4 ring-white/20">
@@ -58,7 +58,7 @@ export function TemplateCard({ template, onSelect }: TemplateCardProps) {
         </p>
 
         <Link
-          href={`/create-biodata?template=${template.id}`}
+          href={`/?template=${template.id}#builder`}
           className="mt-8 flex h-14 w-full items-center justify-center gap-3 rounded-2xl bg-slate-900 px-6 text-sm font-bold text-white transition-all hover:bg-[#aa1d1f] hover:shadow-[0_15px_30px_rgba(170,29,31,0.2)]"
         >
           Use This Template
