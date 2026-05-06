@@ -192,24 +192,28 @@ Arranged marriages are fundamentally about aligning life goals and family values
     metaDescription: "Learn exactly how to write an impressive marriage biodata. Discover what details to include, which photos to choose, and how to stand out to potential matches.",
     excerpt: "Learn the essential tips and tricks to create a marriage biodata that stands out and makes a great first impression.",
     content: `
-Creating a marriage biodata is one of the most important steps in the matchmaking process. It serves as your first impression to potential matches and their families. Here is a comprehensive guide to writing the perfect marriage biodata:
+Creating a marriage biodata is one of the most important steps in the matchmaking process. It serves as your very first impression to potential matches and their entire families. In traditional matchmaking and arranged marriages, this single document acts as your proxy, speaking on your behalf before you ever get the chance to meet in person.
+
+![Indian couple holding biodata](/images/blog/happy-couple.png)
 
 ## 1. Be Honest and Authentic
-The foundation of a good biodata is honesty. Always provide accurate information about your age, height, education, and profession. Authenticity builds trust from the very beginning.
+The foundation of a good biodata is honesty. Always provide accurate information about your age, height, education, and profession. Authenticity builds trust from the very beginning. Avoid exaggerating your achievements or background, as transparency is key to a long-lasting relationship.
 
 ## 2. Choose the Right Photo
-Your photo is the first thing people look at. Ensure you include a clear, recent, and well-lit photograph. Avoid using heavily edited or group photos.
+Your photo is the first thing people look at—it is undeniable. Include a high-quality, recently taken photograph. Avoid using heavily edited pictures, Snapchat filters, or group photos where people have to guess who you are. A genuine, warm smile in natural lighting works wonders and instantly builds trust.
 
 ## 3. Highlight Your Personality
-Beyond basic details, include information about your hobbies, interests, and life goals. This helps potential matches understand your personality and see if your lifestyles align.
+Beyond basic details, include information about your hobbies, interests, and life goals. This helps potential matches understand your personality and see if your lifestyles align. Are you an avid reader? A weekend trekker? Do you value family time above all else? Share this here to attract like-minded individuals.
+
+![Biodata templates collection](/images/blog/templates-collage.png)
 
 ## 4. Clear Family Background
-Provide a concise but clear overview of your family background. Mention your parents' professions and your siblings, as family compatibility is often considered important.
+In Indian marriages, families marry families. Provide a concise but clear overview of your family background. Mention your parents' professions and your siblings, as family compatibility is often considered important. If your parents are retired, mention their previous notable professions to build credibility.
 
 ## 5. Be Specific About Expectations
-Clearly state what you are looking for in a partner. Whether it's education, profession, or personality traits, being specific helps filter out incompatible matches early on.
+Arranged marriages are fundamentally about aligning life goals and family values. Use the final section of your biodata to state your expectations regarding education, profession, and lifestyle. Stating this clearly ensures that family matchmakers only bring you profiles that actually align with your vision for the future.
     `,
-    coverImage: "/images/blog-9.jpg",
+    coverImage: "/images/blog/biodata-guide-cover.png",
     date: "2026-05-01",
     author: "RishtaMaker Team",
     category: "Biodata Guides",

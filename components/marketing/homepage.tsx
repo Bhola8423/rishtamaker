@@ -1,4 +1,8 @@
+"use client";
+
 import { BiodataFormBuilder } from "@/components/biodata/biodata-form-builder";
+import { biodataTemplates } from "@/components/biodata/templates";
+import { TemplateCard } from "@/components/templates/TemplateCard";
 import Image from "next/image";
 import Link from "next/link";
 import { siteContent } from "@/constants/site-content";
@@ -33,11 +37,11 @@ export function Homepage() {
       <section className="relative -mt-10 overflow-hidden border-b border-white/70 bg-[#fffdfc]">
         {/* Animated Background Gradients & Patterns */}
         <div className="absolute inset-0 w-full bg-[radial-gradient(circle_at_top_left,_rgba(177,30,36,0.08),_transparent_40%),radial-gradient(circle_at_80%_60%,_rgba(215,163,71,0.1),_transparent_50%),linear-gradient(180deg,#ffffff_0%,#fdf8f5_100%)]" />
-        
+
         {/* Floating blobs */}
         <div className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-red-500/10 blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute right-0 top-10 h-[500px] w-[500px] rounded-full bg-amber-400/10 blur-[120px] animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }} />
-        
+
         {/* Subtle pattern overlay */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
 
@@ -78,7 +82,7 @@ export function Homepage() {
                 </Link>
 
                 <Link
-                  href="/templates"
+                  href="#templates"
                   className="inline-flex h-16 items-center justify-center gap-2 rounded-full border-2 border-slate-200 bg-white px-8 text-lg font-bold text-slate-700 transition-all hover:border-[#b11e24]/30 hover:bg-slate-50 active:scale-95 sm:w-auto"
                 >
                   See Samples
@@ -125,6 +129,8 @@ export function Homepage() {
           </div>
         </div>
       </section>
+
+
 
       {/* Trust & Features Section - Compact Glass Bar */}
       <section className="relative z-10 mx-auto  max-w-6xl px-6 lg:px-8 ">
@@ -306,7 +312,7 @@ export function Homepage() {
           </Link>
         </div>
       </section>
-      
+
       {/* SEO Footer Tags */}
       <section className="border-t border-[#b11e24]/10 bg-gradient-to-b from-transparent to-[#b11e24]/5 py-16 text-center">
         <div className="mx-auto max-w-6xl px-6">
@@ -322,8 +328,8 @@ export function Homepage() {
                 { label: "Marriage Biodata Format 2026", href: "/marriage-biodata-format" },
                 { label: "Simple Biodata Format", href: "/simple-biodata-format" },
               ].map(page => (
-                <Link 
-                  key={page.href} 
+                <Link
+                  key={page.href}
                   href={page.href}
                   className="rounded-full border border-blue-100 bg-blue-50/50 px-5 py-2.5 text-xs font-bold text-blue-600 transition-all hover:bg-blue-100"
                 >
@@ -364,8 +370,8 @@ export function Homepage() {
               "ऑनलाइन बायोडाटा मेकर शादी", "best marriage biodata maker in india", "create biodata in 2 minutes",
               "free biodata maker for shaadi", "modern biodata templates free", "instant marriage profile builder"
             ].map(keyword => (
-              <Link 
-                key={keyword} 
+              <Link
+                key={keyword}
                 href="/#builder"
                 className="rounded-full border border-[#b11e24]/15 bg-white px-5 py-2.5 text-[0.85rem] font-medium text-slate-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#b11e24]/40 hover:text-[#b11e24] hover:shadow-md"
               >

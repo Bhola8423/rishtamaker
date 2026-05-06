@@ -1,17 +1,11 @@
-import { Metadata } from "next";
+"use client";
+
 import { PageShell } from "@/components/shared/page-shell";
 import Link from "next/link";
-import { ArrowRight, Layout, Zap, Smartphone, CheckCircle } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Layout, Zap, Smartphone, CheckCircle, Star, Quote, ChevronRight, PenTool } from "lucide-react";
 import { BiodataCTA } from "@/components/biodata/CTA";
 import { PopularTemplatesSection } from "@/components/marketing/popular-templates";
-
-export const metadata: Metadata = {
-  title: "Simple Biodata Format for Marriage | Minimalistic Designs",
-  description: "Looking for a simple biodata format? Create a clean, minimalistic matrimonial profile in minutes. Free PDF download, easy to use, no registration.",
-  alternates: {
-    canonical: "/simple-biodata-format",
-  },
-};
 
 export default function SimpleBiodataFormatPage() {
   const faqData = [
@@ -31,104 +25,155 @@ export default function SimpleBiodataFormatPage() {
 
   return (
     <PageShell>
-      {/* Hero Section */}
-      <section className="bg-white pt-24 pb-32 border-b border-slate-50">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-widest mb-6">
-              Minimalist & Clean
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-[1.1] mb-8">
-              Simple Biodata Format <br />
-              <span className="text-slate-400">for a Professional Impression</span>
-            </h1>
-            <p className="text-xl text-slate-500 mb-10 leading-relaxed">
-              Sometimes, less is more. Our simple biodata templates focus on clarity and readability, ensuring your details shine through without unnecessary clutter.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/#builder" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-slate-900 px-8 text-base font-bold text-white shadow-lg transition-all hover:scale-105 hover:bg-slate-800">
-                Create Simple Biodata <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Premium Minimal Hero Section */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-white pt-20 pb-20">
+        {/* Subtle Texture */}
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/white-diamond.png')] opacity-20 pointer-events-none" />
+        
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="text-left">
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-1.5 mb-8">
+                <PenTool className="h-4 w-4 text-slate-500" />
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600">
+                  Minimalist Collection 2026
+                </p>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-display)] font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">
+                Simple & Clean <br />
+                <span className="text-slate-400 italic">Biodata Formats</span>
+              </h1>
+              <p className="text-xl text-slate-500 max-w-xl mb-12 leading-relaxed font-medium">
+                Sometimes, less is more. Our simple biodata templates focus on clarity and readability, ensuring your details shine through without unnecessary clutter.
+              </p>
+              <div className="flex flex-wrap gap-5">
+                <Link href="/#builder" className="inline-flex h-16 items-center justify-center gap-3 rounded-full bg-slate-900 px-10 text-lg font-bold text-white shadow-2xl transition-all hover:scale-105 hover:bg-slate-800 active:scale-95">
+                  Start Building <ArrowRight className="w-6 h-6" />
+                </Link>
+                <Link href="/templates" className="inline-flex h-16 items-center justify-center gap-3 rounded-full border-2 border-slate-100 bg-white px-10 text-lg font-bold text-slate-600 transition-all hover:bg-slate-50">
+                  See Minimalism
+                </Link>
+              </div>
 
-      {/* Intro Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="text-3xl font-bold text-slate-900 mb-6">Why Simplicity Wins in Matrimonial Profiles</h2>
-          <div className="prose prose-slate prose-lg max-w-none">
-            <p>
-              In a world filled with flashy designs, a <strong>simple biodata format</strong> stands out for its elegance and professionalism. Whether you are creating a biodata for a boy or a girl, choosing a clean layout ensures that essential details like education, career, and family background are communicated effectively.
-            </p>
-            <p>
-              At <strong>RishtaMaker</strong>, we understand that not everyone wants a "royal" or "traditional" look. Some users prefer the <em>minimalistic approach</em>. Our simple formats are optimized for WhatsApp sharing and home printing, using standard fonts and balanced white space to create a premium feel.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Templates */}
-      <PopularTemplatesSection />
-
-      {/* Comparison Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Modern Features for Simple Profiles</h2>
-              <ul className="space-y-6">
-                {[
-                  { icon: <Zap className="h-5 w-5" />, title: "Instant Generation", desc: "No need to spend hours on formatting. Just type and download." },
-                  { icon: <Layout className="h-5 w-5" />, title: "WhatsApp Friendly", desc: "Our simple layouts are perfectly sized for mobile screens." },
-                  { icon: <Smartphone className="h-5 w-5" />, title: "Edit Anytime", desc: "Need to change a phone number? Come back and edit for free." }
-                ].map((item, i) => (
-                  <li key={i} className="flex gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-200 text-slate-900">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">{item.title}</h4>
-                      <p className="text-sm text-slate-500">{item.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              {/* Minimal Trust Badge */}
+              <div className="mt-12 flex items-center gap-4 text-slate-400">
+                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100">
+                   <Star className="h-5 w-5 fill-slate-300" />
+                 </div>
+                 <p className="text-sm font-medium">The choice of modern Indian professionals</p>
+              </div>
             </div>
-            <div className="relative aspect-square rounded-[3rem] bg-gradient-to-br from-slate-200 to-slate-100 overflow-hidden border border-slate-200 shadow-inner">
-               <div className="absolute inset-10 bg-white rounded-2xl shadow-2xl p-8 border border-slate-50">
-                  <div className="h-4 w-1/3 bg-slate-100 rounded mb-6" />
-                  <div className="space-y-3">
-                    <div className="h-2 w-full bg-slate-50 rounded" />
-                    <div className="h-2 w-5/6 bg-slate-50 rounded" />
-                    <div className="h-2 w-4/6 bg-slate-50 rounded" />
-                  </div>
-                  <div className="mt-12 h-32 w-full border-2 border-dashed border-slate-100 rounded-xl flex items-center justify-center text-slate-300 text-xs">
-                    Clean Content Only
-                  </div>
-               </div>
+
+            {/* Premium Preview Image */}
+            <div className="relative group">
+              <div className="absolute -inset-8 bg-slate-50 rounded-[4rem] transition-transform duration-700 group-hover:scale-95" />
+              <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_40px_80px_-15px_rgba(0,0,0,0.1)] border-[10px] border-white">
+                <Image 
+                  src="/images/simple-biodata-hero.png" 
+                  alt="Simple Minimalist Biodata Format" 
+                  width={800} 
+                  height={800}
+                  className="w-full h-auto transition-transform duration-1000 group-hover:scale-105"
+                  priority
+                />
+              </div>
+              {/* Overlay Stat */}
+              <div className="absolute -left-10 bottom-10 p-6 bg-white border border-slate-100 rounded-3xl shadow-2xl z-20">
+                <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-1">Clarity Score</p>
+                <p className="text-2xl font-bold text-slate-900">100%</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-2xl font-bold text-slate-900 mb-10 text-center">Simple Biodata FAQ</h2>
-          <div className="space-y-8">
-            {faqData.map((faq, i) => (
-              <div key={i}>
-                <h4 className="text-lg font-bold text-slate-900 mb-2">{faq.q}</h4>
-                <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+      {/* Why Simplicity Section */}
+      <section className="py-24 bg-white relative">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-display)] font-bold text-slate-900 mb-6 leading-tight">
+              Why Simplicity Wins in <br /> Matrimonial Profiles
+            </h2>
+            <p className="text-xl text-slate-500 leading-relaxed">
+               A simple format ensures that the reader focuses on your information rather than distracting designs. It looks professional and is incredibly easy to read.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { 
+                icon: <Zap className="h-7 w-7" />, 
+                t: "Instant Creation", 
+                d: "No need to spend hours on formatting. Our builder does it for you in seconds.",
+                label: "Fast"
+              },
+              { 
+                icon: <Smartphone className="h-7 w-7" />, 
+                t: "WhatsApp Optimized", 
+                d: "Sized perfectly for mobile devices. Looks great on every screen.",
+                label: "Mobile"
+              },
+              { 
+                icon: <Layout className="h-7 w-7" />, 
+                t: "High Legibility", 
+                d: "Using premium fonts and balanced spacing for a clean reading experience.",
+                label: "Clear"
+              }
+            ].map((item, i) => (
+              <div key={i} className="group p-10 rounded-[2.5rem] border border-slate-50 transition-all hover:bg-slate-50 hover:border-slate-200">
+                <div className="inline-block p-4 rounded-2xl bg-white border border-slate-100 shadow-sm mb-6 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h4 className="text-2xl font-bold text-slate-900 mb-4">{item.t}</h4>
+                <p className="text-slate-500 leading-relaxed mb-6">{item.d}</p>
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-300">{item.label}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-24 max-w-5xl">
+      {/* Featured Templates */}
+      <section id="preview">
+        <PopularTemplatesSection />
+      </section>
+
+      {/* Quote Section */}
+      <section className="py-24 bg-slate-900 text-white overflow-hidden">
+        <div className="container mx-auto px-6 max-w-5xl">
+           <div className="relative p-12 md:p-20 text-center">
+              <Quote className="h-20 w-20 text-white/5 absolute top-10 left-10" />
+              <h3 className="text-3xl md:text-4xl font-[family-name:var(--font-display)] font-medium leading-relaxed mb-10 italic">
+                "Simplicity is the ultimate sophistication. Our minimal biodata formats speak volumes without saying a word about vanity."
+              </h3>
+              <div className="flex items-center justify-center gap-4">
+                 <div className="h-px w-10 bg-white/20" />
+                 <p className="text-sm font-bold tracking-widest uppercase text-slate-400">The RishtaMaker Philosophy</p>
+                 <div className="h-px w-10 bg-white/20" />
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* FAQ Modernized */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6 max-w-3xl">
+          <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-display)] font-bold text-slate-900 text-center mb-16 tracking-tight">Common Questions</h2>
+          <div className="space-y-12">
+            {faqData.map((faq, i) => (
+              <div key={i} className="group">
+                <h4 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+                  <ChevronRight className="h-5 w-5 text-slate-300 group-hover:text-slate-900 transition-colors" />
+                  {faq.q}
+                </h4>
+                <p className="text-slate-500 leading-relaxed text-lg pl-8">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-6 py-24 max-w-6xl">
         <BiodataCTA />
       </div>
 
