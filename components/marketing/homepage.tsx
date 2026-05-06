@@ -126,12 +126,13 @@ export function Homepage() {
                   }}
                 >
                   <div className="w-full bg-white shadow-[0_12px_40px_rgba(0,0,0,0.15)] rounded-2xl overflow-hidden flex-none relative">
-                    <img
+                    <Image
                       src={image.src}
                       alt={image.alt}
                       width={560}
                       height={760}
                       className="h-auto w-full object-cover"
+                      priority={idx === 1}
                     />
                   </div>
                 </div>

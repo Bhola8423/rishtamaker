@@ -14,6 +14,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rishtamaker.in'),
   title: "RishtaMaker | Create Beautiful Marriage Biodata Online",
   description: "Instant marriage profile builder. Create professional matrimonial biodata in 2 minutes. Choose from premium templates, no login required.",
   icons: {

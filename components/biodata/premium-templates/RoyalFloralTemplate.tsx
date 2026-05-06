@@ -221,10 +221,10 @@ export default function RoyalFloralTemplate({ data }: BiodataTemplateProps) {
 
       {/* Extreme Corner Florals */}
       <div className="absolute top-0 right-0 w-80 h-80 opacity-60 z-0 pointer-events-none">
-         <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-contain mix-blend-multiply" alt="" />
+         <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=70&w=600&auto=format&fit=crop" className="w-full h-full object-contain mix-blend-multiply" alt="" />
       </div>
       <div className="absolute bottom-0 left-0 w-80 h-80 opacity-60 z-0 pointer-events-none rotate-180">
-         <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=1000&auto=format&fit=crop" className="w-full h-full object-contain mix-blend-multiply" alt="" />
+         <img src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=70&w=600&auto=format&fit=crop" className="w-full h-full object-contain mix-blend-multiply" alt="" />
       </div>
     </div>
   );
