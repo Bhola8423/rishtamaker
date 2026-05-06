@@ -1,15 +1,19 @@
-"use client";
-
 import { PageShell } from "@/components/shared/page-shell";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Briefcase, GraduationCap, CheckCircle2, Star, ChevronRight, Quote, ShieldCheck, Zap } from "lucide-react";
 import { BiodataCTA } from "@/components/biodata/CTA";
 import { PopularTemplatesSection } from "@/components/marketing/popular-templates";
-import { use } from "react";
 
 interface Props {
   params: Promise<{ profession: string }>;
+}
+
+export async function generateStaticParams() {
+  const professions = ["engineer", "doctor", "teacher", "lawyer", "accountant", "software-developer", "business-owner"];
+  return professions.map((p) => ({
+    profession: p,
+  }));
 }
 
 const professionDetails: Record<string, any> = {
@@ -31,8 +35,8 @@ const professionDetails: Record<string, any> = {
   }
 };
 
-export default function ProfessionBiodataPage({ params }: Props) {
-  const { profession } = use(params);
+export default async function ProfessionBiodataPage({ params }: Props) {
+  const { profession } = await params;
   const name = profession.charAt(0).toUpperCase() + profession.slice(1).replace("-", " ");
   const details = professionDetails[profession.toLowerCase()] || professionDetails.default;
 

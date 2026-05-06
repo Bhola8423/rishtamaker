@@ -1,23 +1,8 @@
 "use client";
 
 import React from 'react';
-import { Playball, Fraunces, Manrope } from "next/font/google";
 import { Heart, Calendar, MapPin, Ruler, Users, Star, Moon, Phone, Mail } from "lucide-react";
 import type { BiodataTemplateProps } from "@/components/biodata/types";
-
-const playball = Playball({
-  weight: "400",
-  subsets: ["latin"],
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-});
 
 export default function RoyalFloralTemplate({ data }: BiodataTemplateProps) {
   // Extract common fields for the quick stats row
@@ -38,7 +23,7 @@ export default function RoyalFloralTemplate({ data }: BiodataTemplateProps) {
   const zodiac = getFieldValue("zodiac") || "Your Sign";
 
   return (
-    <div className={`w-[794px] min-h-[1123px] bg-[#fffdf9] p-6 relative overflow-hidden text-slate-800 shadow-2xl mx-auto border-[16px] border-[#f3e5d8] ${manrope.className}`}>
+    <div className={`w-[794px] min-h-[1123px] bg-[#fffdf9] p-6 relative overflow-hidden text-slate-800 shadow-2xl mx-auto border-[16px] border-[#f3e5d8] font-body`}>
       {/* Decorative Gold Inner Border */}
       <div className="absolute inset-2 border border-[#d4af37]/30 pointer-events-none" />
 
@@ -77,9 +62,9 @@ export default function RoyalFloralTemplate({ data }: BiodataTemplateProps) {
               <div className="h-px w-12 bg-[#d4af37]/40" />
             </div>
             
-            <h1 className={`${playball.className} text-7xl text-[#b11e24] mb-4 leading-tight`}>Marriage Biodata</h1>
+            <h1 className="font-script text-7xl text-[#b11e24] mb-4 leading-tight">Marriage Biodata</h1>
             
-            <div className={`${fraunces.className} text-[11px] font-bold tracking-[0.25em] text-[#8b4513] mb-8 flex flex-col gap-2`}>
+            <div className="font-display text-[11px] font-bold tracking-[0.25em] text-[#8b4513] mb-8 flex flex-col gap-2">
               <p>BEAUTIFUL SOUL, KIND HEART</p>
               <p className="opacity-80">LOOKING FOR A LIFELONG PARTNER</p>
               <div className="flex justify-center mt-1">
@@ -89,7 +74,7 @@ export default function RoyalFloralTemplate({ data }: BiodataTemplateProps) {
 
             <div className="relative inline-block mt-4">
               <div className="absolute inset-x-[-40px] inset-y-[-10px] bg-pink-100/40 blur-2xl rounded-full" />
-              <h2 className={`${playball.className} text-6xl text-[#b11e24] relative z-10 px-8`}>
+              <h2 className="font-script text-6xl text-[#b11e24] relative z-10 px-8">
                 {data.fullName || "Your Name Here"}
               </h2>
             </div>
@@ -125,7 +110,7 @@ export default function RoyalFloralTemplate({ data }: BiodataTemplateProps) {
                  <div className="text-[#b11e24] mb-3 opacity-40">
                    <svg width="32" height="24" viewBox="0 0 32 24" fill="currentColor"><path d="M0 24V13.5C0 9.1 1.06667 5.73333 3.2 3.4C5.33333 1.06667 8.26667 0 12 0V5.2C10.1333 5.2 8.73333 5.73333 7.8 6.8C6.86667 7.86667 6.4 9.4 6.4 11.4V12.8H12V24H0ZM19.2 24V13.5C19.2 9.1 20.2667 5.73333 22.4 3.4C24.5333 1.06667 27.4667 0 31.2 0V5.2C29.3333 5.2 27.9333 5.73333 27 6.8C26.0667 7.86667 25.6 9.4 25.6 11.4V12.8H31.2V24H19.2Z"/></svg>
                  </div>
-                 <p className={`${fraunces.className} text-lg text-[#8b4513] leading-relaxed text-center font-medium italic`}>
+                 <p className="font-display text-lg text-[#8b4513] leading-relaxed text-center font-medium italic">
                    A good partner is someone who brings out the best in you and stands by you in every phase of life.
                  </p>
                  <div className="flex justify-center mt-4">
@@ -209,7 +194,7 @@ export default function RoyalFloralTemplate({ data }: BiodataTemplateProps) {
         <div className="mt-12 text-center relative">
            <div className="absolute inset-x-0 top-1/2 h-px bg-[#d4af37]/20 -z-10" />
            <div className="bg-[#fffdf9] inline-block px-8 relative z-10">
-              <p className={`${playball.className} text-[#b11e24] text-3xl mb-1`}>Looking forward to a beautiful journey together</p>
+              <p className="font-script text-[#b11e24] text-3xl mb-1">Looking forward to a beautiful journey together</p>
               <div className="flex justify-center items-center gap-2 mt-1">
                  <Heart className="w-3 h-3 text-[#b11e24] fill-current" />
                  <Heart className="w-4 h-4 text-[#b11e24] fill-current animate-pulse" />
