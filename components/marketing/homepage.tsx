@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { siteContent } from "@/constants/site-content";
 import { PageShell } from "@/components/shared/page-shell";
+import { getAllPosts } from "@/lib/blog";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { BiodataCTA } from "@/components/biodata/CTA";
 
@@ -52,7 +53,7 @@ export function Homepage() {
                 <div className="inline-flex items-center gap-2.5 rounded-full border border-[#b11e24]/20 bg-white/60 px-5 py-2.5 backdrop-blur-md shadow-sm glass">
                   <span className="flex h-2.5 w-2.5 rounded-full bg-[#b11e24] animate-ping" />
                   <p className="text-[0.7rem] font-bold uppercase tracking-[0.25em] text-[#b11e24]">
-                    {siteContent.hero.eyebrow}
+                    The Best Marriage Biodata Maker
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-emerald-600/20 bg-emerald-50 px-4 py-2 glass">
@@ -63,14 +64,14 @@ export function Homepage() {
               </div>
 
               <div className="space-y-6">
-                <h1 className="font-[family-name:var(--font-display)] text-[3.5rem] font-bold leading-[1.05] tracking-tight text-[#120d0e] sm:text-[4.5rem] lg:text-[5rem] xl:text-[6rem]">
-                  Create <span className="text-[#b11e24] relative">
-                    beautiful
+                <h1 className="font-[family-name:var(--font-display)] text-[3.5rem] font-bold leading-[1.05] tracking-tight text-[#120d0e] sm:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem]">
+                  Free Marriage <span className="text-[#b11e24] relative">
+                    Biodata Maker
                     <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#b11e24]/20" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 25 0 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="4" /></svg>
-                  </span> biodata for marriage.
+                  </span> Online
                 </h1>
                 <p className="max-w-[640px] text-lg leading-relaxed text-slate-600 sm:text-xl lg:text-[1.4rem] lg:leading-[1.6] font-medium">
-                  {siteContent.hero.description}
+                  Create beautiful marriage biodata for boys and girls with modern templates and instant PDF download.
                 </p>
               </div>
 
@@ -79,16 +80,15 @@ export function Homepage() {
                   href="/#builder"
                   className="group relative inline-flex h-16 items-center justify-center gap-3 overflow-hidden rounded-full bg-[#b11e24] px-10 text-lg font-bold text-white shadow-[0_20px_40px_rgba(177,30,36,0.25)] transition-all hover:scale-105 hover:bg-[#931719] active:scale-95 sm:w-auto"
                 >
-                  <span className="relative z-10">Start Building Free</span>
+                  <span className="relative z-10">Create Biodata</span>
                   <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  <div className="absolute inset-0 -z-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                 </Link>
 
                 <Link
-                  href="#templates"
+                  href="/templates"
                   className="inline-flex h-16 items-center justify-center gap-2 rounded-full border-2 border-slate-200 bg-white px-8 text-lg font-bold text-slate-700 transition-all hover:border-[#b11e24]/30 hover:bg-slate-50 active:scale-95 sm:w-auto glass"
                 >
-                  See Designs
+                  Browse Templates
                 </Link>
               </div>
 
@@ -144,30 +144,191 @@ export function Homepage() {
 
 
 
-      {/* Trust & Features Section - Compact Glass Bar */}
-      <section className="relative z-10 mx-auto  max-w-6xl px-6 lg:px-8 ">
-        <div className="rounded-[2rem] border border-white/60 bg-white/70 p-6 shadow-[0_20px_60px_rgba(177,30,36,0.06)] backdrop-blur-xl sm:p-10">
-          <div className="grid gap-10 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200/60">
-            {siteContent.features.map((feature, idx) => {
-              const icons = [
-                <svg key="1" className="h-6 w-6 text-[#D7A347]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
-                <svg key="2" className="h-6 w-6 text-[#D7A347]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>,
-                <svg key="3" className="h-6 w-6 text-[#D7A347]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
-              ];
-              return (
-                <div key={feature.title} className="flex flex-col items-center text-center px-4 pt-8 md:pt-0 first:pt-0">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#D7A347]/20 to-[#D7A347]/5 shadow-inner ring-1 ring-[#D7A347]/20">
-                    {icons[idx]}
-                  </div>
-                  <h3 className="font-[family-name:var(--font-display)] text-[1.35rem] font-bold tracking-tight text-slate-900">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-3 text-[1.05rem] leading-relaxed text-slate-600">
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
+      {/* Why Choose RishtaMaker Section */}
+      <section className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 -mt-10">
+        <div className="rounded-[2rem] border border-white/60 bg-white/70 p-8 shadow-[0_20px_60px_rgba(177,30,36,0.06)] backdrop-blur-xl sm:p-12">
+          <div className="text-center mb-10">
+            <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-slate-900 sm:text-4xl">
+              Why Choose RishtaMaker
+            </h2>
+            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+              The most trusted platform for creating professional marriage biodata.
+            </p>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { title: "Instant PDF Download", desc: "Download your biodata instantly in high-quality PDF format.", icon: "⬇️" },
+              { title: "Modern Biodata Templates", desc: "Choose from a variety of clean, modern, and traditional designs.", icon: "🎨" },
+              { title: "Easy Customization", desc: "Add, remove, or edit fields to fit your specific needs.", icon: "⚙️" },
+              { title: "Mobile Friendly", desc: "Create your biodata easily on any device, mobile or desktop.", icon: "📱" },
+              { title: "Hindi Biodata Support", desc: "Create biodata in Hindi or other regional languages.", icon: "🇮🇳" },
+              { title: "Fast & Free Biodata Builder", desc: "No registration required, create your biodata in minutes for free.", icon: "⚡" },
+            ].map((feature) => (
+              <div key={feature.title} className="flex flex-col p-6 bg-white rounded-2xl border border-slate-100 shadow-sm transition hover:shadow-md hover:border-[#b11e24]/10">
+                <div className="mb-4 text-3xl">{feature.icon}</div>
+                <h3 className="font-bold text-lg text-slate-900 mb-2">{feature.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof / Trust Section */}
+      <section className="bg-[#2a050c] text-white py-12 mt-16 rounded-[2rem] mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
+          {[
+            { label: "10,000+", detail: "Biodatas Created" },
+            { label: "Trusted", detail: "By Families Across India" },
+            { label: "50+", detail: "Modern Templates" },
+            { label: "100% Free", detail: "No Hidden Charges" },
+          ].map((stat, i) => (
+            <div key={i} className="flex flex-col items-center">
+              <p className="font-[family-name:var(--font-display)] text-4xl font-bold text-[#D7A347] mb-2">{stat.label}</p>
+              <p className="text-sm text-slate-300 font-medium">{stat.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Design Your Perfect Impression Section */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16 border-t border-slate-100 mt-16">
+        <div className="text-center mb-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#D7A347]">
+            Create Impact
+          </p>
+          <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-bold text-slate-900 sm:text-4xl">
+            Design Your Perfect Impression
+          </h2>
+          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+            Your biodata is your first introduction. We help you make it count.
+          </p>
+        </div>
+
+        <div className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
+          {/* Pillar 1 */}
+          <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-slate-50 shadow-sm hover:shadow-md transition">
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#b11e24]/10 to-[#b11e24]/5 text-[#b11e24]">
+              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            </div>
+            <h3 className="text-xl font-bold text-slate-800 mb-3">Stunning Aesthetics</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Choose from a variety of professionally designed templates that balance tradition and modernity.
+            </p>
+          </div>
+
+          {/* Pillar 2 */}
+          <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-slate-50 shadow-sm hover:shadow-md transition">
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#b11e24]/10 to-[#b11e24]/5 text-[#b11e24]">
+              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+            </div>
+            <h3 className="text-xl font-bold text-slate-800 mb-3">Seamless Experience</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Our intuitive builder makes it easy to add your details, customize fields, and see live updates.
+            </p>
+          </div>
+
+          {/* Pillar 3 */}
+          <div className="flex flex-col items-center text-center p-6 bg-white rounded-2xl border border-slate-50 shadow-sm hover:shadow-md transition">
+            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-[#b11e24]/10 to-[#b11e24]/5 text-[#b11e24]">
+              <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+            </div>
+            <h3 className="text-xl font-bold text-slate-800 mb-3">Instant Shareability</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Download your biodata as a high-quality PDF, ready to be shared with families on WhatsApp or email.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Content Section */}
+      <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
+        <div className="text-center mb-10">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-slate-900 sm:text-4xl">
+            Create Marriage Biodata Online Easily
+          </h2>
+          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+            Everything you need to know about creating the perfect matrimonial profile.
+          </p>
+        </div>
+
+        <div className="grid gap-10 md:grid-cols-2 max-w-5xl mx-auto">
+          {/* Block 1 */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-slate-800">What is a Marriage Biodata?</h3>
+            <p className="text-base text-slate-600 leading-relaxed">
+              A <span className="font-semibold text-slate-800">marriage biodata</span> is an essential document in the process of arranged marriages in India and many other cultures. It serves as your first introduction to potential life partners and their families. A well-crafted biodata can make a lasting impression and increase your chances of finding a compatible match.
+            </p>
+          </div>
+
+          {/* Block 2 */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-slate-800">How RishtaMaker Helps</h3>
+            <p className="text-base text-slate-600 leading-relaxed">
+              At RishtaMaker, we understand the importance of this document. Our <span className="font-semibold text-slate-800">marriage biodata maker</span> is designed to help you create a professional and attractive profile effortlessly. Whether you need a <span className="font-semibold text-slate-800">biodata for marriage</span> for a boy or a girl, our platform provides the perfect tools to showcase your details in the best light.
+            </p>
+          </div>
+
+          {/* Block 3 */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-slate-800">Variety of Formats</h3>
+            <p className="text-base text-slate-600 leading-relaxed">
+              One of the key features of our platform is the variety of <span className="font-semibold text-slate-800">marriage biodata format</span> options available. We offer both traditional and modern designs, ensuring that you can find a template that suits your preferences. Our templates are clean, elegant, and easy to read.
+            </p>
+          </div>
+
+          {/* Block 4 */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-slate-800">Instant PDF Download</h3>
+            <p className="text-base text-slate-600 leading-relaxed">
+              Creating your biodata is simple with our <span className="font-semibold text-slate-800">biodata maker online</span>. Simply fill in your details, choose a template, and download your <span className="font-semibold text-slate-800">marriage biodata pdf</span> instantly. Our PDF downloads are high-quality and ready to be shared.
+            </p>
+          </div>
+        </div>
+
+        {/* Bullet Points Section */}
+        <div className="max-w-4xl mx-auto mt-12 bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+          <h3 className="text-xl font-bold text-slate-800 mb-6 text-center">Key Benefits of Using RishtaMaker</h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              "100% Free to use for standard templates",
+              "No registration or login required",
+              "Mobile-friendly builder interface",
+              "Secure and private - your data is not stored",
+              "High-quality PDF export ready for print",
+              "Support for Hindi and regional languages",
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <svg className="h-5 w-5 text-emerald-500 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                <span className="text-slate-600 text-sm">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Quick Links / Explore Categories */}
+        <div className="max-w-4xl mx-auto mt-12 text-center">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#D7A347] mb-6">
+            Explore Categories
+          </h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { label: "Biodata for Boy", href: "/biodata-for-boy" },
+              { label: "Biodata for Girl", href: "/biodata-for-girl" },
+              { label: "Marriage Biodata Format", href: "/marriage-biodata-format" },
+              { label: "Marriage Biodata PDF", href: "/#builder" },
+              { label: "Hindi Biodata", href: "/hindi-biodata" },
+              { label: "Blog", href: "/blog" },
+              { label: "Templates", href: "/templates" },
+            ].map(item => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition-all hover:border-[#b11e24]/40 hover:text-[#b11e24] hover:shadow-md"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -180,52 +341,6 @@ export function Homepage() {
       <div id="builder" className="scroll-mt-6">
         <BiodataFormBuilder />
       </div>
-
-      {/* SEO Content Section - Compact Split Layout */}
-      <section className="mx-auto max-w-7xl px-6 -mt-6  lg:px-8  pb-10">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.5fr] lg:gap-16">
-          {/* Left Column: Main Intro Sticky */}
-          <div className="lg:sticky lg:top-8 lg:self-start">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--color-accent)]">
-              Guide
-            </p>
-            <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl leading-tight text-slate-900 sm:text-4xl">
-              {siteContent.seoFormatGuide[0].heading}
-            </h2>
-            <div className="mt-6 text-base leading-7 text-slate-600 space-y-4 whitespace-pre-wrap">
-              {siteContent.seoFormatGuide[0].content}
-            </div>
-          </div>
-
-          {/* Right Column: Grid of details */}
-          <div className="grid gap-6 sm:grid-cols-2">
-            {siteContent.seoFormatGuide.slice(1).map((section, idx) => {
-              const icons = [
-                <svg key="1" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>,
-                <svg key="2" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
-                <svg key="3" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>,
-                <svg key="4" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-              ];
-              return (
-                <div
-                  key={section.heading}
-                  className="rounded-[1.75rem] border border-[rgba(177,30,36,0.08)] bg-white/50 p-6 shadow-sm backdrop-blur-md transition hover:bg-white hover:shadow-md"
-                >
-                  <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-[#b11e24]/10 to-[#b11e24]/5 text-[#b11e24] ring-1 ring-[#b11e24]/10">
-                    {icons[idx]}
-                  </div>
-                  <h3 className="font-[family-name:var(--font-display)] text-xl font-bold tracking-tight text-slate-800 leading-snug">
-                    {section.heading}
-                  </h3>
-                  <p className="mt-2 text-[0.95rem] leading-relaxed text-slate-600 font-normal">
-                    {section.content}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* Wall of Love Section */}
       <section className="bg-slate-50 py-16 sm:py-20 lg:py-24 overflow-hidden">
@@ -281,8 +396,67 @@ export function Homepage() {
         </div>
       </section>
 
+      {/* Blog Section */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#D7A347]">
+            Blog
+          </p>
+          <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-semibold text-slate-900 sm:text-4xl">
+            Latest from our Blog
+          </h2>
+          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+            Expert advice and guides for your matrimonial journey.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {getAllPosts().slice(0, 3).map((post) => (
+            <article key={post.slug} className="group relative flex flex-col h-full rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all hover:-translate-y-1">
+              <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-10">
+                <span className="sr-only">View Article</span>
+              </Link>
+              <div className="aspect-[4/3] w-full bg-slate-100 overflow-hidden relative">
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex items-center gap-2 text-xs text-slate-500 mb-3 font-medium">
+                  <time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#b11e24] transition-colors line-clamp-2 leading-tight">
+                  {post.title}
+                </h3>
+                <p className="text-slate-600 text-sm mb-6 leading-relaxed line-clamp-3 flex-grow">
+                  {post.excerpt}
+                </p>
+                <div className="flex items-center gap-2 mt-auto text-[#b11e24] font-semibold text-sm group-hover:underline">
+                  <span>Read article</span>
+                  <svg className="w-4 h-4 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 hover:border-[#b11e24] hover:text-[#b11e24] transition-all"
+          >
+            View All Articles
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </Link>
+        </div>
+      </section>
+
       {/* FAQ Section - Clean Accordion */}
-      <section className="mx-auto max-w-3xl px-6 pt-8  lg:px-8">
+      <section className="mx-auto max-w-3xl px-6 pt-8 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#D7A347]">
             FAQ
@@ -294,7 +468,28 @@ export function Homepage() {
 
         <div className="mx-auto w-full rounded-3xl bg-white p-6 sm:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100">
           <div className="divide-y divide-slate-100">
-            {siteContent.faqs.map((faq) => (
+            {[
+              {
+                question: "What is marriage biodata?",
+                answer: "A marriage biodata is a document that summarizes a person's personal, family, educational, and professional details. It is used in arranged marriages to introduce potential candidates to each other.",
+              },
+              {
+                question: "How to create marriage biodata online?",
+                answer: "You can create it easily on RishtaMaker. Simply fill out the form with your details, choose a template, and download the PDF. No sign-up required.",
+              },
+              {
+                question: "Is RishtaMaker free?",
+                answer: "Yes, RishtaMaker offers a free biodata builder. You can create and download your biodata without paying anything. We also offer premium templates for a small fee.",
+              },
+              {
+                question: "Can I download biodata PDF?",
+                answer: "Yes, once you fill in your details and select a template, you can instantly download your biodata in high-quality PDF format.",
+              },
+              {
+                question: "Which biodata format is best for marriage?",
+                answer: "The best format is one that is clean, easy to read, and presents your information clearly. RishtaMaker offers both traditional and modern formats to suit your preference.",
+              },
+            ].map((faq) => (
               <details
                 key={faq.question}
                 className="group py-6 first:pt-0 last:pb-0"
@@ -325,74 +520,89 @@ export function Homepage() {
         </div>
       </section>
 
-      {/* SEO Footer Tags */}
-      <section className="border-t border-[#b11e24]/10 bg-gradient-to-b from-transparent to-[#b11e24]/5 py-16 text-center">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-12">
-            <h3 className="mb-6 font-[family-name:var(--font-display)] text-[1.4rem] font-bold text-[#120d0e]">
-              Trending Now 🚀
-            </h3>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                { label: "Biodata for Boy", href: "/biodata-for-boy" },
-                { label: "Biodata for Girl", href: "/biodata-for-girl" },
-                { label: "Hindi Biodata Format", href: "/hindi-biodata" },
-                { label: "Marriage Biodata Format 2026", href: "/marriage-biodata-format" },
-                { label: "Simple Biodata Format", href: "/simple-biodata-format" },
-              ].map(page => (
-                <Link
-                  key={page.href}
-                  href={page.href}
-                  className="rounded-full border border-blue-100 bg-blue-50/50 px-5 py-2.5 text-xs font-bold text-blue-600 transition-all hover:bg-blue-100"
-                >
-                  {page.label}
-                </Link>
-              ))}
-            </div>
-          </div>
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is marriage biodata?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A marriage biodata is a document that summarizes a person's personal, family, educational, and professional details. It is used in arranged marriages to introduce potential candidates to each other."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How to create marriage biodata online?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You can create it easily on RishtaMaker. Simply fill out the form with your details, choose a template, and download the PDF. No sign-up required."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is RishtaMaker free?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, RishtaMaker offers a free biodata builder. You can create and download your biodata without paying anything. We also offer premium templates for a small fee."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I download biodata PDF?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, once you fill in your details and select a template, you can instantly download your biodata in high-quality PDF format."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which biodata format is best for marriage?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The best format is one that is clean, easy to read, and presents your information clearly. RishtaMaker offers both traditional and modern formats to suit your preference."
+                }
+              }
+            ]
+          })
+        }}
+      />
 
-          <h3 className="mb-8 font-[family-name:var(--font-display)] text-[1.4rem] font-medium text-[#120d0e]">
-            Everything you need for the perfect matrimonial profile
-          </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              "marriage biodata maker", "marriage biodata builder", "biodata for marriage online",
-              "create marriage biodata online", "biodata maker for matrimony", "shaadi biodata maker",
-              "matrimony biodata maker", "online biodata generator", "marriage CV maker",
-              "rishta biodata creator", "free marriage biodata maker", "professional marriage biodata",
-              "indian marriage biodata format", "biodata for arranged marriage", "best biodata maker online",
-              "free marriage biodata maker with photo", "simple biodata format for marriage in india", "best matrimonial biodata format for boy",
-              "marriage biodata format for girl pdf", "hindu marriage biodata format download", "muslim marriage biodata format",
-              "marriage biodata template word format", "marriage biodata maker free download pdf", "create biodata for marriage online free india",
-              "biodata format for arranged marriage boy india", "modern biodata format for marriage", "stylish marriage biodata template",
-              "biodata maker with horoscope details", "kundli based biodata format for marriage", "marriage biodata in hindi format",
-              "marriage biodata maker india", "biodata maker for marriage in mumbai", "shaadi biodata format india",
-              "indian matrimonial biodata creator", "biodata format india for marriage", "rishta biodata india",
-              "marriage profile maker india", "biodata builder for indian matrimony", "online biodata for shaadi india",
-              "marriage resume india", "marriage biodata template free", "biodata format for marriage pdf download",
-              "marriage biodata sample for boy", "marriage biodata sample for girl", "simple biodata format for marriage",
-              "marriage bio data word format", "editable marriage biodata template", "modern biodata template for marriage",
-              "traditional biodata format india", "creative marriage biodata template", "how to make marriage biodata",
-              "what to include in marriage biodata", "best format for marriage biodata", "marriage biodata tips for boy",
-              "marriage biodata tips for girl", "how to write biodata for arranged marriage", "difference between resume and biodata marriage",
-              "marriage biodata mistakes to avoid", "biodata vs matrimonial profile", "how to create attractive marriage biodata",
-              "शादी के लिए बायोडाटा", "मैरिज बायोडाटा फॉर्मेट", "बायोडाटा कैसे बनाएं शादी के लिए",
-              "शादी का बायोडाटा ऑनलाइन बनाएं", "दूल्हे का बायोडाटा फॉर्मेट", "दुल्हन का बायोडाटा फॉर्मेट",
-              "हिंदी में बायोडाटा फॉर्मेट", "फ्री शादी बायोडाटा डाउनलोड", "शादी का प्रोफाइल कैसे बनाएं",
-              "ऑनलाइन बायोडाटा मेकर शादी", "best marriage biodata maker in india", "create biodata in 2 minutes",
-              "free biodata maker for shaadi", "modern biodata templates free", "instant marriage profile builder"
-            ].map(keyword => (
-              <Link
-                key={keyword}
-                href="/#builder"
-                className="rounded-full border border-[#b11e24]/15 bg-white px-5 py-2.5 text-[0.85rem] font-medium text-slate-600 shadow-sm transition-all hover:-translate-y-0.5 hover:border-[#b11e24]/40 hover:text-[#b11e24] hover:shadow-md"
-              >
-                {keyword}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Organization Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "RishtaMaker",
+            "url": "https://rishtamaker.in",
+            "logo": "https://rishtamaker.in/images/short_logo.png",
+            "sameAs": [
+              "https://www.facebook.com/rishtamaker",
+              "https://www.instagram.com/rishtamaker",
+              "https://twitter.com/rishtamaker"
+            ]
+          })
+        }}
+      />
+
+      {/* Website Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "url": "https://rishtamaker.in"
+          })
+        }}
+      />
     </PageShell>
   );
 }

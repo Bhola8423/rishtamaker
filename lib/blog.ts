@@ -28,6 +28,304 @@ export type BlogPost = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "biodata-sample-for-marriage",
+    title: "Perfect Biodata Sample for Marriage (Free Download)",
+    metaTitle: "Biodata Sample for Marriage | Free Template & Guide",
+    metaDescription: "Looking for a perfect biodata sample for marriage? Download our free templates and create your professional profile in minutes.",
+    excerpt: "A complete guide to filling a biodata sample for marriage. What to write in each field and how to make it stand out.",
+    content: `
+A marriage biodata sample is a filled-out version of a template that shows you exactly what information goes where. It helps you understand the flow of the document and gives you ideas for what to write in your own profile.
+
+In this article, we provide a perfect biodata sample for marriage and guide you through filling each field to create an impressive profile.
+
+## The Perfect Biodata Sample
+
+Here is a sample of how a completed biodata should look:
+
+### Personal Details
+- **Full Name**: Rajesh Kumar
+- **Date of Birth**: 10th May 1994
+- **Time of Birth**: 10:30 AM
+- **Place of Birth**: New Delhi
+- **Height**: 5'9"
+- **Complexion**: Fair
+- **Blood Group**: B+
+- **Religion / Caste**: Hindu / Brahmin
+- **Gotra**: Kashyap
+
+### Educational Background
+- **Schooling**: Delhi Public School, R.K. Puram
+- **Graduation**: B.Tech in Mechanical Engineering, IIT Delhi (2016)
+- **Post Graduation**: MBA, IIM Ahmedabad (2019)
+
+### Professional Details
+- **Occupation**: Senior Product Manager at a leading e-commerce company
+- **Location**: Bangalore
+- **Annual Income**: ₹20 LPA+
+
+### Family Details
+- **Father's Name**: Mr. Suresh Kumar (Retired Bank Manager)
+- **Mother's Name**: Mrs. Sunita Kumar (Homemaker)
+- **Brother**: 1 Younger Brother (Studying B.Tech)
+- **Sister**: None
+
+### About Me
+"I am an optimistic, career-oriented, and family-loving person. I believe in maintaining a balance between traditional values and a modern lifestyle. I enjoy reading, traveling, and playing badminton in my free time."
+
+### Partner Expectations
+"I am looking for an educated, understanding, and caring partner who shares similar family values. A professional who is willing to support and grow together would be an ideal match."
+
+## How to Fill Each Section
+
+### 1. Personal Details
+Be accurate with your date and time of birth, especially if horoscope matching is important to your family. Mention your height correctly, as it is often a key criterion.
+
+### 2. Education and Career
+Highlight your highest qualification and the reputation of the institute if it's well-known. Be specific about your job role and location.
+
+### 3. Family Details
+Mention your parents' professions to give an idea of your family background. Mention siblings and their status too.
+
+### 4. About Me and Expectations
+This is the most important part. Use it to describe your personality and what you are looking for in a partner. Be honest and positive.
+
+## Why This Sample Works
+
+This sample is effective because:
+- **It's Balanced**: It covers all necessary aspects without being too long.
+- **It's Clear**: Information is easy to find.
+- **It's Positive**: The tone is respectful and forward-looking.
+
+## Common Mistakes to Avoid
+
+- **Vague Descriptions**: Avoid saying "I work in a company". Say "I am a Software Engineer at XYZ Corp".
+- **Casual Photos**: Use a professional or clear, well-lit photo. No selfies or group photos.
+- **Spelling Errors**: Proofread your document before sharing.
+
+By following this sample and guide, you can create a profile that is both professional and appealing.
+
+For more help with layouts and designs, check out our [templates](/templates) and [biodata format](/marriage-biodata-format) pages.
+`,
+    coverImage: "/images/blog-sample.jpg",
+    date: "2026-05-12",
+    author: "RishtaMaker Team",
+    category: "Biodata Guides",
+    tags: ["biodata sample", "guide", "how to fill biodata"],
+    faqs: [
+      {
+        question: "Is it necessary to include time of birth?",
+        answer: "It is optional, but required if you want to generate a horoscope or if the other family asks for it."
+      },
+      {
+        question: "What if I don't want to disclose my income?",
+        answer: "You can leave it blank or state 'Disclosed later' if you prefer."
+      }
+    ]
+  },
+  {
+    slug: "marriage-biodata-examples",
+    title: "Top Marriage Biodata Examples to Inspire You",
+    metaTitle: "10+ Marriage Biodata Examples | Download Free Samples",
+    metaDescription: "Check out the best marriage biodata examples for boys and girls. Get inspiration for your own profile and download templates.",
+    excerpt: "Looking for inspiration? Check out these real-world marriage biodata examples for different profiles.",
+    content: `
+When creating your marriage biodata, seeing examples of how others have done it can be incredibly helpful. It gives you a sense of what information to include, how to structure it, and what tone to use.
+
+In this article, we share several real-world marriage biodata examples for different profiles, including software engineers, doctors, and family-oriented individuals. These examples will help you create a profile that stands out and attracts the right matches.
+
+## Example 1: The Modern Software Engineer (Boy)
+
+Here is a sample text for a modern, career-oriented boy:
+
+**Personal Details:**
+- Name: Rahul Sharma
+- Date of Birth: 15th June 1995
+- Height: 5'10"
+- Education: B.Tech in Computer Science from IIT Delhi
+- Occupation: Senior Software Engineer at a leading tech firm in Bangalore
+- Annual Income: ₹25 LPA+
+
+**About Me:**
+"I am an ambitious, optimistic, and career-oriented person who values continuous learning. I am passionate about technology and enjoy solving complex problems. In my free time, I love playing guitar, reading non-fiction, and exploring new cafes. I believe in a relationship built on mutual respect and support."
+
+**Partner Expectations:**
+"I am looking for an educated, independent, and understanding partner who shares similar family values. Someone who is career-oriented but also values family life would be a great match."
+
+## Example 2: The Compassionate Doctor (Girl)
+
+Here is a sample text for a professional and caring girl:
+
+**Personal Details:**
+- Name: Dr. Priya Patel
+- Date of Birth: 22nd October 1996
+- Height: 5'5"
+- Education: MBBS, MD (Pediatrics) from AIIMS New Delhi
+- Occupation: Consultant Pediatrician at a private hospital in Mumbai
+
+**About Me:**
+"I am a compassionate, dedicated, and cheerful person who loves her work. I am passionate about children's health and enjoy making a difference. I love traveling and have a keen interest in photography. I value family traditions and enjoy spending quality time with my loved ones."
+
+**Partner Expectations:**
+"I am looking for a well-educated, open-minded, and caring partner. A professional who understands the demands of a medical career and supports my ambitions would be ideal."
+
+## Example 3: The Traditional and Family-Oriented Profile
+
+Here is a sample for a profile that values tradition and family background heavily:
+
+**Personal Details:**
+- Name: Amit Verma
+- Date of Birth: 5th April 1993
+- Height: 5'8"
+- Education: M.Com from Mumbai University
+- Occupation: Manager at a family-owned business
+
+**About Me:**
+"I am a simple, calm, and family-oriented person. I believe in maintaining a balance between traditional values and a modern lifestyle. I am deeply connected to my roots and value family traditions. My weekends are usually spent with my family or catching up with close friends."
+
+**Partner Expectations:**
+"I am looking for a life partner who is caring, understanding, and values family bonds as much as I do. Someone who is ready to share responsibilities and build a happy home together."
+
+## Example 4: The Creative Professional (Girl)
+
+Here is a sample text for a girl in a creative field:
+
+**Personal Details:**
+- Name: Ananya Iyer
+- Date of Birth: 12th August 1997
+- Height: 5'4"
+- Education: B.Des from NID Ahmedabad
+- Occupation: UI/UX Designer at a design agency
+
+**About Me:**
+"I am a warm, creative, and empathetic person who values small joys in life. I have a passion for art, culture, and design. I enjoy painting, gardening, and practicing yoga. I believe a successful marriage is a partnership of equals where both support each other's passions."
+
+**Partner Expectations:**
+"I am looking for a partner who is honest, understanding, and shares similar values regarding family and life. Someone who appreciates creativity and is open to new experiences would be a great match."
+
+## How to Customize These Examples
+
+To make these examples your own, follow these steps:
+1. **Swap Details**: Replace the education, job title, and hobbies with your own.
+2. **Adjust Tone**: If you are more introverted, tone down the "love exploring" part and focus on "enjoy quiet evenings".
+3. **Be Honest**: Don't claim to love reading if you haven't picked up a book in years. Authenticity is key.
+
+## Key Takeaways from These Examples
+
+1. **Be Specific**: Notice how the examples use specific details about education and profession instead of vague terms.
+2. **Match the Tone**: The tone of the 'About Me' section matches the persona of the individual.
+3. **Clear Expectations**: The expectations are positive and clear.
+
+By following these examples, you can create a profile that effectively communicates who you are and what you are looking for.
+
+For more help with layouts and designs, check out our [templates](/templates) and [biodata format](/marriage-biodata-format) pages.
+`,
+    coverImage: "/images/blog-examples.jpg",
+    date: "2026-05-12",
+    author: "RishtaMaker Team",
+    category: "Biodata Guides",
+    tags: ["biodata examples", "samples", "biodata tips"],
+    faqs: [
+      {
+        question: "Can I copy these examples directly?",
+        answer: "You can use them as inspiration, but it's best to customize the details to reflect your true self."
+      },
+      {
+        question: "Should I include salary in all examples?",
+        answer: "It is optional. Some families prefer to know upfront, while others discuss it later."
+      }
+    ]
+  },
+  {
+    slug: "about-me-for-marriage-biodata",
+    title: "How to Write a Perfect \"About Me\" for Marriage Biodata",
+    metaTitle: "How to Write \"About Me\" for Marriage Biodata | Tips & Examples",
+    metaDescription: "Learn how to write an impressive 'About Me' section for your marriage biodata. Get tips, examples, and templates to stand out.",
+    excerpt: "The 'About Me' section is the heart of your biodata. Learn how to write it perfectly with our guide and examples.",
+    content: `
+Writing the "About Me" section in a marriage biodata is often the most challenging part of the process. While listing your height, education, and family details is straightforward, describing who you are in a few paragraphs requires introspection and tact. This section is your voice on the document. It tells the reader about your personality, your values, and what you are looking for in a life partner.
+
+In traditional matchmaking, families often receive dozens of biodatas. Most of them look identical—lists of degrees, salaries, and family names. The "About Me" section is your chance to break the monotony and stand out. It transforms a list of facts into a living, breathing profile of a human being.
+
+Here is a comprehensive guide to writing the perfect "About Me" section, complete with tips, examples, and strategies to make your profile truly memorable.
+
+## Why the "About Me" Section Matters
+
+Many people underestimate the power of this section. They either leave it blank or write generic clichés like "I am a simple and down-to-earth person." While there is nothing wrong with being simple or down-to-earth, these phrases have become so common that they have lost their meaning. They don't tell the reader anything unique about you.
+
+A well-written "About Me" section does three critical things:
+- It Humanizes Your Profile: It gives the reader a sense of your personality and tone.
+- It Filters Matches: By being specific about who you are and what you want, you attract compatible individuals and filter out those who are not a good fit.
+- It Initiates Conversation: It provides talking points for when families connect or when you meet the person for the first time.
+
+## Step-by-Step Guide to Writing Your Description
+
+To write a compelling description, break it down into four main components:
+
+### 1. Your Personality and Lifestyle
+Start by describing your core personality traits and how you live your life. Are you introverted or extroverted? Do you love traveling or are you a homebody? Do you value fitness, reading, or music?
+
+Instead of just listing adjectives, use short examples or descriptions. Instead of "I am adventurous," try "I love exploring new places and try to plan at least one trekking trip every year." This creates a vivid picture in the reader's mind.
+
+### 4. What You Are Looking For (Partner Expectations)
+Briefly state what you are looking for in a partner. Be positive. Instead of listing what you *don't* want, focus on what you *do* want.
+
+For example: "I am looking for a partner who is educated, understanding, and shares similar family values. Someone who is career-oriented but also values family life would be a great match."
+
+## "About Me" Examples for Boys
+
+Here are some examples tailored for different profiles:
+
+### Example 1: For the Modern Professional
+"I am a software engineer based in Bangalore, passionate about technology and innovation. I am an optimistic and career-oriented person who values continuous learning. In my free time, I love playing guitar, reading non-fiction, and exploring new cafes. I believe in a relationship built on mutual respect and support. I am looking for a partner who is educated, independent, and shares a modern yet grounded outlook on life."
+
+### Example 2: For the Family-Oriented Boy
+"I am a simple, calm, and family-oriented person working as a finance manager. I believe in maintaining a balance between traditional values and a modern lifestyle. My weekends are usually spent with my family or catching up with close friends. I enjoy cooking and listening to classical music. I am looking for a life partner who is caring, understanding, and values family bonds as much as I do."
+
+## "About Me" Examples for Girls
+
+### Example 1: For the Independent Career Woman
+"I am a pediatrician practicing in Mumbai. I am an independent, ambitious, and cheerful person who loves her work. I am passionate about traveling and have a keen interest in photography. I believe a successful marriage is a partnership of equals where both support each other's dreams. I am looking for a partner who is well-educated, open-minded, and shares a progressive outlook on life."
+
+### Example 2: For the Creative and Grounded Girl
+"I am a graphic designer with a love for art and culture. I am a warm, creative, and empathetic person who values small joys in life. I enjoy painting, gardening, and practicing yoga. I am deeply connected to my roots and value family traditions. I am looking for a partner who is honest, understanding, and shares similar values regarding family and life."
+
+## Words and Phrases to Avoid
+
+To keep your profile fresh and engaging, try to avoid these overused clichés:
+- "Simple and down-to-earth" (Be specific instead)
+- "I love music and movies" (Everyone does. Mention specific genres or artists)
+- "Looking for a beautiful and cultured girl" (Focus on personality traits instead)
+
+## Tone and Style Tips
+
+The tone of your writing should reflect your personality. Here are some general tips:
+- Be Positive: Focus on what you enjoy and what you look forward to.
+- Be Concise: Avoid long, winding sentences. Keep it punchy.
+- Proofread: Spelling and grammar errors can ruin a good impression.
+
+## Conclusion
+
+Writing the "About Me" section takes time. Don't rush it. Write a draft, read it aloud, and ask a close friend or family member for feedback. They often know your best qualities better than you do!
+
+For more help with layouts and designs, check out our [templates](/templates) and [biodata format](/marriage-biodata-format) pages.
+`,
+    coverImage: "/images/blog-about-me.jpg",
+    date: "2026-05-12",
+    author: "RishtaMaker Team",
+    category: "Biodata Guides",
+    tags: ["about me", "biodata tips", "how to write biodata"],
+    faqs: [
+      {
+        question: "How long should the 'About Me' section be?",
+        answer: "It should ideally be between 100 to 150 words. Long enough to give a clear picture, but short enough to be read quickly."
+      },
+      {
+        question: "Should I mention my salary in the 'About Me' section?",
+        answer: "No, salary details should be listed in the professional details section, or discussed later during family meetings."
+      }
+    ]
+  },
+  {
     slug: "how-to-make-marriage-biodata-step-by-step",
     title: "How to Make a Marriage Biodata (Step-by-Step)",
     metaTitle: "How to Make a Marriage Biodata | Step-by-Step Guide 2026",
@@ -255,6 +553,182 @@ A beautiful, aesthetic design that incorporates subtle floral patterns, very pop
     faqs: [
       { question: "Which biodata format is best for marriage?", answer: "The best format depends on your audience. Traditional families prefer detailed, astrology-heavy formats, while modern professionals often prefer clean, minimalist designs." },
       { question: "Can I download these templates for free?", answer: "Yes, you can create and download basic templates for free using the RishtaMaker builder, with premium designs available for a small fee." }
+    ]
+  },
+  {
+    slug: "about-me-for-marriage-biodata",
+    title: "How to Write \"About Me\" for Marriage Biodata",
+    metaTitle: "How to Write About Me for Marriage Biodata | Examples & Tips",
+    metaDescription: "Learn how to write a compelling 'About Me' section for your marriage biodata. Get examples for boys and girls that stand out.",
+    excerpt: "The 'About Me' section is your voice. Learn how to write it effectively to attract the right match.",
+    content: `
+Writing about yourself can be challenging, especially for a marriage biodata. This section is where you showcase your personality, values, and lifestyle.
+
+## 1. Keep It Positive and Humble
+Focus on your strengths and what makes you unique. Avoid sounding arrogant or overly demanding.
+
+## 2. Mention Your Core Values
+What is important to you? Family, career, honesty, or personal growth? Sharing your values helps find compatible matches.
+
+## 3. Describe Your Lifestyle
+Do you love traveling, reading, or cooking? Mentioning hobbies gives a glimpse into your daily life.
+
+## Examples for Boys:
+"I am a software engineer with a passion for innovation. I value family traditions and enjoy weekend getaways."
+
+## Examples for Girls:
+"I am a teacher who loves working with children. I am family-oriented and enjoy painting in my free time."
+    `,
+    coverImage: "/images/blog-4.jpg",
+    date: "2026-05-10",
+    author: "RishtaMaker Team",
+    category: "Biodata Guides",
+    tags: ["About Me", "Tips", "Writing"],
+    faqs: [
+      { question: "How long should the About Me section be?", answer: "Keep it to 3-4 sentences. Be concise but meaningful." }
+    ]
+  },
+  {
+    slug: "marriage-biodata-examples",
+    title: "Top Marriage Biodata Examples to Inspire You",
+    metaTitle: "Marriage Biodata Examples | Samples for Boys & Girls",
+    metaDescription: "Check out the best marriage biodata examples for boys and girls. Learn what to include and how to format your profile.",
+    excerpt: "See real examples of successful marriage biodatas and learn from them.",
+    content: `
+Looking at examples is the best way to understand how to create your own biodata. Here are a few samples:
+
+## Example 1: Modern Professional (Boy)
+Focuses on career and modern lifestyle. Uses a clean, minimalist format.
+
+## Example 2: Traditional Family-Oriented (Girl)
+Highlights family background, values, and traditional details like horoscope.
+
+## Example 3: Balanced Approach (Both)
+Combines professional details with a warm, personal 'About Me' section.
+    `,
+    coverImage: "/images/blog-1.jpg",
+    date: "2026-05-11",
+    author: "RishtaMaker Team",
+    category: "Biodata Guides",
+    tags: ["Examples", "Samples", "Inspiration"],
+    faqs: [
+      { question: "Where can I find more examples?", answer: "You can browse our [templates section](/templates) to see how different layouts look with sample data." }
+    ]
+  },
+  {
+    slug: "biodata-sample-for-marriage",
+    title: "Perfect Biodata Sample for Marriage (Free Download)",
+    metaTitle: "Biodata Sample for Marriage | Free Downloadable Formats",
+    metaDescription: "Download the perfect biodata sample for marriage. Choose from various formats and create your own in minutes.",
+    excerpt: "Get a ready-to-use biodata sample and start building your profile today.",
+    content: `
+A sample biodata helps you get started quickly. Here is a standard structure you can follow:
+
+## Personal Details
+- Full Name
+- Date of Birth
+- Height
+- Education
+- Occupation
+
+## Family Details
+- Father's Name & Occupation
+- Mother's Name & Occupation
+- Siblings
+
+## Contact Details
+- Phone Number
+- Email
+- Address
+    `,
+    coverImage: "/images/blog-2.jpg",
+    date: "2026-05-12",
+    author: "RishtaMaker Team",
+    category: "Biodata Guides",
+    tags: ["Sample", "Download", "Format"],
+    faqs: [
+      { question: "Can I download these samples?", answer: "Yes, you can use our builder to fill in your details and download the PDF for free." }
+    ]
+  },
+  {
+    slug: "modern-marriage-biodata-design",
+    title: "Modern Marriage Biodata Design Trends in 2026",
+    metaTitle: "Modern Marriage Biodata Design Trends | 2026 Guide",
+    metaDescription: "Discover the latest trends in marriage biodata design. Learn how to make your profile look modern and appealing.",
+    excerpt: "Design matters. Learn what's trending in biodata design this year.",
+    content: `
+In 2026, marriage biodata design is shifting towards cleaner, more professional layouts.
+
+## 1. Minimalist Aesthetics
+Less is more. Using whitespace effectively makes the biodata easy to read.
+
+## 2. Subtle Colors
+Moving away from bright, loud colors to subtle pastels and rich, muted tones like teal and gold.
+
+## 3. High-Quality Typography
+Using modern fonts that are clear and legible on both mobile screens and print.
+    `,
+    coverImage: "/images/blog-6.jpg",
+    date: "2026-05-13",
+    author: "RishtaMaker Design Team",
+    category: "Templates & Formats",
+    tags: ["Design", "Trends", "Modern"],
+    faqs: [
+      { question: "Are modern designs acceptable to traditional families?", answer: "Yes, a clean and professional design is usually appreciated by everyone as it shows effort and seriousness." }
+    ]
+  },
+  {
+    slug: "marriage-biodata-in-hindi",
+    title: "How to Create Marriage Biodata in Hindi",
+    metaTitle: "How to Create Marriage Biodata in Hindi | Step-by-Step",
+    metaDescription: "Learn how to create a marriage biodata in Hindi. Get tips on typing and formatting your profile in regional languages.",
+    excerpt: "Create a biodata that connects with your community. Learn how to write in Hindi.",
+    content: `
+Creating a biodata in Hindi is a great way to connect with families who prefer regional languages.
+
+## 1. Use a Hindi Keyboard
+You can use online tools or mobile keyboards to type in Hindi directly.
+
+## 2. Standard Terms
+Use standard Hindi terms for sections like 'व्यक्तिगत विवरण' (Personal Details) and 'पारिवारिक पृष्ठभूमि' (Family Background).
+
+## 3. Review for Accuracy
+Make sure there are no spelling or grammatical errors in Hindi.
+    `,
+    coverImage: "/images/blog-7.jpg",
+    date: "2026-05-14",
+    author: "RishtaMaker Team",
+    category: "Regional (India-focused)",
+    tags: ["Hindi", "Regional", "Guide"],
+    faqs: [
+      { question: "Does RishtaMaker support Hindi?", answer: "Yes, you can type in Hindi in our builder form and it will be rendered in the template." }
+    ]
+  },
+  {
+    slug: "editable-marriage-biodata-pdf",
+    title: "How to Create an Editable Marriage Biodata PDF",
+    metaTitle: "How to Create an Editable Marriage Biodata PDF | Online Guide",
+    metaDescription: "Learn how to create an editable marriage biodata PDF online. Update your details anytime and download a fresh copy.",
+    excerpt: "Need to make changes later? Learn how to create an editable biodata PDF.",
+    content: `
+An editable biodata allows you to update your details as your career or preferences change.
+
+## 1. Use an Online Builder
+Platforms like RishtaMaker allow you to enter details in a form and generate a [marriage biodata PDF](/marriage-biodata-pdf).
+
+## 2. Save Your Details
+While we don't store data for privacy, you can keep a copy of your text to quickly fill the form again.
+
+## 3. Generate New PDF
+Whenever you need an update, just fill the form again with new details and download a fresh PDF.
+    `,
+    coverImage: "/images/blog-3.jpg",
+    date: "2026-05-15",
+    author: "RishtaMaker Team",
+    category: "Tools & Comparisons",
+    tags: ["Editable", "PDF", "Guide"],
+    faqs: [
+      { question: "Can I edit the downloaded PDF directly?", answer: "Direct editing of PDFs requires specific software. It's easier to generate a new one from our site." }
     ]
   }
 ];

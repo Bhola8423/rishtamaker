@@ -1,211 +1,117 @@
 "use client";
 
-import { PageShell } from "@/components/shared/page-shell";
+import { SeoLandingPage } from "@/components/marketing/seo-landing-page";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, CheckCircle2, Download, FileText, Sparkles, Layout, Star, ChevronRight, Quote, Clock } from "lucide-react";
-import { BiodataCTA } from "@/components/biodata/CTA";
-import { PopularTemplatesSection } from "@/components/marketing/popular-templates";
 
 export default function MarriageBiodataFormatPage() {
-  const faqData = [
+  const heroData = {
+    badge: "Trending Formats 2026",
+    title: "Marriage Biodata Format",
+    subtitle: "Stop using boring Word documents. Create a stunning, professional marriage biodata format that makes a lasting impression on the bride or groom's family.",
+    ctaText: "Create My Biodata",
+    ctaHref: "/#builder",
+    secondaryCtaText: "View All Formats",
+    secondaryCtaHref: "/templates",
+    imageSrc: "/images/marriage-biodata-hero.png",
+    imageAlt: "Premium Marriage Biodata Formats",
+  };
+
+  const seoContentData = {
+    title: "The Ultimate Guide to Choosing the Perfect Marriage Biodata Format",
+    blocks: [
+      {
+        title: "Why Your Biodata Format Matters More Than You Think",
+        text: [
+          <>In the world of arranged marriages, your <strong>marriage biodata format</strong> acts as your first introduction. It represents your personality, your family values, and your professional achievements before you even meet the person. A well-crafted biodata can make a lasting impression, while a poorly formatted one might result in missed opportunities. It is your silent advocate, presenting your case to the other family.</>,
+          <>Many people still use outdated Word documents or generic templates that look cluttered and unprofessional. In today's digital age, aesthetics matter. A clean, modern biodata format shows that you are serious about the process and have put effort into presenting yourself well. You can explore our <Link href="/templates" className="text-[#b11e24] hover:underline">templates</Link> to find the right style for you. A good design helps you stand out in a pile of profiles.</>,
+          <>When you share your profile with a potential match's family, they often judge the level of seriousness based on how well the information is organized. A structured layout helps them quickly find the details they are looking for, such as education, profession, and family background. It reflects your organized nature and respect for the process.</>,
+        ],
+      },
+      {
+        title: "Key Elements of a Perfect Biodata Format for Marriage",
+        text: [
+          <>A comprehensive <strong>biodata format for marriage</strong> should include several key sections to give a complete picture of who you are. These include Personal Details, Educational Background, Professional Career, Family Details, and Partner Expectations. Each section plays a vital role in building a complete profile.</>,
+          <>Personal details should cover your full name, date of birth, height, and a brief 'About Me' section. The educational and professional sections should highlight your degrees and current job role. Family details are crucial in many cultures, so including information about parents and siblings is essential. This helps the other family understand the environment you come from.</>,
+          <>Additionally, you may want to include details like horoscope compatibility (Gotra, Rasi, Nakshatra) if that is important to your family. Being transparent about these details from the beginning saves time for both families. For specific guides on creating profiles for different genders, check out our <Link href="/biodata-for-boy" className="text-[#b11e24] hover:underline">biodata for boy</Link> and <Link href="/biodata-for-girl" className="text-[#b11e24] hover:underline">biodata for girl</Link> pages. Providing this information upfront shows honesty and builds trust.</>,
+        ],
+      },
+      {
+        title: "How to Choose the Right Matrimonial Biodata Format",
+        text: [
+          <>Choosing the right <strong>matrimonial biodata format</strong> depends on your personal preferences and cultural background. Some families prefer a traditional layout with religious symbols and specific details like horoscope and gotra. Others prefer a modern, minimalist design that focuses more on career and personal interests.</>,
+          <>At RishtaMaker, we offer a variety of templates to suit both preferences. Whether you want a simple and elegant design or a more traditional and ornate layout, you can find the perfect format on our platform. Our templates are designed by experts to ensure they are easy to read and visually appealing.</>,
+          <>If you are looking for a format that balances tradition and modernity, our "Royal Maroon" or "Golden Vintage" templates are excellent choices. For a more modern approach, consider the "Ocean Minimal" or "Midnight Modern" designs.</>,
+        ],
+      },
+      {
+        title: "Tips for Writing an Impressive Marriage Resume Format",
+        text: [
+          <>Think of your biodata as a <strong>marriage resume format</strong>. Just like a job resume, it needs to highlight your strengths and present you in the best light. Here are some tips to make it stand out:</>,
+          <>1. Be Honest and Authentic: Always provide accurate information. Honesty builds trust from the start.</>,
+          <>2. Highlight Your Personality: Don't just list facts. Use the 'About Me' section to describe your values, hobbies, and what you are looking for in a partner.</>,
+          <>3. Choose a High-Quality Photo: A clear, pleasant photograph makes a huge difference. Avoid selfies or group photos.</>,
+          <>4. Keep It Concise: Try to keep it to one or two pages. Long, wordy biodatas often get ignored.</>,
+          <>By following these tips, you can create a profile that not only looks good but also effectively communicates who you are and what you are looking for in a life partner.</>,
+        ],
+      },
+      {
+        title: "The Advantages of Using an Online Biodata Maker",
+        text: [
+          <>Using an online biodata maker offers several advantages over traditional methods like using Microsoft Word or hiring a designer. Our tool ensures that your formatting is always perfect, and you don't have to worry about alignment issues or font inconsistencies.</>,
+          <>Plus, it's incredibly fast and easy to use. Simply fill in your details in our user-friendly form, choose a template you like, and your biodata is generated instantly. You can download it as a high-quality PDF that is ready to be shared on WhatsApp or email.</>,
+          <>Another major advantage is privacy. We do not require you to create an account or log in, meaning your personal data is processed securely and not stored on our servers longer than necessary to generate your PDF. You can start creating right from the <Link href="/" className="text-[#b11e24] hover:underline">homepage</Link>.</>,
+        ],
+      },
+      {
+        title: "Common Mistakes to Avoid in Your Biodata Format",
+        text: [
+          <>To ensure your biodata makes the best impression, avoid these common mistakes:</>,
+          <>- Spelling and Grammar Errors: Typos make the document look careless. Always proofread before downloading.</>,
+          <>- Overly Demanding Expectations: While it's good to be clear about what you want, listing too many demands can sound negative.</>,
+          <>- Poor Photo Quality: Using blurred or inappropriate photos can lead to instant rejection.</>,
+          <>- Cluttered Layout: Trying to fit too much information without proper spacing makes it hard to read. Use our templates to maintain a clean layout.</>,
+        ],
+      },
+    ],
+    benefitsTitle: "Why Choose RishtaMaker for Your Matrimonial Biodata Format?",
+    benefits: [
+      "100% Free to create and download standard formats",
+      "No registration or login required - your privacy is protected",
+      "Mobile-friendly interface - create on the go",
+      "High-quality PDF downloads ready for sharing or printing",
+      "Support for Hindi and other regional languages",
+      "A wide variety of modern and traditional templates",
+    ],
+  };
+
+  const faqs = [
     {
       q: "What is a marriage biodata?",
-      a: "A marriage biodata is a document that summarizes a person's personal, educational, and professional background, along with family details and partner preferences, specifically for matrimonial purposes."
+      a: "A marriage biodata is a document that summarizes a person's personal, educational, and professional background, along with family details and partner preferences, specifically for matrimonial purposes.",
     },
     {
       q: "What should be included in a marriage biodata format?",
-      a: "A standard format includes Personal Details (Name, DOB, Height), Educational Qualification, Professional Career, Family Details (Parents, Siblings), and Partner Expectations."
+      a: "A standard format includes Personal Details (Name, DOB, Height), Educational Qualification, Professional Career, Family Details (Parents, Siblings), and Partner Expectations.",
     },
     {
       q: "Is RishtaMaker's biodata format free?",
-      a: "Yes, you can create and download basic professional biodata formats for free on RishtaMaker. We also offer premium designs for a small fee."
+      a: "Yes, you can create and download basic professional biodata formats for free on RishtaMaker. We also offer premium designs for a small fee.",
     },
     {
       q: "Can I download the biodata in PDF format?",
-      a: "Absolutely! Once you fill in your details and choose a template, you can download your biodata as a high-quality PDF instantly."
-    }
+      a: "Absolutely! Once you fill in your details and choose a template, you can download your biodata as a high-quality PDF instantly.",
+    },
   ];
 
   return (
-    <PageShell>
-      {/* Premium Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-[#fffcfb] pt-20 pb-20">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(177,30,36,0.06),_transparent_50%)]" />
-        <div className="absolute -left-40 -top-40 h-[600px] w-[600px] rounded-full bg-red-500/[0.02] blur-[120px]" />
-        
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="text-left">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#b11e24]/20 bg-[#b11e24]/5 px-4 py-2 mb-8">
-                <span className="flex h-2 w-2 rounded-full bg-[#b11e24] animate-pulse" />
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#b11e24]">
-                  Trending Formats 2026
-                </p>
-              </div>
-              <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-display)] font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">
-                Modern Marriage <br />
-                <span className="text-[#b11e24] italic">Biodata Formats</span>
-              </h1>
-              <p className="text-xl text-slate-600 max-w-xl mb-12 leading-relaxed">
-                Stop using boring Word documents. Create a stunning, professional marriage biodata format that makes a lasting impression on the bride or groom's family.
-              </p>
-              <div className="flex flex-wrap gap-5">
-                <Link href="/#builder" className="inline-flex h-16 items-center justify-center gap-3 rounded-full bg-[#b11e24] px-10 text-lg font-bold text-white shadow-[0_20px_50px_rgba(177,30,36,0.25)] transition-all hover:scale-105 hover:bg-[#8b1c31] active:scale-95">
-                  Create My Biodata <ArrowRight className="w-6 h-6" />
-                </Link>
-                <Link href="/templates" className="inline-flex h-16 items-center justify-center gap-3 rounded-full border-2 border-slate-200 bg-white px-10 text-lg font-bold text-slate-700 transition-all hover:border-red-100 hover:bg-red-50">
-                  View All Formats
-                </Link>
-              </div>
-
-              {/* Quick Stats */}
-              <div className="mt-12 flex items-center gap-8">
-                <div className="flex items-center gap-2">
-                   <Clock className="h-5 w-5 text-slate-400" />
-                   <p className="text-sm font-medium text-slate-500">2 Mins to Create</p>
-                </div>
-                <div className="flex items-center gap-2">
-                   <Download className="h-5 w-5 text-slate-400" />
-                   <p className="text-sm font-medium text-slate-500">Instant PDF Export</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Hero Image Section */}
-            <div className="relative group">
-              <div className="absolute -inset-10 bg-red-100/50 rounded-[5rem] rotate-3 transition-transform duration-700 group-hover:rotate-0" />
-              <div className="relative z-10 rounded-[4rem] overflow-hidden shadow-2xl border-[12px] border-white">
-                <Image 
-                  src="/images/marriage-biodata-hero.png" 
-                  alt="Premium Marriage Biodata Formats" 
-                  width={800} 
-                  height={800}
-                  className="w-full h-auto transition-transform duration-1000 group-hover:scale-105"
-                  priority
-                />
-              </div>
-              {/* Floating Badge */}
-              <div className="absolute -right-8 -top-8 h-24 w-24 bg-[#b11e24] rounded-full flex items-center justify-center text-white text-center p-2 shadow-2xl z-20 animate-bounce-slow">
-                <p className="text-[10px] font-black uppercase leading-tight">100%<br/>Free<br/>Basic</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEO Content Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="relative">
-               <div className="aspect-video bg-red-50 rounded-[3rem] absolute inset-0 -z-10 translate-x-4 translate-y-4" />
-               <div className="relative bg-white p-12 rounded-[3rem] shadow-xl border border-slate-100">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-8 font-[family-name:var(--font-display)]">The Importance of a Well-Structured Format</h2>
-                  <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-                    <p>
-                      In the world of arranged marriages, your <strong>marriage biodata format</strong> acts as your first introduction. It represents your personality, your family values, and your professional achievements.
-                    </p>
-                    <p>
-                      A cluttered or poorly formatted biodata can often lead to missed opportunities. With <strong>RishtaMaker</strong>, we have revolutionized the way people create their matrimonial profiles.
-                    </p>
-                  </div>
-               </div>
-            </div>
-
-            <div className="space-y-12">
-              <h3 className="text-3xl font-bold text-slate-900 font-[family-name:var(--font-display)]">What's inside our formats?</h3>
-              <div className="grid sm:grid-cols-2 gap-6">
-                {[
-                  { t: "Personal Details", d: "Name, Age, Height, and 'About Me'.", icon: <CheckCircle2 className="h-5 w-5" /> },
-                  { t: "Career Path", d: "Degrees and current job role.", icon: <CheckCircle2 className="h-5 w-5" /> },
-                  { t: "Family Roots", d: "Details about parents and siblings.", icon: <CheckCircle2 className="h-5 w-5" /> },
-                  { t: "Cultural Info", d: "Horoscope and Gotra details.", icon: <CheckCircle2 className="h-5 w-5" /> }
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-4 items-start p-4 rounded-2xl bg-slate-50 transition-all hover:bg-white hover:shadow-md">
-                    <div className="text-green-500 mt-1">{item.icon}</div>
-                    <div>
-                      <h4 className="font-bold text-slate-900">{item.t}</h4>
-                      <p className="text-sm text-slate-500">{item.d}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Templates Section */}
-      <section id="preview">
-        <PopularTemplatesSection />
-      </section>
-
-      {/* Modern Step Guide */}
-      <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(177,30,36,0.1),_transparent_50%)]" />
-        <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-display)] font-bold mb-4">Create in 5 Simple Steps</h2>
-            <p className="text-slate-400">Professional biodata creation, simplified for everyone.</p>
-          </div>
-          <div className="grid md:grid-cols-5 gap-12">
-            {[
-              { t: "Pick Template", d: "Select from our premium designs." },
-              { t: "Fill Details", d: "Enter career and family info." },
-              { t: "AI Magic", d: "Auto-generate your bio." },
-              { t: "Live Preview", d: "See changes instantly." },
-              { t: "PDF Export", d: "Get your high-quality PDF." }
-            ].map((s, i) => (
-              <div key={i} className="text-center group">
-                <div className="mx-auto h-20 w-20 rounded-[2.5rem] bg-white/5 border border-white/10 flex items-center justify-center mb-8 text-3xl font-black text-white transition-all group-hover:bg-[#b11e24] group-hover:scale-110">
-                  {i + 1}
-                </div>
-                <h4 className="text-xl font-bold mb-3">{s.t}</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">{s.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Modern FAQ */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-           <h2 className="text-4xl font-[family-name:var(--font-display)] font-bold text-slate-900 text-center mb-16">Expert Advice & FAQs</h2>
-           <div className="grid gap-6">
-              {faqData.map((faq, i) => (
-                <div key={i} className="p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 transition-all hover:bg-white hover:shadow-xl hover:border-red-100">
-                  <h4 className="text-xl font-bold text-slate-900 mb-4">{faq.q}</h4>
-                  <p className="text-slate-600 leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
-           </div>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-6 py-24 max-w-6xl">
-        <BiodataCTA />
-      </div>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(f => ({
-              "@type": "Question",
-              "name": f.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": f.a
-              }
-            }))
-          })
-        }}
-      />
-    </PageShell>
+    <SeoLandingPage
+      hero={heroData}
+      seoContent={seoContentData}
+      faqs={faqs}
+      breadcrumbItems={[
+        { name: "Home", url: "https://rishtamaker.in" },
+        { name: "Marriage Biodata Format", url: "https://rishtamaker.in/marriage-biodata-format" }
+      ]}
+    />
   );
 }

@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { getAllPosts } from '@/lib/blog';
+import { biodataTemplates } from '@/components/biodata/templates';
 
 export const dynamic = 'force-static';
 
@@ -15,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/biodata-for-girl', changeFrequency: 'weekly' as const, priority: 0.9 },
     { url: '/hindi-biodata', changeFrequency: 'weekly' as const, priority: 0.9 },
     { url: '/marriage-biodata-format', changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: '/marriage-biodata-pdf', changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: '/simple-biodata-format', changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: '/blog', changeFrequency: 'daily' as const, priority: 0.8 },
   ];
@@ -26,7 +28,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7
   }));
 
-  const sitemapRoutes: MetadataRoute.Sitemap = [...staticRoutes, ...professionRoutes].map((route) => ({
+  const templateRoutes = biodataTemplates.map(t => ({
+    url: `/template/${t.id}`,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8
+  }));
+
+  const sitemapRoutes: MetadataRoute.Sitemap = [...staticRoutes, ...professionRoutes, ...templateRoutes].map((route) => ({
     url: `${baseUrl}${route.url}`,
     lastModified: new Date(),
     changeFrequency: route.changeFrequency,

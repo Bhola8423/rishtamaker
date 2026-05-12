@@ -1,241 +1,119 @@
 "use client";
 
-import { PageShell } from "@/components/shared/page-shell";
+import { SeoLandingPage } from "@/components/marketing/seo-landing-page";
 import Link from "next/link";
-import Image from "next/image";
-import { UserCircle, Briefcase, GraduationCap, ArrowRight, ShieldCheck, Zap, Star, CheckCircle2, ChevronRight, Quote } from "lucide-react";
-import { BiodataCTA } from "@/components/biodata/CTA";
-import { PopularTemplatesSection } from "@/components/marketing/popular-templates";
 
 export default function BiodataForBoyPage() {
-  const faqData = [
+  const heroData = {
+    badge: "Tailored for Grooms",
+    title: "Biodata Format for Boy",
+    subtitle: "Create a strong, professional marriage biodata that highlights your career and personality. Choose from clean designs optimized for grooms.",
+    ctaText: "Create Biodata",
+    ctaHref: "/#builder",
+    secondaryCtaText: "Use Template",
+    secondaryCtaHref: "/templates",
+    imageSrc: "/images/biodata-boy-hero.png",
+    imageAlt: "Groom Biodata Formats",
+  };
+
+  const seoContentData = {
+    title: "The Ultimate Guide to Creating the Perfect Biodata for a Boy",
+    blocks: [
+      {
+        title: "The Importance of a Strong Biodata Format for a Boy",
+        text: [
+          <>In the context of arranged marriages, the <strong>biodata format for boy</strong> plays a crucial role in creating a positive first impression. It is often the first piece of information a bride's family receives about a potential groom. Therefore, it needs to be professional, clean, and comprehensive. A well-organized document reflects your seriousness and respect for the process.</>,
+          <>Many boys make the mistake of using casual layouts or not providing enough details about their career and family. In competitive matrimonial searches, a professional design can make a significant difference. You can explore our <Link href="/templates" className="text-[#b11e24] hover:underline">template pages</Link> to find a style that matches your professional standing.</>,
+          <>A good profile should strike a balance between personal details and professional achievements. It should showcase not just what you do, but also who you are as a person and what values you hold dear.</>,
+        ],
+      },
+      {
+        title: "Key Elements to Include in a Groom Biodata",
+        text: [
+          <>A comprehensive <strong>marriage biodata for boy</strong> should include specific sections to give a complete picture. These typically include Personal Details, Educational Background, Professional Career, Family Details, and Partner Expectations.</>,
+          <>Personal details should cover your full name, date of birth, height, and a brief 'About Me' section. The educational section should highlight your degrees and the institutions you attended. For the professional section, mention your current job title, company, and location. This is often a key area of interest for the bride's family.</>,
+          <>Family details are equally important. Mention your parents' professions and your siblings. If you are creating a profile for a girl or want to see the other side, check out our <Link href="/biodata-for-girl" className="text-[#b11e24] hover:underline">biodata for girl</Link> page. For more general advice on layout, visit our <Link href="/marriage-biodata-format" className="text-[#b11e24] hover:underline">marriage biodata format</Link> guide.</>,
+        ],
+      },
+      {
+        title: "How to Choose the Right Boy Biodata for Marriage",
+        text: [
+          <>Choosing the right <strong>boy biodata for marriage</strong> depends on your background and preferences. If you are a professional in a corporate field, a clean, minimalist design like our 'Ocean Minimal' or 'Midnight Modern' templates works best. These designs focus on readability and a modern aesthetic.</>,
+          <>If your family values tradition and cultural details heavily, a more ornate layout like 'Royal Maroon' with sections for horoscope and gotra might be more appropriate. RishtaMaker offers a variety of options to suit every need.</>,
+          <>Ultimately, the best format is one that presents your information clearly without being cluttered. Avoid using bright, distracting colors and stick to a professional palette that conveys maturity and stability.</>,
+        ],
+      },
+      {
+        title: "Tips for Highlighting Career and Education",
+        text: [
+          <>For a <strong>groom biodata</strong>, the career and education sections are often scrutinized the most. Here are some tips to make them stand out:</>,
+          <>- Be Specific: Instead of just saying 'Software Engineer', mention the specific domain or company if you are comfortable. E.g., 'Senior Software Engineer at a leading tech firm'.</>,
+          <>- Mention Growth: If you have had significant career progression, you can mention it briefly in the 'About Me' section to show ambition and stability.</>,
+          <>- Educational Pedigree: If you attended well-known universities or colleges, make sure to highlight them as they add credibility to your profile.</>,
+          <>Presenting this information clearly helps the other family assess compatibility regarding lifestyle and future goals.</>,
+        ],
+      },
+      {
+        title: "Why Use RishtaMaker for Groom Biodatas",
+        text: [
+          <>RishtaMaker provides a specialized platform for creating a <strong>simple biodata for boy</strong>. Our tool is designed to be fast, easy, and secure. Here are the benefits of using our platform:</>,
+          <>- No Account Needed: Create your document without sharing your email or phone number. We respect your privacy.</>,
+          <>- Live Preview: See exactly how your document will look as you fill in the details.</>,
+          <>- High-Quality PDF: Download a crisp, clean PDF that is ready to be shared on WhatsApp or printed.</>,
+          <>- Mobile-Friendly: Our builder works perfectly on mobile devices, allowing you to create your profile anytime, anywhere. Start creating from the <Link href="/" className="text-[#b11e24] hover:underline">homepage</Link>.</>,
+        ],
+      },
+      {
+        title: "Common Mistakes Boys Make in Their Biodata",
+        text: [
+          <>To ensure your profile makes the best impression, avoid these common pitfalls:</>,
+          <>- Casual Photos: Using group photos, selfies with filters, or blurred images is a big no-no. Use a professional or clear, well-lit photograph.</>,
+          <>- Spelling Errors: Typos in your job title or education make the document look careless. Always proofread.</>,
+          <>- Vague Descriptions: Saying 'I work in business' is too vague. Be more descriptive about your role or industry.</>,
+          <>- Neglecting the 'About Me' Section: This is your voice. Use it to describe your personality and values, not just repeat your facts.</>,
+        ],
+      },
+    ],
+    benefitsTitle: "Why Choose RishtaMaker's Groom Templates?",
+    benefits: [
+      "Designs optimized specifically for a masculine and professional look",
+      "100% Free to use and download standard templates",
+      "No registration required - create in total privacy",
+      "Instant PDF generation ready for digital sharing",
+      "Support for detailed family and astrological information",
+      "Easy-to-use form with live preview functionality",
+    ],
+  };
+
+  const faqs = [
     {
-      q: "What should be the focus of a boy's marriage biodata?",
-      a: "A groom's biodata should focus on educational pedigree, career stability, family background, and values. Financial stability and long-term career prospects are often key considerations for the bride's family."
+      q: "What is the best biodata format for a boy?",
+      a: "The best format is one that is clean, professional, and clearly highlights your career, education, and family background. Minimalist designs are very popular for modern professionals.",
     },
     {
-      q: "Is it necessary to add a photo in the boy's biodata?",
-      a: "While optional, adding a professional and clear photograph significantly increases the chances of getting a positive response. It builds trust and provides a face to the profile."
+      q: "Should I include a photo in my biodata?",
+      a: "Yes, including a clear, professional-looking photo drastically increases the chances of a positive response. Avoid casual selfies.",
     },
     {
-      q: "How to write a bio for marriage biodata for a boy?",
-      a: "Keep it polite and honest. Mention your personality, hobbies, and what you are looking for in a life partner. You can use RishtaMaker's AI tool to generate a professional bio automatically."
-    }
+      q: "Is RishtaMaker free for creating boy biodatas?",
+      a: "Yes, we offer free professional templates that you can fill and download as a PDF without any cost.",
+    },
+    {
+      q: "Can I create a biodata in Hindi?",
+      a: "Yes, our builder supports typing in Hindi and other regional languages, and it will be rendered correctly in the template.",
+    },
   ];
 
   return (
-    <PageShell>
-      {/* Premium Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-slate-900 pt-20 pb-20">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.1),_transparent_50%)]" />
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-        
-        <div className="container mx-auto px-6 max-w-[1440px] relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <div className="text-left">
-              <div className="inline-flex items-center gap-3 rounded-full border border-blue-500/20 bg-blue-500/5 px-4 py-2 mb-8 backdrop-blur-sm">
-                <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse" />
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-400">
-                  Professional Groom Formats 2026
-                </p>
-              </div>
-              <h1 className="text-5xl md:text-7xl font-[family-name:var(--font-display)] font-bold text-white leading-[1.1] mb-8 tracking-tight">
-                Marriage Biodata <br />
-                <span className="text-blue-500 italic">for Professionals</span>
-              </h1>
-              <p className="text-xl text-slate-400 max-w-xl mb-12 leading-relaxed">
-                Design a high-impact matrimonial profile that highlights your career, education, and values. Compete at the highest level with our sleek, masculine designs.
-              </p>
-              <div className="flex flex-wrap gap-5">
-                <Link href="/#builder" className="inline-flex h-16 items-center justify-center gap-3 rounded-full bg-blue-600 px-10 text-lg font-bold text-white shadow-[0_20px_50px_rgba(37,99,235,0.3)] transition-all hover:scale-105 hover:bg-blue-700 active:scale-95">
-                  Start Building Now <ArrowRight className="w-6 h-6" />
-                </Link>
-                <Link href="#preview" className="inline-flex h-16 items-center justify-center gap-3 rounded-full border border-slate-700 bg-white/5 px-10 text-lg font-bold text-white backdrop-blur-sm transition-all hover:bg-white/10">
-                  View Formats
-                </Link>
-              </div>
-
-              {/* Trust Badge */}
-              <div className="mt-12 flex items-center gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 max-w-md">
-                <div className="flex -space-x-3">
-                  {[1,2,3].map(i => (
-                    <div key={i} className="h-10 w-10 rounded-full border-2 border-slate-900 bg-slate-800" />
-                  ))}
-                </div>
-                <div className="text-sm">
-                  <p className="text-white font-bold">Trusted by 50k+ Grooms</p>
-                  <p className="text-slate-500">Rated 4.9/5 by Indian Families</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Premium Preview Image */}
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-blue-500/20 rounded-[4rem] blur-3xl opacity-50 group-hover:opacity-75 transition-opacity" />
-              <div className="relative z-10 rounded-[3.5rem] overflow-hidden shadow-2xl border-8 border-slate-800/50 backdrop-blur-md">
-                <Image 
-                  src="/images/biodata-boy-hero.png" 
-                  alt="Premium Boy Biodata Design" 
-                  width={800} 
-                  height={1000}
-                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
-                  priority
-                />
-              </div>
-              {/* Floating Stat Card */}
-              <div className="absolute -left-10 bottom-20 p-6 bg-slate-800 border border-slate-700 rounded-3xl shadow-2xl z-20 animate-bounce-slow">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="h-8 w-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                    <Star className="h-4 w-4 text-blue-500" />
-                  </div>
-                  <p className="text-xs font-black uppercase text-slate-400">Success Rate</p>
-                </div>
-                <p className="text-2xl font-bold text-white">92% Match</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Feature Grid - Modern Glass Cards */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-[1440px]">
-          <div className="grid md:grid-cols-3 gap-10">
-            {[
-              { 
-                icon: <Briefcase className="h-7 w-7" />, 
-                t: "Career Focused", 
-                d: "Specialized sections for corporate roles, business, and government services.",
-                color: "bg-blue-50 text-blue-600"
-              },
-              { 
-                icon: <ShieldCheck className="h-7 w-7" />, 
-                t: "Authority Design", 
-                d: "Clean, authoritative layouts that command respect and build immediate trust.",
-                color: "bg-slate-900 text-white"
-              },
-              { 
-                icon: <Zap className="h-7 w-7" />, 
-                t: "AI Bio Generator", 
-                d: "Let our AI draft a professional self-intro that reflects your true personality.",
-                color: "bg-indigo-50 text-indigo-600"
-              }
-            ].map((f, i) => (
-              <div key={i} className="group p-10 rounded-[2.5rem] border border-slate-100 bg-white transition-all hover:shadow-2xl hover:-translate-y-2">
-                <div className={`h-16 w-16 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:rotate-6 ${f.color}`}>
-                  {f.icon}
-                </div>
-                <h4 className="text-2xl font-bold text-slate-900 mb-4">{f.t}</h4>
-                <p className="text-slate-500 leading-relaxed">{f.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Modern Content Section */}
-      <section className="py-24 bg-slate-50">
-        <div className="container mx-auto px-6 max-w-[1440px]">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
-            <div className="order-2 lg:order-1">
-              <h2 className="text-4xl font-[family-name:var(--font-display)] font-bold text-slate-900 mb-8">
-                The Science of a <br /> Perfect Groom Profile
-              </h2>
-              <div className="space-y-6">
-                {[
-                  "Professional Stability: Clearly present your career trajectory.",
-                  "Educational Pedigree: Highlight your academic milestones.",
-                  "Family Foundation: Give families a clear view of your roots.",
-                  "Aesthetic Appeal: Use designs that signal success."
-                ].map((text, i) => (
-                  <div key={i} className="flex items-center gap-4 text-lg text-slate-700">
-                    <CheckCircle2 className="h-6 w-6 text-blue-500 flex-shrink-0" />
-                    <span>{text}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-12 p-8 bg-white rounded-[2rem] border border-slate-200 shadow-sm">
-                <Quote className="h-8 w-8 text-blue-100 mb-4" />
-                <p className="text-slate-600 italic leading-relaxed">
-                  "A boy's biodata is the first interview of a lifetime partnership. We make sure you're dressed for success."
-                </p>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2 relative">
-               <div className="aspect-square bg-blue-100 rounded-[4rem] rotate-3 absolute inset-0 -z-10" />
-               <div className="relative bg-white p-4 rounded-[4rem] shadow-2xl">
-                 <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" 
-                    alt="Confident Professional" 
-                    className="rounded-[3.5rem] w-full h-full object-cover"
-                 />
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Templates Preview */}
-      <section id="preview">
-        <PopularTemplatesSection gender="boy" />
-      </section>
-
-      {/* Dark Footer CTA */}
-      <div className="container mx-auto px-6 py-24 max-w-[1440px]">
-        <div className="relative rounded-[4rem] overflow-hidden bg-slate-900 p-12 md:p-24 text-center">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.15),_transparent_50%)]" />
-          <div className="relative z-10">
-            <h2 className="text-4xl md:text-6xl font-[family-name:var(--font-display)] font-bold text-white mb-8">
-              Ready to take the <br /> next step?
-            </h2>
-            <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
-              Join thousands of professionals who have already built their perfect matrimonial profile with RishtaMaker.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6">
-              <Link href="/#builder" className="h-16 inline-flex items-center justify-center rounded-full bg-blue-600 px-12 text-lg font-bold text-white transition-all hover:scale-105 hover:bg-blue-700">
-                Create My Biodata
-              </Link>
-              <Link href="/templates" className="h-16 inline-flex items-center justify-center rounded-full border border-slate-700 bg-white/5 px-12 text-lg font-bold text-white backdrop-blur-sm transition-all hover:bg-white/10">
-                View All Designs
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* FAQ Modernized */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-display)] font-bold text-slate-900 text-center mb-16">Expert Advice</h2>
-          <div className="grid gap-6">
-            {faqData.map((faq, i) => (
-              <div key={i} className="p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 transition-all hover:bg-white hover:shadow-xl hover:border-blue-100">
-                <h4 className="text-xl font-bold text-slate-900 mb-4">{faq.q}</h4>
-                <p className="text-slate-600 leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(f => ({
-              "@type": "Question",
-              "name": f.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": f.a
-              }
-            }))
-          })
-        }}
-      />
-    </PageShell>
+    <SeoLandingPage
+      hero={heroData}
+      seoContent={seoContentData}
+      faqs={faqs}
+      gender="boy"
+      breadcrumbItems={[
+        { name: "Home", url: "https://rishtamaker.in" },
+        { name: "Biodata for Boy", url: "https://rishtamaker.in/biodata-for-boy" }
+      ]}
+    />
   );
 }

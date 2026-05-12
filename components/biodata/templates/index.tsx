@@ -29,7 +29,7 @@ export type BiodataTemplateDefinition = {
 
 export const standardTemplates: BiodataTemplateDefinition[] = [
   {
-    id: "classic-maroon",
+    id: "hindu-biodata-template",
     name: "Royal Maroon",
     description: "Deep maroon biodata with gold styling and traditional section headers.",
     gender: "boy",
@@ -48,7 +48,7 @@ export const standardTemplates: BiodataTemplateDefinition[] = [
     Component: FloralCreamTemplate,
   },
   {
-    id: "minimal-slate",
+    id: "simple-biodata-format",
     name: "Sacred Classic",
     description: "White traditional layout with top mantra styling and side portrait placement.",
     gender: "boy",
@@ -94,7 +94,7 @@ export const standardTemplates: BiodataTemplateDefinition[] = [
     Component: MaroonSplitTemplate,
   },
   {
-    id: "modern-dark",
+    id: "modern-marriage-biodata",
     name: "Midnight Modern",
     description: "Sleek and professional dark-themed layout for a modern touch.",
     gender: "boy",

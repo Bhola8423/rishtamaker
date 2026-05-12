@@ -42,11 +42,11 @@ export function SiteFooter() {
       {/* Background glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(177,30,36,0.12),_transparent_50%)]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-8 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
+      <div className="relative mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           
-          {/* Left Side: Brand & Links */}
-          <div className="flex flex-col md:flex-row items-center gap-6">
+          {/* Column 1: Brand & About */}
+          <div className="flex flex-col gap-4">
             <Link href="/" className="inline-block shrink-0">
               <Image
                 src="/images/short_logo.png"
@@ -56,20 +56,10 @@ export function SiteFooter() {
                 className="h-11 w-11 object-contain transition-transform hover:scale-105"
               />
             </Link>
-            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-slate-400">
-              {siteContent.navigation.map((item) => (
-                <Link key={item.label} href={item.href} className="hover:text-white transition-colors">
-                  {item.label}
-                </Link>
-              ))}
-              <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="#" className="hover:text-white transition-colors">Terms</Link>
-            </div>
-          </div>
-
-          {/* Right Side: Social & Copyright */}
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="flex items-center space-x-5">
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Create beautiful, professional marriage biodata online for free. Choose from modern templates and download as PDF.
+            </p>
+            <div className="flex items-center space-x-4 mt-2">
               {siteContent.socialMedia.map((item) => (
                 <a
                   key={item.name}
@@ -83,12 +73,53 @@ export function SiteFooter() {
                 </a>
               ))}
             </div>
-            <div className="hidden md:block h-4 w-px bg-slate-800" />
-            <p className="text-xs text-slate-500 text-center md:text-left">
-              &copy; {new Date().getFullYear()} {siteContent.brand.name}. Made with precision for beautiful matching.
-            </p>
           </div>
 
+          {/* Column 2: Product */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#D7A347] mb-4">Product</h3>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/#builder" className="hover:text-white transition-colors">Create Biodata</Link></li>
+              <li><Link href="/#templates" className="hover:text-white transition-colors">Templates</Link></li>
+              <li><Link href="/premium-templates" className="hover:text-white transition-colors">Premium Collection</Link></li>
+              <li><Link href="/hindi-biodata" className="hover:text-white transition-colors">Hindi Biodata</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 3: Categories */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#D7A347] mb-4">Categories</h3>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/biodata-for-boy" className="hover:text-white transition-colors">Biodata for Boy</Link></li>
+              <li><Link href="/biodata-for-girl" className="hover:text-white transition-colors">Biodata for Girl</Link></li>
+              <li><Link href="/marriage-biodata-format" className="hover:text-white transition-colors">Marriage Biodata Format</Link></li>
+              <li><Link href="/marriage-biodata-pdf" className="hover:text-white transition-colors">Marriage Biodata PDF</Link></li>
+            </ul>
+          </div>
+
+          {/* Column 4: Support & Legal */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#D7A347] mb-4">Support & Legal</h3>
+            <ul className="space-y-3 text-sm">
+              <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link></li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-slate-800 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-500 text-center md:text-left">
+            &copy; {new Date().getFullYear()} {siteContent.brand.name}. Made with precision for beautiful matching.
+          </p>
+          <div className="flex gap-6 text-xs text-slate-500">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms</Link>
+            <Link href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</Link>
+          </div>
         </div>
       </div>
     </footer>

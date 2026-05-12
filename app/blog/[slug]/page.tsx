@@ -56,6 +56,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         return `<h2 class="text-3xl font-[family-name:var(--font-display)] font-semibold text-slate-900 mt-12 mb-6 tracking-tight">${processed.replace('## ', '')}</h2>`;
       }
 
+      // Handle Bullet Points
+      if (processed.startsWith('- ')) {
+        return `<p class="text-[1.15rem] text-slate-700 leading-[1.7] mb-4 font-normal ml-6 flex gap-2"><span>•</span><span>${processed.replace('- ', '')}</span></p>`;
+      }
+
       // Handle Images: ![alt](url)
       const imgMatch = processed.match(/!\[(.*?)\]\((.*?)\)/);
       if (imgMatch) {
@@ -69,6 +74,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       // Handle Bold
       processed = processed.replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-slate-900">$1</strong>');
+
+      // Handle Links
+      processed = processed.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" class="text-[#b11e24] hover:underline">$1</a>');
 
       return `<p class="text-[1.15rem] text-slate-700 leading-[1.7] mb-8 font-normal">${processed}</p>`;
     })
