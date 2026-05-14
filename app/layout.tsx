@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://rishtamaker.in'),
   title: "RishtaMaker | Free Marriage Biodata Template & Maker Online",
-  description: "Download the perfect marriage biodata template. Create a professional matrimonial profile in 2 minutes with our online biodata maker. Free PDF download.",
+  description: "Create your marriage biodata with our free templates. Best marriage biodata format for boy and girl. Create shaadi biodata, matrimonial profile, and wedding resume in 2 minutes. Free PDF download.",
   icons: {
     icon: '/images/short_logo.png',
     shortcut: '/images/short_logo.png',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "RishtaMaker | Free Marriage Biodata Template & Maker Online",
-    description: "Download the perfect marriage biodata template. Create a professional matrimonial profile in 2 minutes with our online biodata maker. Free PDF download.",
+    description: "Create your marriage biodata with our free templates. Best marriage biodata format for boy and girl. Create shaadi biodata, matrimonial profile, and wedding resume in 2 minutes. Free PDF download.",
     url: "https://rishtamaker.in",
     siteName: "RishtaMaker",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "RishtaMaker | Free Marriage Biodata Template & Maker Online",
-    description: "Download the perfect marriage biodata template. Create a professional matrimonial profile in 2 minutes with our online biodata maker. Free PDF download.",
+    description: "Create your marriage biodata with our free templates. Best marriage biodata format for boy and girl. Create shaadi biodata, matrimonial profile, and wedding resume in 2 minutes. Free PDF download.",
     images: ["/images/templates-hero-3d.png"],
   },
 };

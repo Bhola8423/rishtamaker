@@ -71,7 +71,7 @@ export function Homepage() {
                   </span> & Maker
                 </h1>
                 <p className="max-w-[640px] text-lg leading-relaxed text-slate-600 sm:text-xl lg:text-[1.4rem] lg:leading-[1.6] font-medium">
-                  Create beautiful profiles with our free marriage biodata templates for boys and girls, and instantly download as PDF.
+                  Create beautiful profiles with our free <strong>marriage biodata format</strong> for boys and girls. Best <strong>shaadi biodata maker</strong> to instantly download your <strong>matrimonial profile</strong> as PDF.
                 </p>
               </div>
 
@@ -247,7 +247,7 @@ export function Homepage() {
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
         <div className="text-center mb-10">
           <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-slate-900 sm:text-4xl">
-            Free Marriage Biodata Template Download
+            Free Marriage Biodata Format & Shaadi Biodata Maker
           </h2>
           <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
             Everything you need to know about creating the perfect matrimonial profile.
@@ -259,31 +259,31 @@ export function Homepage() {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-slate-800">What is a Marriage Biodata?</h3>
             <p className="text-base text-slate-600 leading-relaxed">
-              A <span className="font-semibold text-slate-800">marriage biodata</span> is an essential document in the process of arranged marriages in India and many other cultures. It serves as your first introduction to potential life partners and their families. A well-crafted biodata can make a lasting impression and increase your chances of finding a compatible match.
+              A <span className="font-semibold text-slate-800">marriage biodata</span> (also known as a <span className="font-semibold text-slate-800">shaadi biodata</span> or <span className="font-semibold text-slate-800">matrimonial biodata</span>) is an essential document in the process of arranged marriages. It serves as your <span className="font-semibold text-slate-800">marriage resume</span> or <span className="font-semibold text-slate-800">marriage CV format</span>, providing a first introduction to potential life partners and their families.
             </p>
           </div>
 
           {/* Block 2 */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-slate-800">Perfect Marriage Biodata Templates</h3>
+            <h3 className="text-xl font-bold text-slate-800">Free Marriage Biodata Template</h3>
             <p className="text-base text-slate-600 leading-relaxed">
-              At RishtaMaker, we understand the importance of this document. Our <span className="font-semibold text-slate-800">marriage biodata template</span> collection is designed to help you create a professional and attractive profile effortlessly. Whether you need a <span className="font-semibold text-slate-800">biodata for marriage</span> for a boy or a girl, our free biodata maker provides the perfect tools to showcase your details in the best light.
+              At RishtaMaker, we offer an extensive collection of <span className="font-semibold text-slate-800">marriage biodata template</span> options. Whether you need an <span className="font-semibold text-slate-800">editable marriage biodata</span> or a <span className="font-semibold text-slate-800">modern marriage biodata</span>, our designs are optimized for impact. Our <span className="font-semibold text-slate-800">marriage biodata maker</span> ensures you can create an <span className="font-semibold text-slate-800">attractive marriage biodata</span> in minutes.
             </p>
           </div>
 
           {/* Block 3 */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-slate-800">Variety of Formats</h3>
+            <h3 className="text-xl font-bold text-slate-800">Professional Marriage Biodata Design</h3>
             <p className="text-base text-slate-600 leading-relaxed">
-              One of the key features of our platform is the variety of <span className="font-semibold text-slate-800">marriage biodata format</span> options available. We offer both traditional and modern designs, ensuring that you can find a template that suits your preferences. Our templates are clean, elegant, and easy to read.
+              Our <span className="font-semibold text-slate-800">marriage biodata design</span> philosophy focuses on elegance and clarity. From a <span className="font-semibold text-slate-800">simple marriage biodata format</span> to a more complex <span className="font-semibold text-slate-800">professional marriage biodata</span>, we provide choices that suit every family's needs. Experience the best <span className="font-semibold text-slate-800">online marriage biodata</span> creation process.
             </p>
           </div>
 
           {/* Block 4 */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-slate-800">Instant PDF Download</h3>
+            <h3 className="text-xl font-bold text-slate-800">Online Bio Data for Marriage</h3>
             <p className="text-base text-slate-600 leading-relaxed">
-              Creating your biodata is simple with our <span className="font-semibold text-slate-800">biodata maker online</span>. Simply fill in your details, choose a template, and download your <span className="font-semibold text-slate-800">marriage biodata pdf</span> instantly. Our PDF downloads are high-quality and ready to be shared.
+              Creating your <span className="font-semibold text-slate-800">bio data for marriage</span> is simple with our online tool. Simply fill in your details, choose a <span className="font-semibold text-slate-800">marriage biodata format</span>, and download your <span className="font-semibold text-slate-800">marriage biodata pdf</span> instantly. Our PDF downloads are high-quality and ready to be shared on WhatsApp.
             </p>
           </div>
         </div>
