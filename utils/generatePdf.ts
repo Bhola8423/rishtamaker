@@ -28,7 +28,7 @@ export const generatePdf = async ({
   element.style.top = "0";
 
   const canvas = await html2canvas(element, {
-    scale: 2, 
+    scale: 3, // Higher scale for better crispness in PDF
     useCORS: true,
     logging: false,
     backgroundColor: "#ffffff",
@@ -39,40 +39,17 @@ export const generatePdf = async ({
   element.style.cssText = originalStyle;
 
   const imgData = canvas.toDataURL("image/jpeg", 1.0);
-  
-  // A4 size in points
-  const pdfWidth = 595.28;
-  const pdfHeight = 841.89;
-  
-  const imgWidth = pdfWidth;
-  const imgHeight = (canvas.height * imgWidth) / canvas.width;
-  
-  const pdf = new jsPDF("p", "pt", "a4");
-  
-  let heightLeft = imgHeight;
-  let position = 0;
+  const captureHeight = canvas.height / 3; // Adjust for scale 3
 
-  // Function to add watermark
-  const addWatermark = (doc: jsPDF) => {
-    doc.setFontSize(10);
-    doc.setTextColor(150, 150, 150);
-    doc.text(watermarkText, pdfWidth / 2, pdfHeight - 20, { align: "center" });
-  };
+  // Create PDF with EXACT dimensions in points (pt) for no margins
+  const pdf = new jsPDF({
+    orientation: 'portrait',
+    unit: 'pt',
+    format: [675, captureHeight]
+  });
 
-  // Add first page
-  pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight, undefined, 'FAST');
-  addWatermark(pdf);
-  heightLeft -= pdfHeight;
-
-  // Add subsequent pages if necessary
-  while (heightLeft >= 0) {
-    position = heightLeft - imgHeight;
-    pdf.addPage();
-    pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight, undefined, 'FAST');
-    addWatermark(pdf);
-    heightLeft -= pdfHeight;
-  }
-
+  pdf.addImage(imgData, "JPEG", 0, 0, 675, captureHeight, undefined, 'FAST');
+  
   pdf.save(fileName);
 };
 

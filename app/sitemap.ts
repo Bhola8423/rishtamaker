@@ -19,6 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/marriage-biodata-pdf', changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: '/simple-biodata-format', changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: '/blog', changeFrequency: 'daily' as const, priority: 0.8 },
+    { url: '/about', changeFrequency: 'monthly' as const, priority: 0.5 },
+    { url: '/contact', changeFrequency: 'monthly' as const, priority: 0.5 },
+    { url: '/privacy-policy', changeFrequency: 'monthly' as const, priority: 0.3 },
+    { url: '/terms-and-conditions', changeFrequency: 'monthly' as const, priority: 0.3 },
   ];
 
   const professions = ["engineer", "doctor", "teacher", "lawyer", "accountant", "software-developer", "business-owner", "architect", "nurse", "banker", "management-professional", "government-employee", "pharmacist", "professor", "chef", "artist", "designer", "scientist", "police", "defence-personnel"];

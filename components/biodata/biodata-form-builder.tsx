@@ -81,16 +81,16 @@ export function BiodataFormBuilder() {
       const element = document.getElementById('pdf-download-node');
       if (!element) throw new Error("Preview element not found");
 
-      // Measure the actual height and width dynamically
-      const elementHeight = Math.max(842, element.scrollHeight);
-      const elementWidth = element.scrollWidth;
+      // Use a consistent width for capture to ensure standard scaling
+      const captureWidth = 675;
+      const captureHeight = Math.max(842, element.scrollHeight);
 
       // Use html-to-image to perfectly bypass modern CSS limitations like 'lab'/'oklch' which break html2canvas
       const imgData = await toPng(element, {
-        pixelRatio: 2, // 2x for better crispness
+        pixelRatio: 3, // High quality for printing
         backgroundColor: '#ffffff',
-        width: elementWidth,
-        height: elementHeight,
+        width: captureWidth,
+        height: captureHeight,
         style: {
           transform: 'scale(1)',
           transformOrigin: 'top left',
@@ -99,13 +99,16 @@ export function BiodataFormBuilder() {
         }
       });
 
+      // Create PDF with EXACT dimensions of the content in points (pt)
+      // This removes all white space and fixes the "oversized" issue in Chrome
       const pdf = new jsPDF({
         orientation: 'portrait',
-        unit: 'px',
-        format: [elementWidth, elementHeight]
+        unit: 'pt',
+        format: [675, captureHeight]
       });
 
-      pdf.addImage(imgData, 'PNG', 0, 0, elementWidth, elementHeight);
+      pdf.addImage(imgData, 'PNG', 0, 0, 675, captureHeight, undefined, 'FAST');
+
       pdf.save(`${formData.fullName.replace(/\s+/g, '_') || 'Biodata'}.pdf`);
     } catch (error) {
       console.error("Failed to generate PDF", error);
