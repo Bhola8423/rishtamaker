@@ -86,8 +86,19 @@ export function NavigationSidebar({ children }: { children: React.ReactNode }) {
                 <Link 
                   key={item.label} 
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-slate-700 hover:text-[#b11e24] transition-colors"
+                  onClick={(e) => {
+                    setIsOpen(false);
+                    if (item.href.includes('#') && window.location.pathname === '/') {
+                      const targetId = item.href.split('#')[1];
+                      const element = document.getElementById(targetId);
+                      if (element) {
+                        e.preventDefault();
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        window.history.pushState({}, '', `/#${targetId}`);
+                      }
+                    }
+                  }}
+                  className="text-lg font-[family-name:var(--font-body)] font-medium text-slate-700 hover:text-[#b11e24] transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -105,8 +116,18 @@ export function NavigationSidebar({ children }: { children: React.ReactNode }) {
                 <Link 
                   key={link} 
                   href="#builder"
-                  onClick={() => setIsOpen(false)}
-                  className="group flex items-center gap-2 text-[0.95rem] font-medium text-slate-600 hover:text-[#b11e24] transition-colors"
+                  onClick={(e) => {
+                    setIsOpen(false);
+                    if (window.location.pathname === '/') {
+                      const element = document.getElementById('builder');
+                      if (element) {
+                        e.preventDefault();
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        window.history.pushState({}, '', '/#builder');
+                      }
+                    }
+                  }}
+                  className="group flex items-center gap-2 text-[0.95rem] font-[family-name:var(--font-body)] font-medium text-slate-600 hover:text-[#b11e24] transition-colors"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-slate-300 group-hover:bg-[#b11e24] transition-colors" />
                   {link}
@@ -119,7 +140,17 @@ export function NavigationSidebar({ children }: { children: React.ReactNode }) {
         <div className="p-6 border-t border-slate-100 bg-slate-50">
           <Link
             href="#builder"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              setIsOpen(false);
+              if (window.location.pathname === '/') {
+                const element = document.getElementById('builder');
+                if (element) {
+                  e.preventDefault();
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  window.history.pushState({}, '', '/#builder');
+                }
+              }
+            }}
             className="flex w-full min-h-12 items-center justify-center rounded-xl bg-[#aa1d1f] px-4 text-sm font-semibold text-white shadow-[0_10px_20px_rgba(170,29,31,0.15)] transition hover:bg-[#931719]"
           >
             Create My Biodata Now

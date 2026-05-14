@@ -97,6 +97,11 @@ export function SeoLandingPage({ hero, seoContent, faqs, gender, breadcrumbItems
         </div>
       </section>
 
+      {/* Templates Section */}
+      <section id="preview">
+        <PopularTemplatesSection gender={gender} />
+      </section>
+
       {/* SEO Content Section */}
       <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-6 max-w-7xl">
@@ -135,10 +140,7 @@ export function SeoLandingPage({ hero, seoContent, faqs, gender, breadcrumbItems
         </div>
       </section>
 
-      {/* Templates Section */}
-      <section id="preview">
-        <PopularTemplatesSection gender={gender} />
-      </section>
+
 
       {/* Modern FAQ */}
       <section className="py-24 bg-white">

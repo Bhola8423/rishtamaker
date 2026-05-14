@@ -106,7 +106,7 @@ By following this sample and guide, you can create a profile that is both profes
 
 For more help with layouts and designs, check out our [templates](/templates) and [biodata format](/marriage-biodata-format) pages.
 `,
-    coverImage: "/images/blog-sample.jpg",
+    coverImage: "/images/blog-sample.png",
     date: "2026-05-12",
     author: "RishtaMaker Team",
     category: "Biodata Guides",
@@ -219,7 +219,7 @@ By following these examples, you can create a profile that effectively communica
 
 For more help with layouts and designs, check out our [templates](/templates) and [biodata format](/marriage-biodata-format) pages.
 `,
-    coverImage: "/images/blog-examples.jpg",
+    coverImage: "/images/blog-examples.png",
     date: "2026-05-12",
     author: "RishtaMaker Team",
     category: "Biodata Guides",
@@ -309,7 +309,7 @@ Writing the "About Me" section takes time. Don't rush it. Write a draft, read it
 
 For more help with layouts and designs, check out our [templates](/templates) and [biodata format](/marriage-biodata-format) pages.
 `,
-    coverImage: "/images/blog-about-me.jpg",
+    coverImage: "/images/blog-about-me.png",
     date: "2026-05-12",
     author: "RishtaMaker Team",
     category: "Biodata Guides",
@@ -553,101 +553,6 @@ A beautiful, aesthetic design that incorporates subtle floral patterns, very pop
     faqs: [
       { question: "Which biodata format is best for marriage?", answer: "The best format depends on your audience. Traditional families prefer detailed, astrology-heavy formats, while modern professionals often prefer clean, minimalist designs." },
       { question: "Can I download these templates for free?", answer: "Yes, you can create and download basic templates for free using the RishtaMaker builder, with premium designs available for a small fee." }
-    ]
-  },
-  {
-    slug: "about-me-for-marriage-biodata",
-    title: "How to Write \"About Me\" for Marriage Biodata",
-    metaTitle: "How to Write About Me for Marriage Biodata | Examples & Tips",
-    metaDescription: "Learn how to write a compelling 'About Me' section for your marriage biodata. Get examples for boys and girls that stand out.",
-    excerpt: "The 'About Me' section is your voice. Learn how to write it effectively to attract the right match.",
-    content: `
-Writing about yourself can be challenging, especially for a marriage biodata. This section is where you showcase your personality, values, and lifestyle.
-
-## 1. Keep It Positive and Humble
-Focus on your strengths and what makes you unique. Avoid sounding arrogant or overly demanding.
-
-## 2. Mention Your Core Values
-What is important to you? Family, career, honesty, or personal growth? Sharing your values helps find compatible matches.
-
-## 3. Describe Your Lifestyle
-Do you love traveling, reading, or cooking? Mentioning hobbies gives a glimpse into your daily life.
-
-## Examples for Boys:
-"I am a software engineer with a passion for innovation. I value family traditions and enjoy weekend getaways."
-
-## Examples for Girls:
-"I am a teacher who loves working with children. I am family-oriented and enjoy painting in my free time."
-    `,
-    coverImage: "/images/blog-4.jpg",
-    date: "2026-05-10",
-    author: "RishtaMaker Team",
-    category: "Biodata Guides",
-    tags: ["About Me", "Tips", "Writing"],
-    faqs: [
-      { question: "How long should the About Me section be?", answer: "Keep it to 3-4 sentences. Be concise but meaningful." }
-    ]
-  },
-  {
-    slug: "marriage-biodata-examples",
-    title: "Top Marriage Biodata Examples to Inspire You",
-    metaTitle: "Marriage Biodata Examples | Samples for Boys & Girls",
-    metaDescription: "Check out the best marriage biodata examples for boys and girls. Learn what to include and how to format your profile.",
-    excerpt: "See real examples of successful marriage biodatas and learn from them.",
-    content: `
-Looking at examples is the best way to understand how to create your own biodata. Here are a few samples:
-
-## Example 1: Modern Professional (Boy)
-Focuses on career and modern lifestyle. Uses a clean, minimalist format.
-
-## Example 2: Traditional Family-Oriented (Girl)
-Highlights family background, values, and traditional details like horoscope.
-
-## Example 3: Balanced Approach (Both)
-Combines professional details with a warm, personal 'About Me' section.
-    `,
-    coverImage: "/images/blog-1.jpg",
-    date: "2026-05-11",
-    author: "RishtaMaker Team",
-    category: "Biodata Guides",
-    tags: ["Examples", "Samples", "Inspiration"],
-    faqs: [
-      { question: "Where can I find more examples?", answer: "You can browse our [templates section](/templates) to see how different layouts look with sample data." }
-    ]
-  },
-  {
-    slug: "biodata-sample-for-marriage",
-    title: "Perfect Biodata Sample for Marriage (Free Download)",
-    metaTitle: "Biodata Sample for Marriage | Free Downloadable Formats",
-    metaDescription: "Download the perfect biodata sample for marriage. Choose from various formats and create your own in minutes.",
-    excerpt: "Get a ready-to-use biodata sample and start building your profile today.",
-    content: `
-A sample biodata helps you get started quickly. Here is a standard structure you can follow:
-
-## Personal Details
-- Full Name
-- Date of Birth
-- Height
-- Education
-- Occupation
-
-## Family Details
-- Father's Name & Occupation
-- Mother's Name & Occupation
-- Siblings
-
-## Contact Details
-- Phone Number
-- Email
-- Address
-    `,
-    coverImage: "/images/blog-2.jpg",
-    date: "2026-05-12",
-    author: "RishtaMaker Team",
-    category: "Biodata Guides",
-    tags: ["Sample", "Download", "Format"],
-    faqs: [
-      { question: "Can I download these samples?", answer: "Yes, you can use our builder to fill in your details and download the PDF for free." }
     ]
   },
   {

@@ -68,10 +68,9 @@ export function TemplateCard({ template, gender, onSelect }: TemplateCardProps) 
           </div>
         </div>
 
-        {/* Modern Hover Overlay */}
         <div className="absolute inset-0 flex items-center justify-center bg-slate-900/0 transition-all duration-700 group-hover:bg-slate-900/20 backdrop-blur-0 group-hover:backdrop-blur-[2px]">
           <Link
-            href={`/template/${template.id}`}
+            href={`/?template=${template.id}#builder`}
             className="translate-y-8 scale-75 opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100"
           >
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white text-[#b11e24] shadow-[0_20px_40px_rgba(0,0,0,0.3)] ring-8 ring-white/10 hover:scale-110 transition-transform">
@@ -92,7 +91,7 @@ export function TemplateCard({ template, gender, onSelect }: TemplateCardProps) 
         </div>
 
         <h3 className="font-[family-name:var(--font-display)] text-[1.65rem] font-bold text-slate-900 leading-tight group-hover:text-[#b11e24] transition-colors">
-          <Link href={`/template/${template.id}`}>
+          <Link href={`/?template=${template.id}#builder`}>
             {template.name}
           </Link>
         </h3>

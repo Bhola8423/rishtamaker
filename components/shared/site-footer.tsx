@@ -102,6 +102,7 @@ export function SiteFooter() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[#D7A347] mb-4">Support & Legal</h3>
             <ul className="space-y-3 text-sm">
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link></li>

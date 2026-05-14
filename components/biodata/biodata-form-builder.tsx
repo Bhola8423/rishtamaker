@@ -54,6 +54,17 @@ export function BiodataFormBuilder() {
   const selectedTemplate =
     biodataTemplates.find((template) => template.id === selectedTemplateId) ?? biodataTemplates[0];
 
+  const handleTemplateSelect = (id: string) => {
+    setSelectedTemplateId(id);
+    if (isGalleryOpen) {
+      setTimeout(() => setIsGalleryOpen(false), 250);
+    }
+    // Auto-scroll to the form area after a short delay
+    setTimeout(() => {
+      document.getElementById("biodata-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
+  };
+
   const handleProfileChange = (key: "fullName" | "profileImage", value: string) => {
     setFormData((current) => ({
       ...current,
@@ -254,7 +265,7 @@ export function BiodataFormBuilder() {
             data={formData}
             templates={standardTemplates}
             selectedTemplateId={selectedTemplate.id}
-            onSelect={setSelectedTemplateId}
+            onSelect={handleTemplateSelect}
           />
         </div>
       </div>
@@ -472,11 +483,7 @@ export function BiodataFormBuilder() {
                 data={formData}
                 templates={standardTemplates}
                 selectedTemplateId={selectedTemplate.id}
-                onSelect={(id: any) => {
-                  setSelectedTemplateId(id);
-                  // Optional: add a slight delay so they see it selected before the modal closes
-                  setTimeout(() => setIsGalleryOpen(false), 250);
-                }}
+                onSelect={handleTemplateSelect}
               />
             </div>
           </div>

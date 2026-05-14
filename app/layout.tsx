@@ -3,16 +3,16 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rishtamaker.in'),
-  title: "RishtaMaker | Create Beautiful Marriage Biodata Online",
-  description: "Instant marriage profile builder. Create professional matrimonial biodata in 2 minutes. Choose from premium templates, no login required.",
+  title: "RishtaMaker | Free Marriage Biodata Template & Maker Online",
+  description: "Download the perfect marriage biodata template. Create a professional matrimonial profile in 2 minutes with our online biodata maker. Free PDF download.",
   icons: {
     icon: '/images/short_logo.png',
     shortcut: '/images/short_logo.png',
     apple: '/images/short_logo.png',
   },
   openGraph: {
-    title: "RishtaMaker | Create Beautiful Marriage Biodata Online",
-    description: "Instant marriage profile builder. Create professional matrimonial biodata in 2 minutes. Choose from premium templates, no login required.",
+    title: "RishtaMaker | Free Marriage Biodata Template & Maker Online",
+    description: "Download the perfect marriage biodata template. Create a professional matrimonial profile in 2 minutes with our online biodata maker. Free PDF download.",
     url: "https://rishtamaker.in",
     siteName: "RishtaMaker",
     images: [
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RishtaMaker | Create Beautiful Marriage Biodata Online",
-    description: "Instant marriage profile builder. Create professional matrimonial biodata in 2 minutes. Choose from premium templates, no login required.",
+    title: "RishtaMaker | Free Marriage Biodata Template & Maker Online",
+    description: "Download the perfect marriage biodata template. Create a professional matrimonial profile in 2 minutes with our online biodata maker. Free PDF download.",
     images: ["/images/templates-hero-3d.png"],
   },
 };

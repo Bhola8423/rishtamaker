@@ -66,12 +66,12 @@ export function Homepage() {
               <div className="space-y-6">
                 <h1 className="font-[family-name:var(--font-display)] text-[3.5rem] font-bold leading-[1.05] tracking-tight text-[#120d0e] sm:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem]">
                   Free Marriage <span className="text-[#b11e24] relative">
-                    Biodata Maker
+                    Biodata Template
                     <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#b11e24]/20" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 25 0 50 5 T 100 5" fill="none" stroke="currentColor" strokeWidth="4" /></svg>
-                  </span> Online
+                  </span> & Maker
                 </h1>
                 <p className="max-w-[640px] text-lg leading-relaxed text-slate-600 sm:text-xl lg:text-[1.4rem] lg:leading-[1.6] font-medium">
-                  Create beautiful marriage biodata for boys and girls with modern templates and instant PDF download.
+                  Create beautiful profiles with our free marriage biodata templates for boys and girls, and instantly download as PDF.
                 </p>
               </div>
 
@@ -142,7 +142,9 @@ export function Homepage() {
         </div>
       </section>
 
-
+      <div id="builder" className="scroll-mt-6">
+        <BiodataFormBuilder />
+      </div>
 
       {/* Why Choose RishtaMaker Section */}
       <section className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 -mt-10">
@@ -245,7 +247,7 @@ export function Homepage() {
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
         <div className="text-center mb-10">
           <h2 className="font-[family-name:var(--font-display)] text-3xl font-bold text-slate-900 sm:text-4xl">
-            Create Marriage Biodata Online Easily
+            Free Marriage Biodata Template Download
           </h2>
           <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
             Everything you need to know about creating the perfect matrimonial profile.
@@ -263,9 +265,9 @@ export function Homepage() {
 
           {/* Block 2 */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-slate-800">How RishtaMaker Helps</h3>
+            <h3 className="text-xl font-bold text-slate-800">Perfect Marriage Biodata Templates</h3>
             <p className="text-base text-slate-600 leading-relaxed">
-              At RishtaMaker, we understand the importance of this document. Our <span className="font-semibold text-slate-800">marriage biodata maker</span> is designed to help you create a professional and attractive profile effortlessly. Whether you need a <span className="font-semibold text-slate-800">biodata for marriage</span> for a boy or a girl, our platform provides the perfect tools to showcase your details in the best light.
+              At RishtaMaker, we understand the importance of this document. Our <span className="font-semibold text-slate-800">marriage biodata template</span> collection is designed to help you create a professional and attractive profile effortlessly. Whether you need a <span className="font-semibold text-slate-800">biodata for marriage</span> for a boy or a girl, our free biodata maker provides the perfect tools to showcase your details in the best light.
             </p>
           </div>
 
@@ -336,10 +338,6 @@ export function Homepage() {
       {/* Form Builder Anchor */}
       <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16">
         <BiodataCTA />
-      </div>
-
-      <div id="builder" className="scroll-mt-6">
-        <BiodataFormBuilder />
       </div>
 
       {/* Wall of Love Section */}

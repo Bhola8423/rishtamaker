@@ -4,6 +4,7 @@ import { PageShell } from "@/components/shared/page-shell";
 import Link from "next/link";
 import Image from "next/image";
 import { getPostBySlug, getAllPosts } from "@/lib/blog";
+import { BlogNavigationHandler } from "@/components/blog/blog-navigation-handler";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -115,6 +116,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   return (
     <PageShell>
+      <BlogNavigationHandler>
       {/* Schema Markup for SEO */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
@@ -246,6 +248,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </article>
       </div>
+      </BlogNavigationHandler>
     </PageShell>
   );
 }

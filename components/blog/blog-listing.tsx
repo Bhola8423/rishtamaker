@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { BlogPost } from "@/lib/blog";
 import { Search, ArrowRight, ChevronRight, Home } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { ScreenLoader } from "@/components/shared/screen-loader";
 
 interface BlogListingProps {
   posts: BlogPost[];
@@ -14,6 +16,14 @@ interface BlogListingProps {
 export function BlogListing({ posts, categories }: BlogListingProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+
+  const handlePostClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    setIsLoading(true);
+    router.push(href);
+  };
 
   const filteredPosts = posts.filter((post) => {
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -27,6 +37,7 @@ export function BlogListing({ posts, categories }: BlogListingProps) {
 
   return (
     <div className="container mx-auto px-4 py-16 sm:py-24 max-w-7xl">
+      {isLoading && <ScreenLoader />}
       {/* Breadcrumbs */}
       <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8 font-medium">
         <Link href="/" className="flex items-center gap-1 hover:text-[#b11e24] transition-colors">
@@ -51,7 +62,11 @@ export function BlogListing({ posts, categories }: BlogListingProps) {
       {selectedCategory === "All" && searchQuery === "" && featuredPost && (
         <div className="mb-16">
           <article className="group relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all">
-            <Link href={`/blog/${featuredPost.slug}`} className="absolute inset-0 z-10">
+            <Link 
+              href={`/blog/${featuredPost.slug}`} 
+              onClick={(e) => handlePostClick(e, `/blog/${featuredPost.slug}`)}
+              className="absolute inset-0 z-10"
+            >
               <span className="sr-only">View Article</span>
             </Link>
             <div className="aspect-[16/10] lg:aspect-auto lg:h-full w-full bg-slate-100 overflow-hidden relative">
@@ -95,11 +110,10 @@ export function BlogListing({ posts, categories }: BlogListingProps) {
         <div className="flex flex-wrap items-center gap-2 justify-center md:justify-start">
           <button
             onClick={() => setSelectedCategory("All")}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-              selectedCategory === "All"
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === "All"
                 ? "bg-[#b11e24] text-white shadow-sm"
                 : "bg-white border border-slate-200 text-slate-600 hover:border-[#b11e24] hover:text-[#b11e24]"
-            }`}
+              }`}
           >
             All Posts
           </button>
@@ -107,11 +121,10 @@ export function BlogListing({ posts, categories }: BlogListingProps) {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                selectedCategory === category
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category
                   ? "bg-[#b11e24] text-white shadow-sm"
                   : "bg-white border border-slate-200 text-slate-600 hover:border-[#b11e24] hover:text-[#b11e24]"
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -136,7 +149,11 @@ export function BlogListing({ posts, categories }: BlogListingProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {(selectedCategory !== "All" || searchQuery !== "" ? filteredPosts : regularPosts).map((post) => (
             <article key={post.slug} className="group relative flex flex-col h-full rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] transition-all hover:-translate-y-1">
-              <Link href={`/blog/${post.slug}`} className="absolute inset-0 z-10">
+              <Link 
+                href={`/blog/${post.slug}`} 
+                onClick={(e) => handlePostClick(e, `/blog/${post.slug}`)}
+                className="absolute inset-0 z-10"
+              >
                 <span className="sr-only">View Article</span>
               </Link>
               <div className="aspect-[4/3] w-full bg-slate-100 overflow-hidden relative">

@@ -37,25 +37,36 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden xl:flex items-center gap-1.5">
           {siteContent.navigation.map((item) => {
-            // Because our URLs can be /#builder or /#templates
-            // We want to make sure the active state highlights properly
-            // but Next.js usePathname only returns path without hash.
-            // So we'll just match exact paths.
             const isActive = pathname === item.href || (pathname === '/' && item.href === '/');
             
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className={`rounded-full px-3.5 py-2 text-[0.9rem] font-medium transition-all ${
+                onClick={(e) => {
+                  if (item.href.includes('#') && pathname === '/') {
+                    const targetId = item.href.split('#')[1];
+                    const element = document.getElementById(targetId);
+                    if (element) {
+                      e.preventDefault();
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      window.history.pushState({}, '', `/#${targetId}`);
+                    }
+                  }
+                }}
+                className={`relative px-3 py-2 text-[0.95rem] font-[family-name:var(--font-body)] font-medium tracking-normal transition-all duration-300 group overflow-hidden rounded-full ${
                   isActive && !item.href.includes('#')
-                  ? "bg-[#b11e24]/10 text-[#b11e24]" 
-                  : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                  ? "text-[#b11e24] bg-red-50/80 shadow-[inset_0_1px_3px_rgba(177,30,36,0.05)]" 
+                  : "text-slate-700 hover:text-[#b11e24]"
                 }`}
               >
-                {item.label}
+                <span className="relative z-10 flex items-center gap-1.5">
+                  {item.label}
+                </span>
+                {/* Hover background bubble effect */}
+                <span className={`absolute inset-0 bg-red-50/80 rounded-full scale-0 transition-transform duration-300 ease-out origin-center ${!isActive ? 'group-hover:scale-100' : ''}`} />
               </Link>
             );
           })}
@@ -65,11 +76,30 @@ export function SiteHeader() {
         <div className="flex items-center gap-3 shrink-0">
           <Link
             href="/#builder"
-            className="hidden sm:inline-flex h-10 items-center justify-center rounded-full bg-[#aa1d1f] px-6 text-sm font-semibold text-white shadow-[0_10px_20px_rgba(170,29,31,0.2)] transition-all hover:scale-105 hover:bg-[#931719]"
+            onClick={(e) => {
+              if (pathname === '/') {
+                const element = document.getElementById('builder');
+                if (element) {
+                  e.preventDefault();
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  window.history.pushState({}, '', '/#builder');
+                }
+              }
+            }}
+            className="relative hidden sm:inline-flex h-10 items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-[#b11e24] to-[#8b1c31] px-6 text-sm font-bold text-white shadow-[0_10px_20px_rgba(177,30,36,0.25)] transition-all hover:scale-105 hover:shadow-[0_15px_30px_rgba(177,30,36,0.35)] group"
           >
-            Create Biodata
+            <span className="relative z-10 flex items-center gap-2">
+              Create Biodata
+              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+            {/* Shine effect */}
+            <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-150%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(150%)]">
+              <div className="relative h-full w-8 bg-white/20" />
+            </div>
           </Link>
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <NavigationSidebar>
               <button type="button" aria-label="Open navigation" className="block cursor-pointer">
                 <MenuIcon />
