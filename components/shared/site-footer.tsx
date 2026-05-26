@@ -117,26 +117,27 @@ export function SiteFooter() {
           <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-3 text-xs text-slate-500">
             <Link href="/" className="hover:text-[#D7A347] transition-colors">Marriage Biodata</Link>
             <Link href="/marriage-biodata-format" className="hover:text-[#D7A347] transition-colors">Marriage Biodata Format</Link>
-            <Link href="/#builder" className="hover:text-[#D7A347] transition-colors">Biodata for Marriage</Link>
-            <Link href="/hindi-biodata" className="hover:text-[#D7A347] transition-colors">Shaadi Biodata</Link>
-            <Link href="/" className="hover:text-[#D7A347] transition-colors">Matrimonial Biodata</Link>
+            <Link href="/biodata-for-marriage" className="hover:text-[#D7A347] transition-colors">Biodata for Marriage</Link>
+            <Link href="/shaadi-biodata" className="hover:text-[#D7A347] transition-colors">Shaadi Biodata</Link>
+            <Link href="/matrimonial-biodata" className="hover:text-[#D7A347] transition-colors">Matrimonial Biodata</Link>
             <Link href="/templates" className="hover:text-[#D7A347] transition-colors">Wedding Biodata</Link>
-            <Link href="/marriage-biodata-format" className="hover:text-[#D7A347] transition-colors">Marriage Profile Format</Link>
-            <Link href="/#builder" className="hover:text-[#D7A347] transition-colors">Marriage Resume</Link>
-            <Link href="/#builder" className="hover:text-[#D7A347] transition-colors">Bio data for Marriage</Link>
+            <Link href="/blank-biodata-for-marriage-pdf" className="hover:text-[#D7A347] transition-colors">Blank Biodata for Marriage PDF</Link>
+            <Link href="/marriage-biodata-download" className="hover:text-[#D7A347] transition-colors">Marriage Biodata Download</Link>
+            <Link href="/biodata-for-marriage" className="hover:text-[#D7A347] transition-colors">Bio data for Marriage</Link>
             <Link href="/marriage-biodata-format" className="hover:text-[#D7A347] transition-colors">Marriage CV Format</Link>
           </div>
           <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-3 text-xs text-slate-500 mt-4">
-            <Link href="/templates" className="hover:text-[#D7A347] transition-colors">Marriage Biodata Template</Link>
+            <Link href="/marriage-biodata-template" className="hover:text-[#D7A347] transition-colors">Marriage Biodata Template</Link>
             <Link href="/#builder" className="hover:text-[#D7A347] transition-colors">Marriage Biodata Maker</Link>
             <Link href="/templates" className="hover:text-[#D7A347] transition-colors">Free Marriage Biodata Template</Link>
             <Link href="/#builder" className="hover:text-[#D7A347] transition-colors">Editable Marriage Biodata</Link>
             <Link href="/#builder" className="hover:text-[#D7A347] transition-colors">Online Marriage Biodata</Link>
-            <Link href="/templates" className="hover:text-[#D7A347] transition-colors">Marriage Biodata Design</Link>
+            <Link href="/marriage-biodata-format-in-word" className="hover:text-[#D7A347] transition-colors">Marriage Biodata Format in Word</Link>
             <Link href="/marriage-biodata-format" className="hover:text-[#D7A347] transition-colors">Simple Marriage Biodata Format</Link>
-            <Link href="/templates" className="hover:text-[#D7A347] transition-colors">Modern Marriage Biodata</Link>
-            <Link href="/templates" className="hover:text-[#D7A347] transition-colors">Professional Marriage Biodata</Link>
-            <Link href="/templates" className="hover:text-[#D7A347] transition-colors">Attractive Marriage Biodata</Link>
+            <Link href="/modern-marriage-biodata-template" className="hover:text-[#D7A347] transition-colors">Modern Marriage Biodata</Link>
+            <Link href="/elegant-marriage-biodata-design" className="hover:text-[#D7A347] transition-colors">Elegant Marriage Biodata</Link>
+            <Link href="/royal-marriage-biodata-template" className="hover:text-[#D7A347] transition-colors">Royal Marriage Biodata</Link>
+            <Link href="/attractive-bio-data-for-marriage" className="hover:text-[#D7A347] transition-colors">Attractive Marriage Biodata</Link>
           </div>
         </div>
 
